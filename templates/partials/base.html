@@ -1,5 +1,32 @@
-<h1>Base HTML</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        MoneySpread - {% block title %}  {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Deposit</a></li>
+        </ul>
+    </nav>
+    {% block content %}
 
-{% block content %}
-    dsflkjakdjjajlsj
-{% endblock content %}
+    {% endblock content %}
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Log Out</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
