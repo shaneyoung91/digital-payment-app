@@ -138,10 +138,11 @@ AUTH_USER_MODEL = 'userauths.User'
 
 
 JAZZMIN_SETTINGS = {
-    # "site_title": "ABC",
+    "site_title": "MoneySpread Admin",
     "site_header": "MoneySpread",
-    "site_brand": "Payments Made Easy...",
-    # "site_logo": "images/logo.jpg",
+    "site_brand": "MoneySpread",
+    "site_logo": "/images/MoneySpread.png",
+    "welcome_sign": "Welcome to MoneySpread",
     "copyright": "MoneySpread - All Rights Reserved ©️ Copyright 2023",
     # "order_with_respect_to": ["core", "userauths", "transactions", "addon", "blog"],
 }
