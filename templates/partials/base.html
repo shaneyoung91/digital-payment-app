@@ -1,32 +1,136 @@
-<!DOCTYPE html>
+{% load static %}
+
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        MoneySpread - {% block title %}  {% endblock title %}
-    </title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MoneySpread - Money Transfer and Online Payments HTML Template</title>
+
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.m' %}in.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/arafat-font.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Account</a></li>
-            <li><a href="">Deposit</a></li>
-        </ul>
-    </nav>
-    {% block content %}
+    <!-- start preloader -->
+    {% comment %} <div class="preloader" id="preloader"></div> {% endcomment %}
+    <!-- end preloader -->
 
-    {% endblock content %}
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Log Out</a></li>
-            </ul>
-        </nav>
-    </footer>
+    <!-- Scroll To Top Start-->
+    <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+    <!-- Scroll To Top End -->
 
+    <!-- header-section start -->
+    <header class="header-section">
+        <div class="overlay">
+            <div class="container">
+                <div class="row d-flex header-area">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="{% static 'assets/images/MoneySpread.png' %}" class="logo" alt="logo">
+                        </a>
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbar-content">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown main-navbar">
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Personal</a>
+                                    <ul class="dropdown-menu main-menu shadow">
+                                        <li><a class="nav-link" href="payments-01.html">Freelancer Payments</a></li>
+                                        <li><a class="nav-link" href="subscriptions.html">Subscriptions</a></li>
+                                        <li><a class="nav-link" href="security.html">Security</a></li>
+                                        <li><a class="nav-link" href="fees.html">Fees</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown main-navbar">
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Business</a>
+                                    <ul class="dropdown-menu main-menu shadow">
+                                        <li><a class="nav-link" href="payments-01.html">Business Payments</a></li>
+                                        <li><a class="nav-link" href="business-account.html">Business Account</a></li>
+                                        <li><a class="nav-link" href="corporate-card.html">Corporate Card</a></li>
+                                        <li><a class="nav-link" href="expense-management.html">Expense Management</a></li>
+                                        <li><a class="nav-link" href="budgeting-and-analytics.html">Budgeting</a></li>
+                                        <li><a class="nav-link" href="integrations.html">Integrations</a></li>
+                                        <li><a class="nav-link" href="invoice-management.html">Invoice</a></li>
+                                        <li><a class="nav-link" href="security.html">Security</a></li>
+                                        <li><a class="nav-link" href="rewards.html">Rewards</a></li>
+                                        <li><a class="nav-link" href="fees.html">Fees</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown main-navbar">
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Company</a>
+                                    <ul class="dropdown-menu main-menu shadow">
+                                        <li><a class="nav-link" href="about-us.html">About Us</a></li>
+                                        <li><a class="nav-link" href="career.html">Career</a></li>
+                                        <li><a class="nav-link" href="career-details.html">Career Details</a></li>
+                                        <li class="dropend sub-navbar">
+                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                                data-bs-auto-close="outside">Blog</a>
+                                            <ul class="dropdown-menu sub-menu shadow">
+                                                <li><a class="nav-link" href="blog.html">Blog</a></li>
+                                                <li><a class="nav-link" href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="nav-link" href="error.html">Error</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown main-navbar">
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Help</a>
+                                    <ul class="dropdown-menu main-menu shadow">
+                                        <li><a class="nav-link" href="help-center.html">Help Center</a></li>
+                                        <li><a class="nav-link" href="help-center-category.html">Help Category</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="right-area header-action d-flex align-items-center max-un">
+                                <a href="login.html" class="login">Login</a>
+                                <a href="sign-up.html" class="cmn-btn">Sign Up
+                                    <i class="icon-d-right-arrow-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-section end -->
+
+{% block content %}
+
+{% endblock content %}
+
+
+    <!--==================================================================-->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/slick.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/counter.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/waypoint.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/plugin.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
+
 </html>
