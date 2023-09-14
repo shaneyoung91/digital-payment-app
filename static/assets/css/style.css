@@ -665,7 +665,7 @@ label {
 }
 
 .header-section .navbar {
-    padding: 11px 13px;
+    padding: 0px 13px;
 }
 
 .header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link,
@@ -3860,10 +3860,10 @@ label {
 
         .logo {
         position: relative;
-        width: 175px;
-        height: 155px;
+        width: 150px;
         /* object-fit: fill; */
         }
+        
         .logo span {
         position: absolute;
         right: 0;
