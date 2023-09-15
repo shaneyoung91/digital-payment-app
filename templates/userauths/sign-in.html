@@ -13,31 +13,32 @@
                     </div>
                     <div class="col-xl-5">
                         <div class="section-text text-center">
-                            <h5 class="sub-title">Account</h5>
-                            <h2 class="title">Welcome to MoneySpread</h2>
-                            <p class="dont-acc">Already have an account? <a href="{% url "userauths:sign-in" %}">Login</a></p>
+                            <h5 class="sub-title">Welcome to MoneySpread</h5>
+                            <h2 class="title">Sign In</h2>
+                            <p class="dont-acc">Don't have an account yet? <a href="{% url "userauths:sign-up" %}">Sign Up</a></p>
                             {% comment %} <div class="reg-google">
                                 <a href="javascript:void(0)"><i class="fab fa-google"></i>Sign up with Google</a>
                             </div>
                             <span class="or">Or Continue With</span> {% endcomment %}
                         </div>
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <strong>{{ message }}</strong>
+                            {% endfor %}
+                        {% endif %}
+
                         <form method="POST">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="single-input">
-                                        Username: {{ form.username }}
+                                        <input type='text' required name='email' id='logemail' placeholder='Enter Your Email'>
                                     </div>
                                     <div class="single-input">
-                                        Email: {{ form.email }}
+                                        <input type='password' required name='password' id='logemail' placeholder='Enter Your Password'>
                                     </div>
-                                    <div class="single-input">
-                                        Password: {{ form.password1 }}
-                                    </div>
-                                    <div class="single-input">
-                                        Confirm Password: {{ form.password2 }}
-                                    </div>
-                                    <button class="cmn-btn w-100">Sign Up</button>
+                                    <button class="cmn-btn w-100">Login</button>
                                 </div>
                             </div>
                         </form>
