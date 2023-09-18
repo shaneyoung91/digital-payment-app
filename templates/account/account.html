@@ -3,81 +3,6 @@
 
 {% block content %}
     <!-- Dashboard Section start -->
-    <head>
-        <style>
-            #id_image{
-                background-color: #432f9f;
-                /* border: 1px solid #e2e9f3; */
-                border-radius: 4px;
-                height: 50px;
-                width: 100%;
-                color: #ffffff;
-            }
-            #id_image::file-selector-button{
-                border: none;
-                border-radius: 7px;
-                color: 432f9f;
-                background-color: #ffffff;
-                /* border: 1px solid #595ef1bd; */
-                height: 30px;
-                cursor: pointer;
-                transition: all .25s ease-in;
-            }
-            #id_image::file-selector-button:hover,
-            #id_identity_type::file-selector-button:hover{
-                background-color: #fff;
-                color: #565A90;
-                transition: all .25s ease-in;
-            }
-            #id_identity_image{
-                background-color: #432f9f;
-                /* border: 1px solid #e2e9f3; */
-                border-radius: 4px;
-                height: 50px;
-                width: 100%;
-                color: #ffffff;
-            }
-            #id_identity_image::file-selector-button{
-                border: none;
-                border-radius: 7px;
-                color: 432f9f;
-                background-color: #ffffff;
-                /* border: 1px solid #595ef1bd; */
-                height: 30px;
-                cursor: pointer;
-                transition: all .25s ease-in;
-            }
-            #id_identity_image::file-selector-button:hover{
-                background-color: #fff;
-                color: #565A90;
-                transition: all .25s ease-in;
-            }
-            #id_signature{
-                background-color: #432f9f;
-                /* border: 1px solid #e2e9f3; */
-                border-radius: 4px;
-                height: 50px;
-                width: 100%;
-                color: #ffffff;
-            }
-            #id_signature::file-selector-button{
-                border: none;
-                border-radius: 7px;
-                color: 432f9f;
-                background-color: #ffffff;
-                /* border: 1px solid #595ef1bd; */
-                height: 30px;
-                cursor: pointer;
-                transition: all .25s ease-in;
-            }
-            #id_signature::file-selector-button:hover{
-                background-color: #fff;
-                color: #565A90;
-                transition: all .25s ease-in;
-            }
-        </style>
-    </head>
-
     <section class="dashboard-section body-collapse account">
         <div class="overlay pt-120">
             <div class="container-fruid">
@@ -126,111 +51,56 @@
                             <div class="tab-main">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active text-center" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" 
-                                        type="button" role="tab" aria-controls="account" aria-selected="true">
-                                        KYC Registration Form</button>
+                                        <button class="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="account" aria-selected="true">Account</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="payment" aria-selected="false">Payment Methods</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="notification-tab" data-bs-toggle="tab" data-bs-target="#notification" type="button" role="tab" aria-controls="notification" aria-selected="false">Notification</button>
                                     </li>
                                 </ul>
                                 <div class="tab-content mt-40">
                                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-                                        <form method="POST" enctype="multipart/form-data">
-                                            {% csrf_token %}
-                                            <div class="upload-avatar">
-                                                <div class="avatar-left d-flex align-items-center">
-                                                    <div class="profile-img">
-                                                        <img src="{{kyc.image.url}}" alt="image" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover">
-                                                    </div>
-                                                    <div class="instraction">
-                                                        <h6>Your Avatar</h6>
-                                                        {% comment %} <p>Profile picture size: 400px x 400px</p> {% endcomment %}
-                                                    </div>
+                                        <div class="upload-avatar">
+                                            <div class="avatar-left d-flex align-items-center">
+                                                <div class="profile-img">
+                                                    <img src="{% static 'assets1/images/owner-profile-2.png' %}" alt="image">
                                                 </div>
-                                                <div class="avatar-right">
-                                                    {{form.image}}
+                                                <div class="instraction">
+                                                    <h6>Your Avatar</h6>
+                                                    <p>Profile picture size: 400px x 400px</p>
                                                 </div>
                                             </div>
-
+                                            <div class="avatar-right">
+                                                <div class="file-upload">
+                                                    <div class="right-area">
+                                                        <label class="file">
+                                                            <input type="file">
+                                                            <span class="file-custom"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <form action="#">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6">
                                                     <div class="single-input">
-                                                        <label for="fName">Full Name</label>
-                                                        {{form.full_name}}
+                                                        <label for="fName">First Name</label>
+                                                        <input type="text" id="fName" placeholder="Alfred">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="single-input">
-                                                        <label for="fName">Mobile Number</label>
-                                                        {{form.mobile}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="single-input">
-                                                        <label for="fName">Country</label>
-                                                        {{form.country}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="single-input">
-                                                        <label for="fName">State</label>
-                                                        {{form.state}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="single-input">
-                                                        <label for="fName">City</label>
-                                                        {{form.city}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="single-input">
-                                                        <label for="fName">Fax</label>
-                                                        {{form.fax}}
+                                                        <label for="lName">Last Name</label>
+                                                        <input type="text" id="lName" placeholder="Davis">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <div class="single-input">
-                                                        <label for="fName">Date of Birth</label>
-                                                        {{form.date_of_birth}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="single-input">
-                                                        {{form.gender}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="single-input">
-                                                        {{form.marital_status}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="single-input">
-                                                        {{form.identity_type}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" style="padding-top: 50px">
-                                                    <div class="single-input">
-                                                        <label for="fName">Select Identity Image</label>
-                                                        {{form.identity_image}}
-                                                        {% if kyc.identity_image %}
-                                                            <img src="{{ kyc.identity_image.url }}" alt="" 
-                                                            style="width: 100%; height: 300px; border-radius: 10px; object-fit: cover; padding-top: 10px">
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" style="padding-top: 50px">
-                                                    <div class="single-input">
-                                                        <label for="fName">Select Signature Image</label>
-                                                        {{form.signature}}
-                                                        {% if kyc.signature %}
-                                                            <img src="{{ kyc.signature.url }}" alt="" 
-                                                            style="width: 100%; height: 300px; border-radius: 10px; object-fit: cover; padding-top: 10px">
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                                <br><br>
-
-                                                {% comment %} <div class="col-md-12">
                                                     <div class="single-input">
                                                         <label for="email">Email</label>
                                                         <div class="row input-status d-flex align-items-center">
@@ -290,10 +160,10 @@
                                                         <label for="address">Address</label>
                                                         <input type="text" id="address" placeholder="2972 Westheimer Rd. Santa Ana, Illinois 85486">
                                                     </div>
-                                                </div> {% endcomment %}
+                                                </div>
                                                 <div class="col-md-12">
                                                     <div class="btn-border">
-                                                        <button class="cmn-btn" type="submit">Submit KYC</button>
+                                                        <button class="cmn-btn">Account</button>
                                                     </div>
                                                 </div>
                                             </div>
