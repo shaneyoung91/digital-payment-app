@@ -1,0 +1,4801 @@
+/*============================================ 
+# Template Name: Paylio Admin Dashboard
+# Version: 1.0
+# Date: 26/04/2022
+# Author: pixelaxis
+# Author URI: https://themeforest.net/user/pixelaxis/portfolio
+# Developed By: Pranto
+# Description: Paylio - Money Transfer and Online Payments Dashboard HTML Template
+============================================*/
+
+/*============================================ 
+======== Table of Css Content =========
+# Typography
+# Normalize 
+# Global style
+# Header Area
+# Banner Area
+# Section Area
+# Footer Area
+============================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap");
+:root {
+    --body-font: "Jost", sans-serif;
+    --body-color: #F7F9FD;
+    --primary-color: #4743c9;
+    --secondary-color: #00FE83;
+    --head-color: #0c266c;
+    --section-primary-color: #f2f3f9;
+    --section-color: #f5f6fc;
+    --para-color: #0c266c;
+    --border-color: #868ea5;
+    --hover-alt-color: #291b6b;
+}
+
+.collapsing {
+    transition: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+section,
+footer {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h1>a,
+h2,
+h2>a,
+h3,
+h3>a,
+h4,
+h4>a,
+h5,
+h5>a,
+h6,
+h6>a {
+    font-family: var(--body-font);
+    color: var(--para-color);
+    font-weight: 400;
+    text-transform: initial;
+    transition: all 0.3s;
+}
+
+h1>a:hover,
+h2>a:hover,
+h3>a:hover,
+h4>a:hover,
+h5>a:hover,
+h6>a:hover {
+    color: var(--para-color);
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: none;
+    color: var(--para-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.max-un {
+    max-width: unset;
+}
+
+.d-rtl {
+    direction: rtl;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    padding: 10px 20px;
+    color: var(--para-color);
+    width: 100%;
+    font-family: var(--body-font);
+    background: var(--bs-white);
+    border: 1px solid #eeecf7;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: rgba(12, 38, 110, 0.502);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(12, 38, 110, 0.502);
+}
+
+::-ms-input-placeholder {
+    color: rgba(12, 38, 110, 0.502);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="password"] {
+    font-family: initial;
+}
+
+input[type="checkbox"] {
+    width: initial;
+    height: initial;
+}
+
+select {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+span {
+    display: inline-block;
+}
+
+.table thead th,
+.table td,
+.table th {
+    border: none;
+}
+
+.d-grid {
+    display: grid !important;
+}
+
+.b-none {
+    border: none !important;
+}
+
+.ovf-unset {
+    overflow-x: unset !important;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+}
+
+.shadow-none {
+    box-shadow: none;
+}
+
+h1,
+h1>a {
+    font-size: 76px;
+    line-height: 98.8px;
+    margin-top: -20px;
+}
+
+h2,
+h2>a {
+    font-size: 57px;
+    line-height: 74.1px;
+    margin-top: -16px;
+}
+
+h3,
+h3>a {
+    font-size: 43px;
+    line-height: 55.9px;
+    margin-top: -10px;
+}
+
+h4,
+h4>a {
+    font-size: 32px;
+    line-height: 41.6px;
+    margin-top: -8px;
+}
+
+h5,
+h5>a {
+    font-size: 24px;
+    line-height: 31.2px;
+    margin-top: -6px;
+}
+
+h6,
+h6>a {
+    font-size: 18px;
+    line-height: 23.4px;
+    margin-top: -4px;
+}
+
+h1.m-none,
+h2.m-none,
+h3.m-none,
+h4.m-none,
+h5.m-none {
+    margin: 0;
+}
+
+table thead tr th {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+a {
+    display: inline-block;
+    color: var(--para-color);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+p,
+span,
+li,
+label {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--para-color);
+    line-height: 30px;
+}
+
+.section-text {
+    margin-bottom: 34px;
+}
+
+.section-header {
+    margin-bottom: 53px;
+}
+
+.dark-sec .sub-title {
+    color: var(--secondary-color);
+}
+
+.dark-sec .title,
+.dark-sec p {
+    color: var(--bs-white);
+}
+
+.sub-title {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.xxlr {
+    font-size: 26px;
+    line-height: 36px;
+    margin-top: -7px;
+}
+
+.xlr {
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: -7px;
+}
+
+.mdr {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.z-1 {
+    z-index: 1;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.pt-120 {
+    padding-top: 120px;
+}
+
+@media (max-width: 991px) {
+    .pt-120 {
+        padding-top: 60px;
+    }
+    .mb-60 {
+        margin-bottom: 40px;
+    }
+    .mt-60 {
+        margin-top: 40px;
+    }
+    .mb-80 {
+        margin-bottom: 60px;
+    }
+    .mt-80 {
+        margin-top: 60px;
+    }
+    .header-section {
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+        background-color: var(--bs-white);
+    }
+}
+
+@media (max-width: 575px) {
+    .pt-120 {
+        padding-top: 50px;
+    }
+}
+
+.pb-120 {
+    padding-bottom: 120px;
+}
+
+@media (max-width: 991px) {
+    .pb-120 {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .pb-120 {
+        padding-bottom: 50px;
+    }
+}
+
+*::-webkit-scrollbar-track {
+    background: #00003e;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-thumb {
+    background-color: #5732c6;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: #fff;
+    line-height: 45px;
+    font-size: 20px;
+    text-align: center;
+    z-index: 9;
+    cursor: pointer;
+    transition: all 1s;
+    transform: translateY(100%);
+}
+
+.scrollToTop i {
+    color: var(--bs-white);
+}
+
+.scrollToTop.active {
+    bottom: 30px;
+    transform: translateY(0%);
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999999;
+    overflow: visible;
+    background: url(../images/preloader.gif) no-repeat center center;
+    background-size: 30%;
+    background-color: #F8F8F7;
+}
+
+.icon-svg {
+    position: relative;
+}
+
+.icon-svg img {
+    opacity: 1;
+    position: absolute;
+}
+
+.icon-svg svg {
+    position: absolute;
+    stroke-dashoffset: 1500;
+    stroke-dasharray: 1500;
+    transform: scale(1);
+    transition: transform 0.3s, fill 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon-svg:hover svg {
+    visibility: visible;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    fill: transparent;
+    transition: transform 0.3s, fill 0.5s, stroke-dashoffset 6s;
+}
+
+.icon-svg:hover img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+/* cmn btn */
+
+.cmn-btn {
+    padding: 10px 30px;
+    font-weight: 600;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--bs-white);
+    transition: 0.3s;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cmn-btn:hover {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--para-color);
+}
+
+.cmn-btn img,
+.cmn-btn i {
+    margin-left: 10px;
+}
+
+.cmn-btn.active {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--para-color);
+}
+
+.cmn-btn.active:hover {
+    background: var(--primary-color);
+    color: var(--bs-white);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ripple2Ani {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    33% {
+        transform: translate(-5px, -5px);
+    }
+    66% {
+        transform: translate(5px, 5px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+    -0% {
+        transform: scale(1);
+    }
+    -50% {
+        transform: scale(0.8);
+    }
+    -100% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes rippleAni {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    33% {
+        transform: translate(5px, -5px);
+    }
+    66% {
+        transform: translate(-5px, 5px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.header-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 140px;
+    width: calc(100% - 140px);
+    z-index: 999;
+    background-color: var(--bs-white);
+    border-bottom: 1px solid #6c6ea6;
+    transition: all 0.8s;
+}
+
+.header-section.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: var(--bs-white);
+    border-color: transparent;
+}
+
+.header-section .navbar-toggler {
+    padding-right: 0;
+    display: none;
+    border: none;
+}
+
+.header-section .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.header-section .navbar-toggler i {
+    color: var(--head-alt-color);
+}
+
+.header-section .navbar-area {
+    padding: 10px 40px;
+}
+
+.header-section .navbar-area .sidebar-icon {
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.header-section .navbar-area form .form-group {
+    padding: 0 12px;
+    background: #f9f9f9;
+    border: 1px solid #d0d3e8;
+    border-radius: 10px;
+}
+
+.header-section .navbar-area form .form-group input {
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+}
+
+.header-section .navbar-area .dashboard-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    margin-left: 100px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item {
+    cursor: pointer;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .profile-area i {
+    margin-left: 5px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .main-area {
+    position: absolute;
+    top: 50px;
+    width: 360px;
+    right: 0;
+    padding: 30px;
+    background: var(--bs-white);
+    box-shadow: 0px 20px 50px rgba(44, 63, 88, 0.15);
+    border-radius: 20px;
+    border-radius: 20px;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .main-area.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .main-area ul li {
+    margin-top: 15px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .main-area ul li i {
+    margin-right: 10px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .main-area ul li a {
+    width: 100%;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .user-content .head-area {
+    background: #F8F8FF;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item .user-content .head-area .profile-img {
+    margin-right: 20px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area .notifications-btn {
+    position: relative;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area .notifications-btn::before {
+    content: '';
+    position: absolute;
+    background-color: #ED815B;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 6px;
+    right: 0;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area .head-area span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--bs-white);
+    background: #902520;
+    border-radius: 6px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li {
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li:hover {
+    background: #F8F8FF;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li a {
+    width: 95%;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li .img-area {
+    margin-right: 10px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li .time-area {
+    margin-top: 5px;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.notifications-area ul li i {
+    color: #A5A5A5;
+    margin-right: 0;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.language-area .language-content {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.language-area .language-content li {
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.header-section .navbar-area .dashboard-nav .single-item.language-area .language-content li:hover,
+.header-section .navbar-area .dashboard-nav .single-item.language-area .language-content li.active {
+    background-color: #6C3AFF;
+    color: var(--bs-white);
+}
+
+.header-section .sidebar-wrapper {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    left: -220px;
+    padding: 20px;
+    background: var(--bs-white);
+    box-shadow: 0px 20px 50px rgba(44, 63, 88, 0.15);
+    transform: translateX(150px);
+    transition: 0.3s;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.header-section .sidebar-wrapper.active {
+    opacity: 1;
+    left: -140px;
+    visibility: visible;
+    transform: translateX(0px);
+}
+
+.header-section .sidebar-wrapper::-webkit-scrollbar {
+    width: 0;
+}
+
+.header-section .sidebar-wrapper .close-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.header-section .sidebar-wrapper .close-btn i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #4341cc;
+    font-size: 24px;
+}
+
+.header-section .sidebar-wrapper .sidebar-logo {
+    margin-bottom: 20px;
+}
+
+.header-section .sidebar-wrapper ul li {
+    border-radius: 20px;
+    padding: 15px 10px;
+    transition: 0.3s;
+}
+
+.header-section .sidebar-wrapper ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-section .sidebar-wrapper ul li span {
+    display: none;
+}
+
+.header-section .sidebar-wrapper ul li:hover,
+.header-section .sidebar-wrapper ul li.active {
+    background: #F6F5FF;
+}
+
+.header-section .sidebar-wrapper ul li img {
+    margin-right: 0;
+    width: 35%;
+}
+
+.header-section .sidebar-wrapper .bottom-item {
+    border-top: 1px solid #E4E2EE;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.header-section .sidebar-wrapper .invite-now {
+    border: 1px solid #E4E2EE;
+    padding: 20px;
+    background: var(--bs-white);
+    border: 1px solid #DFDFDF;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+.header-section .sidebar-wrapper .invite-now p {
+    margin: 15px 0 25px;
+}
+
+.header-section .sidebar-wrapper .invite-now .cmn-btn {
+    border-radius: 25px;
+    width: 100%;
+}
+
+.header-section.body-collapse {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+
+.header-section.body-collapse .sidebar-wrapper {
+    width: 270px;
+    left: -420px;
+}
+
+.header-section.body-collapse .sidebar-wrapper ul li span {
+    display: block;
+}
+
+.header-section.body-collapse .sidebar-wrapper ul li img {
+    width: auto;
+    margin-right: 10px;
+}
+
+.header-section.body-collapse .sidebar-wrapper ul li a {
+    justify-content: start;
+}
+
+.header-section.body-collapse .sidebar-wrapper .invite-now {
+    display: block;
+}
+
+.dashboard-section {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    margin-left: 140px;
+    width: calc(100% - 140px);
+    transition: all 0.8s;
+}
+
+.dashboard-section.body-collapse {
+    width: calc(100% - 270px);
+    margin-left: 270px;
+}
+
+.dashboard-section .section-content {
+    position: sticky;
+    top: 0;
+}
+
+.dashboard-section .dropdown-area {
+    position: relative;
+}
+
+.dashboard-section .dropdown-area button {
+    background-color: transparent;
+}
+
+.dashboard-section .dropdown-area .dropdown-menu {
+    transition: all 0.3s;
+    transform: translate(-160px, 100px) !important;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+    min-width: 190px;
+    inset: 0px auto auto 0px !important;
+}
+
+.dashboard-section .dropdown-area .dropdown-menu.show {
+    transition: all 0.3s;
+    opacity: 1;
+    transform: translate(-160px, 40px) !important;
+}
+
+.dashboard-section .dropdown-area .dropdown-menu li a:hover {
+    background-color: #6C3AFF;
+    color: var(--bs-white);
+}
+
+.dashboard-section .acc-details {
+    background: #4341cc;
+    border-radius: 10px;
+}
+
+.dashboard-section .acc-details .top-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.dashboard-section .acc-details .top-area h5,
+.dashboard-section .acc-details .top-area h2,
+.dashboard-section .acc-details .top-area h4 {
+    color: var(--bs-white);
+}
+
+.dashboard-section .acc-details .top-area h2 {
+    margin: 25px 0 15px;
+}
+
+.dashboard-section .acc-details .top-area .receive {
+    color: #d8dcff;
+}
+
+.dashboard-section .acc-details .top-area .receive span {
+    color: #24ff00;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.dashboard-section .acc-details .top-area .nice-select {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section .acc-details .top-area .nice-select::after {
+    border-bottom: 2px solid var(--bs-white);
+    border-right: 2px solid var(--bs-white);
+    height: 8px;
+    width: 8px;
+    right: 14px;
+    top: initial;
+}
+
+.dashboard-section .acc-details .top-area .nice-select .current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--bs-white);
+    font-weight: 600;
+}
+
+.dashboard-section .acc-details .top-area .nice-select .current::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    background-image: url(../images/icon/flag-usa.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section .acc-details .top-area .nice-select .list {
+    width: 100%;
+}
+
+.dashboard-section .acc-details .top-area .right-top {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.dashboard-section .acc-details .top-area .right-bottom h4 {
+    margin: 25px 0 15px;
+}
+
+.dashboard-section .acc-details .top-area .right-bottom h5 {
+    color: #24ff00;
+}
+
+.dashboard-section .acc-details .bottom-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #5654D1;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.dashboard-section .acc-details .bottom-area .left-side {
+    margin-bottom: -15px;
+}
+
+.dashboard-section .acc-details .bottom-area .cmn-btn {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--bs-white);
+}
+
+.dashboard-section .acc-details .bottom-area .cmn-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.dashboard-section .transactions-area {
+    background: var(--bs-white);
+    border-radius: 10px;
+}
+
+.dashboard-section .transactions-area .section-text {
+    padding: 30px;
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 25px;
+}
+
+.dashboard-section .transactions-area .section-text h5 {
+    font-weight: 600;
+}
+
+.dashboard-section .transactions-area .top-area {
+    padding: 0 30px;
+}
+
+.dashboard-section .transactions-area .top-area ul {
+    border: none;
+}
+
+.dashboard-section .transactions-area .top-area ul li .nav-link {
+    color: #696D8D;
+    padding: 0;
+    border-color: transparent;
+    font-weight: 700;
+    padding-right: 15px;
+}
+
+.dashboard-section .transactions-area .top-area ul li .nav-link.active {
+    color: #5B2EDF;
+}
+
+.dashboard-section .transactions-area .top-area .view-all {
+    color: #5B2EDF;
+}
+
+.dashboard-section .transactions-area .top-area .view-all img {
+    margin-left: 5px;
+}
+
+.dashboard-section .transactions-area .table-responsive tr {
+    text-align: center;
+    border-top: 1px solid #EFEFEF;
+}
+
+.dashboard-section .transactions-area .table-responsive tr th {
+    padding: 15px 30px;
+}
+
+.dashboard-section .transactions-area .table-responsive tr th p:first-child {
+    font-weight: 700;
+}
+
+.dashboard-section .transactions-area .table-responsive tr td {
+    vertical-align: middle;
+}
+
+.dashboard-section .transactions-area .table-responsive tr td p:first-child {
+    font-weight: 700;
+}
+
+.dashboard-section .transactions-area .table-responsive thead {
+    background: #F6F5FF;
+}
+
+.dashboard-section .transactions-area .table-responsive thead tr th {
+    color: #696D8D;
+    font-weight: 400;
+}
+
+.dashboard-section .transactions-area .table-responsive thead tr th:first-child {
+    text-align: start;
+    width: 35%;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody {
+    border: none;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody tr th:first-child {
+    text-align: start;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody tr .cancelled {
+    color: #E9687F;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody tr .completed {
+    color: #49C96D;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody tr .pending {
+    color: #F7A94A;
+}
+
+.dashboard-section .transactions-area .table-responsive tbody tr .inprogress {
+    color: #DBAF14;
+}
+
+.dashboard-section .side-items .single-item {
+    background: var(--bs-white);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.dashboard-section .side-items .single-item:last-child {
+    margin: 0;
+}
+
+.dashboard-section .side-items .single-item .section-text h6 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.dashboard-section .side-items .single-item .single-card {
+    margin-bottom: 20px;
+}
+
+.dashboard-section .side-items .single-item .single-card button {
+    background-color: transparent;
+    padding: 0;
+}
+
+.dashboard-section .side-items .single-item .add-card {
+    background: var(--bs-white);
+    border: 1px solid #EAE9F5;
+    border-radius: 10px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section .side-items .single-item .add-card button {
+    background-color: transparent;
+    padding: 0;
+}
+
+.dashboard-section .side-items .single-item .view-all img {
+    margin-left: 5px;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #D4D7F4;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li:last-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p .info {
+    display: grid;
+    margin-left: 10px;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p .info span:first-child {
+    font-weight: 600;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p span {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p.right span {
+    justify-content: center;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p.right span:first-child {
+    font-weight: 600;
+    color: #49C96D;
+}
+
+.dashboard-section .side-items .single-item .recipients-item li p.right span.loss {
+    color: red;
+}
+
+.dashboard-section.transactions .head-area {
+    padding-bottom: 20px;
+}
+
+.dashboard-section.transactions .head-area h4 {
+    font-weight: 700;
+}
+
+.dashboard-section.transactions .transactions-right form {
+    margin-right: 15px;
+}
+
+.dashboard-section.transactions .transactions-right form .form-group {
+    padding: 0 12px;
+    background: #f9f9f9;
+    border: 1px solid #d0d3e8;
+    border-radius: 10px;
+}
+
+.dashboard-section.transactions .transactions-right form .form-group input {
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+}
+
+.dashboard-section.transactions .transactions-right a {
+    font-weight: 700;
+    color: #5B2EDF;
+}
+
+.dashboard-section.transactions .transactions-main {
+    background: var(--bs-white);
+    border-radius: 10px;
+}
+
+.dashboard-section.transactions .transactions-main .top-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 30px 30px 20px;
+}
+
+.dashboard-section.transactions .transactions-main .top-items h6 {
+    font-weight: 700;
+}
+
+.dashboard-section.transactions .transactions-main .top-items li {
+    margin-left: 15px;
+}
+
+.dashboard-section.transactions .transactions-main .top-items li a {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.transactions .transactions-main .top-items li a img {
+    margin-right: 5px;
+}
+
+.dashboard-section.transactions .transactions-main .filters-item {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.dashboard-section.transactions .transactions-main .filters-item .single-item {
+    margin-right: 15px;
+}
+
+.dashboard-section.transactions .transactions-main .filters-item .single-item button {
+    font-weight: 700;
+    color: #5B2EDF;
+    background-color: transparent;
+    border-left: 1px solid #E6E5FF;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.dashboard-section.transactions .transactions-main .filters-item .single-item .nice-select {
+    border-radius: 10px;
+}
+
+.dashboard-section.transactions .transactions-main .filters-item .single-item .nice-select::after {
+    height: 9px;
+    width: 9px;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tr {
+    text-align: center;
+    border-top: 1px solid #EFEFEF;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tr th {
+    padding: 15px 30px;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tr th p:first-child {
+    font-weight: 700;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tr td {
+    vertical-align: middle;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tr td p:first-child {
+    font-weight: 700;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive thead {
+    background: #F6F5FF;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive thead tr th {
+    color: #696D8D;
+    font-weight: 400;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive thead tr th:first-child {
+    text-align: start;
+    width: 35%;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody {
+    border: none;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody tr th:first-child {
+    text-align: start;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody tr .cancelled {
+    color: #E9687F;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody tr .completed {
+    color: #49C96D;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody tr .pending {
+    color: #F7A94A;
+}
+
+.dashboard-section.transactions .transactions-main .table-responsive tbody tr .inprogress {
+    color: #DBAF14;
+}
+
+.dashboard-section.transactions.recipients .filters-item {
+    background: #5732C6;
+    padding: 20px 30px;
+    gap: 20px;
+}
+
+.dashboard-section.transactions.recipients .filters-item .right-area {
+    gap: 20px;
+}
+
+.dashboard-section.transactions.recipients .filters-item .search-area {
+    width: 100%;
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item {
+    padding: 8px 20px;
+    background: #5F3DC4;
+    border: 1px solid #6A4BC8;
+    border-radius: 10px;
+    margin-right: 0;
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item form .form-group input {
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: var(--bs-white);
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item form .form-group input::placeholder {
+    color: #B2B9CB;
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item .nice-select {
+    background-color: transparent;
+    border: transparent;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item .nice-select .current {
+    color: var(--bs-white);
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: var(--bs-white);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.transactions.recipients .filters-item .single-item button i {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.dashboard-section.transactions.recipients .table-responsive tr:last-child {
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.dashboard-section.transactions.recipients .table-responsive th .info-area {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.transactions.recipients .table-responsive th .info-area .img-area {
+    margin-right: 15px;
+}
+
+.dashboard-section.transactions.recipients .table-responsive th .info-area .img-area img {
+    max-width: unset;
+}
+
+.dashboard-section.transactions.recipients .table-responsive .btn-item a {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    padding: 11px 45px;
+}
+
+.dashboard-section.pay .main-content {
+    background: var(--bs-white);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.dashboard-section.pay .main-content .head-area {
+    border-bottom: 1px solid #C3C2C8;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.dashboard-section.pay .main-content .head-area h4 {
+    font-weight: 700;
+}
+
+.dashboard-section.pay .main-content .single-item {
+    text-align: center;
+    background: #F7F9FD;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid transparent;
+    margin-top: 20px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.dashboard-section.pay .main-content .single-item p {
+    margin: 15px 0 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #CEDAF3;
+}
+
+.dashboard-section.pay .main-content .single-item:hover {
+    border: 1px solid #6C3AFF;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .step-area {
+    margin-bottom: 20px;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .step-area h5 {
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list {
+    margin-bottom: 40px;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button {
+    border-radius: 20px;
+    padding: 25px 40px;
+    margin-right: 30px;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button .icon-area {
+    width: 100%;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button .icon-area i {
+    color: #7D7F93;
+    font-size: 35px;
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button.active,
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button:hover {
+    background: linear-gradient(117.39deg, #5732C6 13.65%, #9A79FD 105.93%);
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button.active i,
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button:hover i {
+    color: var(--bs-white);
+}
+
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button.active span,
+.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button:hover span {
+    color: var(--bs-white);
+}
+
+.dashboard-section.pay.step .main-content .user-select .single-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #EFEFEF;
+    padding: 20px 0;
+}
+
+.dashboard-section.pay.step .main-content .user-select .single-user:last-child {
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.dashboard-section.pay.step .main-content .user-select .text-area {
+    margin-left: 15px;
+}
+
+.dashboard-section.pay.step .main-content .user-select .text-area p {
+    font-weight: 700;
+}
+
+.dashboard-section.pay.step .main-content .user-select .text-area .last-payment {
+    border-top: 1px dashed #BABABA;
+    display: block;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.dashboard-section.pay.step .main-content .user-select .right a {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    padding: 14px 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.dashboard-section.pay.step .main-content .user-select .right a:hover {
+    background: #5732C6;
+    color: var(--bs-white);
+}
+
+.dashboard-section.pay.step .main-content .user-select .right a:hover::before {
+    position: absolute;
+    content: "\0047";
+    font-family: 'arafat font';
+    left: 35px;
+}
+
+.dashboard-section.pay.step .main-content form {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section.pay.step .main-content form .form-group {
+    padding: 0 12px;
+    background: #f9f9f9;
+    border: 1px solid #d0d3e8;
+    border-radius: 10px;
+}
+
+.dashboard-section.pay.step .main-content form .form-group input {
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+}
+
+.dashboard-section.pay.step-2 .main-content .user-select .right {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.pay.step-2 .main-content .user-select .right a {
+    padding: 12px 45px;
+    margin-left: 15px;
+    justify-content: center;
+}
+
+.dashboard-section.pay.step-2 .main-content .user-select .right a i {
+    margin-right: 10px;
+}
+
+.dashboard-section.pay.step-2 .main-content .user-select .right a:hover::before {
+    display: none;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance {
+    background: #F8F8FF;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance p b {
+    margin-left: 10px;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #ACB1C8;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .input-area input {
+    padding: 0;
+    padding-right: 25px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .nice-select {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .nice-select::after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    height: 8px;
+    width: 8px;
+    right: 14px;
+    top: initial;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .nice-select .current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .nice-select .current::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    background-image: url(../images/icon/flag-usa.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.pay.step-2 .main-content .send-banance .nice-select .list {
+    width: 100%;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content .send-banance {
+    width: 100%;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content .recipient {
+    background: #F1ECFF;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
+    position: absolute;
+    content: '';
+    width: 26px;
+    height: 26px;
+    left: -20px;
+    z-index: 1;
+    background-image: url(../images/icon/exchange-icon.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    left: -30px;
+    background-color: #5732C6;
+    border: 6px solid var(--bs-white);
+    border-radius: 25px;
+}
+
+.dashboard-section.pay.step-2 .main-content .exchange-content .recipient .nice-select .current::before {
+    background-image: url(../images/icon/flag-bd.png);
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option {
+    background: #F8F8FF;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option h6 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single .nice-select {
+    height: 50px;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single .nice-select::after {
+    height: 9px;
+    width: 9px;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single.border-area {
+    border-left: 1px solid #E5DCDC;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-details ul {
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-details ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-details ul li p {
+    font-weight: 700;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-details .tatal-pay .single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.step-2 .main-content .pay-details .tatal-pay .single h5,
+.dashboard-section.pay.step-2 .main-content .pay-details .tatal-pay .single p {
+    font-weight: 700;
+}
+
+.dashboard-section.pay.step-2 .main-content .total-fees {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.dashboard-section.pay.step-2 .main-content .total-fees h5 {
+    font-weight: 600;
+}
+
+.dashboard-section.pay.step-2 .main-content .total-fees.pay {
+    border: none;
+}
+
+.dashboard-section.pay.step-3 .payment-details {
+    border: 1px solid #B6B4D4;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 20px;
+}
+
+.dashboard-section.pay.step-3 .payment-details .top-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #B6B4D5;
+}
+
+.dashboard-section.pay.step-3 .payment-details .top-area h6 {
+    font-weight: 700;
+}
+
+.dashboard-section.pay.step-3 .payment-details .top-area a {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    padding: 12px 45px;
+    transition: 0.3s;
+}
+
+.dashboard-section.pay.step-3 .payment-details .top-area a:hover {
+    background: #5732C6;
+    color: var(--bs-white);
+}
+
+.dashboard-section.pay.step-3 .payment-details .details-list li {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.step-3 .payment-details .details-list li span {
+    width: 50%;
+}
+
+.dashboard-section.pay.step-3 .main-content form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dashboard-section.pay.step-3 .main-content form label {
+    font-weight: 500;
+}
+
+.dashboard-section.pay.receive-2 .input-field {
+    background: #F8F8FF;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 10px;
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.dashboard-section.pay.receive-2 .input-field .single-input {
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.receive-2 .input-field .single-input input {
+    background: #F8F8FF;
+    border: 1px solid #D0D3E8;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents {
+    border: 1px solid #B6B4D4;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents h6 {
+    border-bottom: 1px solid #B6B4D5;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload {
+    border: 1px dashed #C4BEE4;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload input {
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file {
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom {
+    position: absolute;
+    top: 0;
+    height: 105px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom::before {
+    position: absolute;
+    left: 0;
+    background-image: url(../images/icon/upload-icons.png);
+    background-repeat: no-repeat;
+    content: "";
+    width: 70px;
+    height: 70px;
+    left: 20px;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+    position: relative;
+    width: 205%;
+    display: flex;
+    z-index: 5;
+    top: -5px;
+    left: 25%;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+    content: "DRAG FILES HERE OR BROWSE";
+    position: absolute;
+    left: 0;
+    top: -30px;
+}
+
+.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+    content: "Supported file types: PDF, DOC, DOCX, JPEG,JPG,BMP,XLS and XLSX ( Upload up to 10 MB)";
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .top-area {
+    border: 1px solid #C3C2C8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .top-area h3 {
+    margin: 25px 0 15px;
+    font-weight: 700;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .top-area h5 {
+    border-top: 1px solid #B5B7C8;
+    font-weight: 700;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .share-link {
+    margin-top: 30px;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .share-link ul {
+    margin-top: 15px;
+}
+
+.dashboard-section.pay.receive-3 .request-submitted .share-link ul li a {
+    margin: 0 15px;
+}
+
+.dashboard-section.pay.crypto .main-content .single-item {
+    padding: 30px;
+}
+
+.dashboard-section.pay.crypto .main-content .single-item span {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.dashboard-section .footer-area {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-section .footer-area a {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    margin: 0 10px;
+    padding: 12px 40px;
+    transition: 0.3s;
+}
+
+.dashboard-section .footer-area a:hover {
+    background: #5732C6;
+    color: var(--bs-white);
+}
+
+.dashboard-section .footer-area a.active {
+    background: #5732C6;
+    color: var(--bs-white);
+}
+
+.dashboard-section .footer-area a.active:hover {
+    background: #F7F9FD;
+    color: var(--para-color);
+    border: 1px solid #DDE8FF;
+}
+
+.dashboard-section.exchange {
+    overflow-x: initial;
+}
+
+.dashboard-section.exchange .nav-tabs {
+    border: none;
+}
+
+.dashboard-section.exchange .recipient-list button {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+}
+
+.dashboard-section.exchange .tab-content .section-head h5 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.dashboard-section.exchange .tab-content form .single-input {
+    margin-bottom: 30px;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .select-area,
+.dashboard-section.exchange .tab-content form .single-input input {
+    background: #F9F9F9;
+    border: 1px solid #D0D3E8;
+    border-radius: 10px;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .select-area .nice-select,
+.dashboard-section.exchange .tab-content form .single-input input .nice-select {
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .select-area input {
+    border: none;
+    border-left: 1px solid #D0D3E8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .nice-select {
+    float: initial;
+    background: #F9F9F9;
+    border: 1px solid #D0D3E8;
+    border-radius: 10px;
+    line-height: 50px;
+    height: 50px;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .nice-select::after {
+    width: 9px;
+    height: 9px;
+}
+
+.dashboard-section.exchange .tab-content form .single-input .nice-select .list {
+    width: 100%;
+}
+
+.dashboard-section.exchange .side-area {
+    border: 1px solid #C8C5DE;
+    border-radius: 20px;
+    padding: 30px;
+    position: sticky;
+    top: 100px;
+}
+
+.dashboard-section.exchange .side-area .title-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-section.exchange .side-area .title-area h5 {
+    font-weight: 700;
+}
+
+.dashboard-section.exchange .side-area .title-area .flag-area {
+    display: flex;
+}
+
+.dashboard-section.exchange .side-area .title-area .flag-area img {
+    margin-right: -10px;
+    max-width: unset;
+}
+
+.dashboard-section.exchange .side-area .deposit-details {
+    border-top: 1px solid #C8C5DE;
+    margin-top: 20px;
+}
+
+.dashboard-section.exchange .side-area .deposit-details li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.dashboard-section.exchange .details-list li span {
+    text-align: start;
+}
+
+.dashboard-section.crypto .left-area {
+    position: sticky;
+    top: 100px;
+}
+
+.dashboard-section.crypto .left-area ul {
+    position: sticky;
+    top: 100px;
+}
+
+.dashboard-section.crypto .left-area ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.dashboard-section.crypto .left-area ul li a {
+    margin-left: 45px;
+    padding: 0;
+    color: #777E90;
+    border: none;
+}
+
+.dashboard-section.crypto .left-area ul li a::after {
+    position: absolute;
+    content: '';
+    width: 30px;
+    bottom: -25px;
+    height: 0;
+    left: 0;
+    transform: rotate(90deg);
+    border-bottom: 1px dashed #777E91;
+}
+
+.dashboard-section.crypto .left-area ul li a::before {
+    position: absolute;
+    content: '1';
+    width: 30px;
+    height: 30px;
+    left: 0;
+    text-align: center;
+    color: #777E90;
+    border: 2px solid #E6E8EC;
+    border-radius: 36px;
+}
+
+.dashboard-section.crypto .left-area ul li a.two::before {
+    content: '2';
+}
+
+.dashboard-section.crypto .left-area ul li a.three::before {
+    content: '3';
+}
+
+.dashboard-section.crypto .left-area ul li a.last::before {
+    content: '4';
+}
+
+.dashboard-section.crypto .left-area ul li a.last::after {
+    display: none;
+}
+
+.dashboard-section.crypto .left-area ul li a.active button {
+    color: #23262F;
+    font-weight: 600;
+}
+
+.dashboard-section.crypto .left-area ul li a.active::before {
+    position: absolute;
+    content: '\f00c';
+    font-family: 'font awesome 6 free';
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    left: 0;
+    background-color: #5B2EDF;
+    border: none;
+    border-radius: 36px;
+    font-weight: 600;
+    color: var(--bs-white);
+}
+
+.dashboard-section.crypto .table-area {
+    padding: 40px;
+    background: #FCFCFD;
+    border-radius: 16px;
+}
+
+.dashboard-section.crypto .table-area form {
+    margin-top: 20px;
+}
+
+.dashboard-section.crypto .table-area form .form-group {
+    padding: 0 12px;
+    background: #f9f9f9;
+    border: 1px solid #d0d3e8;
+    border-radius: 10px;
+}
+
+.dashboard-section.crypto .table-area form .form-group input {
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+}
+
+.dashboard-section.crypto .table-area form .form-group button {
+    padding: 0;
+    background-color: transparent;
+}
+
+.dashboard-section.crypto .table-area th,
+.dashboard-section.crypto .table-area td {
+    padding: 16px;
+}
+
+.dashboard-section.crypto .table-area thead {
+    border-bottom: 1px solid #E6E8EC;
+}
+
+.dashboard-section.crypto .table-area thead th {
+    color: #777E90;
+    font-size: 14px;
+}
+
+.dashboard-section.crypto .table-area tbody {
+    border: none;
+}
+
+.dashboard-section.crypto .table-area tbody .highlight {
+    color: #FF6838;
+}
+
+.dashboard-section.crypto .table-area tbody tr {
+    border: none;
+}
+
+.dashboard-section.crypto .table-area tbody tr:hover {
+    background: #F4F5F6;
+}
+
+.dashboard-section.crypto .table-area tbody tr:hover i {
+    color: #FFD166;
+}
+
+.dashboard-section.crypto .table-area tbody tr i {
+    color: #777E90;
+    margin-right: 5px;
+}
+
+.dashboard-section.crypto .table-area tbody tr td .crypto-logo {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.crypto .table-area tbody tr td .crypto-logo img {
+    margin-right: 10px;
+}
+
+.dashboard-section.crypto .table-area tbody tr td p {
+    color: #23262F;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.dashboard-section.crypto .table-area tbody tr td:last-child .highlight {
+    color: #FF6838;
+}
+
+.dashboard-section.crypto .table-area tbody tr td:last-child p {
+    color: #58BD7D;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance {
+    background: #F8F8FF;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance p b {
+    margin-left: 10px;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #ACB1C8;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .input-area input {
+    padding: 0;
+    margin-top: 0;
+    padding-right: 25px;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .nice-select {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .nice-select::after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    height: 8px;
+    width: 8px;
+    right: 14px;
+    top: initial;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .nice-select .current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .nice-select .current::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    background-image: url(../images/icon/flag-usa.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.crypto .exchange-content .send-banance .nice-select .list {
+    width: 100%;
+}
+
+.dashboard-section.crypto .exchange-content .recipient {
+    background: #F1ECFF;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.dashboard-section.crypto .exchange-content .recipient::before {
+    position: absolute;
+    content: '';
+    width: 26px;
+    height: 26px;
+    top: -22px;
+    left: calc(50% - -12px);
+    z-index: 1;
+    background-image: url(../images/icon/exchange-icon.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.crypto .exchange-content .recipient::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    left: calc(50%);
+    top: -35px;
+    background-color: #5732C6;
+    border: 6px solid var(--bs-white);
+    border-radius: 25px;
+}
+
+.dashboard-section.crypto .exchange-content .recipient .nice-select .current::before {
+    background-image: url(../images/icon/flag-btc.png);
+}
+
+.dashboard-section.crypto .exchange-content .pay-details ul {
+    margin-bottom: 30px;
+}
+
+.dashboard-section.crypto .exchange-content .pay-details ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dashboard-section.crypto .exchange-content .pay-details ul li p {
+    font-weight: 700;
+}
+
+.dashboard-section.crypto .exchange-content .pay-details .tatal-pay .single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dashboard-section.crypto .exchange-content .pay-details .tatal-pay .single h5,
+.dashboard-section.crypto .exchange-content .pay-details .tatal-pay .single p {
+    font-weight: 700;
+}
+
+.dashboard-section.crypto .spend-get {
+    padding: 25px 40px;
+    background: #F4F5F6;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-section.crypto .spend-get .single-spend-get {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.crypto .spend-get .single-spend-get .img-area {
+    width: 40px;
+    height: 40px;
+    background: #9757D7;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.dashboard-section.crypto .spend-get .single-spend-get .text-area span {
+    font-weight: 700;
+}
+
+.dashboard-section.crypto .spend-get .single-spend-get.get .img-area {
+    background: #58BD7D;
+}
+
+.dashboard-section.crypto .spend-get .single-spend-get.method .img-area {
+    background: #4BC9F0;
+}
+
+.dashboard-section.crypto .checkbox-single {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    padding: 30px;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #F4F5F6;
+    border-radius: 20px;
+}
+
+.dashboard-section.crypto .checkbox-single:hover,
+.dashboard-section.crypto .checkbox-single.active {
+    border: 1px solid #5B2EDF;
+}
+
+.dashboard-section.crypto .checkbox-single:last-child {
+    margin-bottom: 0;
+}
+
+.dashboard-section.crypto .checkbox-single .left-area {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.crypto .checkbox-single .checkbox-area {
+    align-items: center;
+}
+
+.dashboard-section.crypto .checkbox-single .checkbox-area input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
+    position: absolute;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background: #F4F5F6;
+}
+
+.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.dashboard-section.crypto .checkbox-single .checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-section.crypto .checkbox-single .checkmark::after {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icon/check.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.crypto .checkbox-single input:checked~.checkmark {
+    background: #571ce0;
+}
+
+.dashboard-section.crypto .checkbox-single input:checked~.checkmark:after {
+    display: block;
+}
+
+.dashboard-section.crypto .checkbox-single .item-title span {
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.dashboard-section.crypto .checkbox-single .item-title .img-area {
+    margin-left: 70px;
+    width: 62px;
+    height: 62px;
+    background: #F4F5F6;
+    border-radius: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-section.crypto .fee-area {
+    margin-top: 30px;
+}
+
+.dashboard-section.crypto .fee-area ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.dashboard-section.crypto .fee-area .fee {
+    margin-top: 10px;
+    border-top: 1px solid #E6E8EC;
+}
+
+.dashboard-section.deposit-money .table-area {
+    border: 1px solid #CADBFC;
+    border-radius: 10px;
+}
+
+.dashboard-section.deposit-money .card-area {
+    position: relative;
+    gap: 30px;
+    width: 80%;
+}
+
+.dashboard-section.deposit-money .card-area input {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.dashboard-section.deposit-money .card-area input[type=radio]+label {
+    position: relative;
+    width: 100%;
+    transition: 0.3s all;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-section.deposit-money .card-area input[type=radio]+label img {
+    width: 100%;
+}
+
+.dashboard-section.deposit-money .card-area input[type=radio]:checked+label::before {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icon/check-2.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.dashboard-section.deposit-money .card-area input[type=radio]:checked+label::after {
+    position: absolute;
+    content: '';
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--bs-white);
+    z-index: 1;
+}
+
+.dashboard-section.deposit-money .card-area input[type=radio]:checked+label .wrapper::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #0A2843;
+    border-radius: 10px;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.dashboard-section.deposit-money form {
+    margin: 0 !important;
+}
+
+.dashboard-section.deposit-money .send-banance p b {
+    margin-left: 10px;
+}
+
+.dashboard-section.deposit-money .send-banance .input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #ACB1C8;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.dashboard-section.deposit-money .send-banance .input-area input {
+    padding: 0;
+    padding-right: 25px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.dashboard-section.deposit-money .send-banance .nice-select {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.deposit-money .send-banance .nice-select::after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    height: 8px;
+    width: 8px;
+    right: 14px;
+    top: initial;
+}
+
+.dashboard-section.deposit-money .send-banance .nice-select .current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.dashboard-section.deposit-money .send-banance .nice-select .current::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    background-image: url(../images/icon/flag-usa.png);
+    background-repeat: no-repeat;
+}
+
+.dashboard-section.deposit-money .send-banance .nice-select .list {
+    width: 100%;
+}
+
+.dashboard-section.deposit-money .details-list li {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.dashboard-section.deposit-money .details-list li span {
+    text-align: start;
+}
+
+.dashboard-section.deposit-money .checkbox-area label {
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.dashboard-section.deposit-money .checkbox-area label a {
+    color: #5732C6;
+    font-weight: 600;
+}
+
+.dashboard-section.withdraw-money .head-item h6 {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.dashboard-section.withdraw-money .table-area {
+    padding: 30px;
+}
+
+.dashboard-section.account {
+    position: relative;
+    overflow-x: initial;
+}
+
+.dashboard-section.account::before {
+    content: "";
+    position: absolute;
+    background: #5732C6;
+    top: 0;
+    left: 0;
+    height: 270px;
+    z-index: -1;
+    width: 100%;
+}
+
+.dashboard-section.account .owner-details {
+    background: var(--bs-white);
+    box-shadow: 0px 4px 26px rgba(165, 163, 235, 0.25);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+}
+
+.dashboard-section.account .owner-details h6 {
+    font-weight: 700;
+    margin: 25px 0 15px;
+}
+
+.dashboard-section.account .owner-details .active-status {
+    color: #378754;
+}
+
+.dashboard-section.account .owner-details ul {
+    border-top: 1px solid #E8E8E8;
+    margin-top: 15px;
+}
+
+.dashboard-section.account .owner-details ul li {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-section.account .owner-details ul li span {
+    color: #7D7F93;
+}
+
+.dashboard-section.account .owner-details .owner-action {
+    margin-top: 20px;
+}
+
+.dashboard-section.account .owner-details .owner-action a {
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-weight: 700;
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.dashboard-section.account .owner-details .owner-action a img {
+    margin-right: 10px;
+}
+
+.dashboard-section.account .owner-details .owner-action a.delete {
+    color: #D8481B;
+}
+
+.dashboard-section.account .tab-main {
+    background: var(--bs-white);
+    box-shadow: 0px 4px 26px rgba(165, 163, 235, 0.25);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.dashboard-section.account .nav-tabs {
+    justify-content: space-between;
+    border: none;
+    margin-bottom: -20px;
+}
+
+.dashboard-section.account .nav-tabs .nav-link {
+    padding: 13px 55px;
+    background: #F7F9FD;
+    color: #13216E;
+    font-weight: 700;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.dashboard-section.account .nav-tabs .nav-link.active {
+    color: var(--bs-white);
+    background: #5927E3;
+    box-shadow: 0px 8px 24px rgba(89, 39, 227, 0.42);
+}
+
+.dashboard-section.account .upload-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F7F7FF;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.dashboard-section.account .upload-avatar .instraction {
+    margin-left: 20px;
+}
+
+.dashboard-section.account .upload-avatar .instraction h6 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.dashboard-section.account .file-upload input {
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dashboard-section.account .file-upload .file {
+    cursor: pointer;
+    position: relative;
+}
+
+.dashboard-section.account .file-upload .file .file-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.account .file-upload .file .file-custom::before {
+    content: "Upload new avatar";
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px 30px;
+    background: var(--bs-white);
+    border: 1px solid #F2F3FB;
+    border-radius: 10px;
+}
+
+.dashboard-section.account form .single-input {
+    margin-bottom: 20px;
+}
+
+.dashboard-section.account form .file .file-custom {
+    border: none;
+}
+
+.dashboard-section.account form span,
+.dashboard-section.account form input {
+    background: #F8F8FF;
+    border: 1px solid #D5CDEB;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.dashboard-section.account form span {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.account form span img {
+    margin-right: 10px;
+}
+
+.dashboard-section.account form .pending {
+    color: #5834C6;
+    border: 1px solid #5834C6;
+}
+
+.dashboard-section.account form .confirm {
+    color: #1C6510;
+    border: 1px solid #1C6510;
+}
+
+.dashboard-section.account form .notconfirm {
+    color: #D8481B;
+    border: 1px solid #D8481B;
+}
+
+.dashboard-section.account form .file-upload .file .file-custom::before {
+    content: "Not uploaded";
+    left: 0;
+    padding: 12px 30px;
+    background: #F8F8FF;
+    border: 1px solid #D5CDEB;
+}
+
+.dashboard-section.account .single-content h5,
+.dashboard-section.account .change-pass h5 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.dashboard-section.account .single-content a,
+.dashboard-section.account .change-pass a {
+    padding: 12px 30px;
+    margin-top: 20px;
+    background: var(--bs-white);
+    border: 1px solid #DCDCFF;
+    border-radius: 10px;
+}
+
+.dashboard-section.account .single-content {
+    background: #F7F7FF;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.dashboard-section.account .single-content button {
+    padding: 12px 25px;
+    font-weight: 600;
+    background: var(--bs-white);
+    box-shadow: 0px 8px 18px rgba(61, 32, 139, 0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dashboard-section.account .single-content button:hover,
+.dashboard-section.account .single-content button.active {
+    background: #5927E3;
+    color: var(--bs-white);
+}
+
+.dashboard-section.account .single-content .single-setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #C7CADC;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.dashboard-section.account .single-content .single-setting h6 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.dashboard-section.account .single-content .single-setting:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: none;
+}
+
+.dashboard-section.account .single-content.your-devices .left {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-section.account .single-content.your-devices .left .icon-area {
+    margin-right: 15px;
+}
+
+.dashboard-section.account .single-content .head-item {
+    margin-bottom: 30px;
+}
+
+.dashboard-section.account .single-content .head-item h5 {
+    margin: 0;
+}
+
+.dashboard-section.account .single-content .head-item a {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    color: #4E0DFF;
+}
+
+.dashboard-section.account .card-area {
+    border: 1px solid #CADBFC;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.dashboard-section.account .card-area h6 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dashboard-section.account .card-area .card-content {
+    gap: 30px;
+    width: 80%;
+}
+
+.dashboard-section.account .card-area button {
+    padding: 0;
+    border-radius: 20px;
+}
+
+.dashboard-section.account .notification-single {
+    background: #F7F9FD;
+    box-shadow: 0px -1px 0px #DDE8FF, 0px 1px 0px #DDE8FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section.account .notification-single h6 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.dashboard-section.account .notification-single .switch {
+    position: relative;
+    display: inline-block;
+    min-width: 53px;
+    height: 25px;
+    margin-left: 15px;
+}
+
+.dashboard-section.account .notification-single .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dashboard-section.account .notification-single .switch input:checked+.slider {
+    background-color: #571ce0;
+}
+
+.dashboard-section.account .notification-single .switch input:focus+.slider {
+    box-shadow: 0 0 1px #571ce0;
+}
+
+.dashboard-section.account .notification-single .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-color);
+    transition: 0.4s;
+}
+
+.dashboard-section.account .notification-single .switch .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.dashboard-section.account .notification-single .switch .slider.round {
+    border-radius: 24px;
+}
+
+.dashboard-section.account .notification-single .switch .slider.round::before {
+    border-radius: 50%;
+}
+
+.dashboard-section.account .notification-single .switch input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.card-popup .modal-dialog {
+    max-width: 520px;
+}
+
+.card-popup .modal-content .modal-header {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 0;
+}
+
+.card-popup .modal-content .modal-header button {
+    padding: 8px;
+    margin: 0;
+    background: #643DD8;
+    border-radius: 5px;
+    z-index: 1;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-popup .modal-content .modal-header button i {
+    color: var(--bs-white);
+}
+
+.card-popup .modal-content .main-content {
+    padding: 30px 30px 0;
+    position: relative;
+    z-index: 0;
+}
+
+.card-popup .modal-content .main-content::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 20%;
+    background: #5732C6;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.card-popup .modal-content .main-content .top-area .text-area h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-popup .modal-content .main-content .tab-area ul {
+    justify-content: space-between;
+    border: none;
+}
+
+.card-popup .modal-content .main-content .tab-area ul li {
+    display: flex;
+    align-items: center;
+}
+
+.card-popup .modal-content .main-content .tab-area ul li .btn-link {
+    color: #5732C6;
+    margin-right: 20px;
+}
+
+.card-popup .modal-content .main-content .tab-area ul li button {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #E2305B;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.card-popup .modal-content .main-content .tab-area ul li img {
+    margin-right: 5px;
+}
+
+.card-popup .modal-content .main-content .bottom-area .history {
+    font-weight: 600;
+}
+
+.card-popup .modal-content .main-content .bottom-area .history span {
+    color: #5732C6;
+}
+
+.card-popup .modal-content .main-content .bottom-area li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.card-popup .modal-content .main-content .bottom-area li:first-child {
+    border-top: 1px solid #EFEFEF;
+    margin-top: 10px;
+}
+
+.card-popup .modal-content .main-content .bottom-area li span {
+    display: block;
+    font-size: 16px;
+}
+
+.card-popup .modal-content .main-content .bottom-area li p {
+    padding: 10px 25px;
+}
+
+.card-popup .modal-content .main-content .bottom-area li p span:first-child {
+    font-weight: bold;
+}
+
+.card-popup .modal-content .main-content .tab-content .transfer-area p:first-child {
+    border-bottom: 1px solid #B4B8D8;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    font-weight: 600;
+}
+
+.card-popup .modal-content .main-content .tab-content form .input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #ACB1C8;
+    border-radius: 20px;
+}
+
+.card-popup .modal-content .main-content .tab-content form .input-area input {
+    padding: 0;
+    margin: 0;
+    padding-right: 25px;
+    border: none;
+    font-weight: bold;
+}
+
+.card-popup .modal-content .main-content .tab-content .nice-select {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    padding: 10px 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+}
+
+.card-popup .modal-content .main-content .tab-content .nice-select::after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    height: 8px;
+    width: 8px;
+    right: 14px;
+    top: initial;
+}
+
+.card-popup .modal-content .main-content .tab-content .nice-select .current {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.card-popup .modal-content .main-content .tab-content .nice-select .current::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    background-image: url(../images/icon/flag-usa.png);
+    background-repeat: no-repeat;
+}
+
+.card-popup .modal-content .main-content .tab-content .nice-select .list {
+    width: 100%;
+}
+
+.card-popup .modal-content .main-content .tab-content .bottom-area {
+    margin: 30px 0;
+}
+
+.card-popup.recipients .modal-content .main-content::before {
+    height: 15%;
+}
+
+.card-popup.recipients .modal-content .main-content .tab-area ul {
+    gap: 20px;
+}
+
+.card-popup.recipients .modal-content .main-content .tab-area ul li {
+    width: 47%;
+}
+
+.card-popup.recipients .modal-content .main-content .tab-area ul li button {
+    width: 100%;
+    font-size: 16px;
+    text-align: start;
+    color: var(--para-color);
+}
+
+.transactions-popup .modal-header {
+    background: #F6F5FF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.transactions-popup .modal-dialog {
+    max-width: 880px;
+}
+
+.transactions-popup .modal-dialog .modal-content {
+    border-radius: 20px;
+}
+
+.transactions-popup .modal-dialog .modal-content .modal-header {
+    padding: 30px;
+}
+
+.transactions-popup .modal-dialog .modal-content .modal-header h6 {
+    font-weight: 700;
+}
+
+.transactions-popup .modal-dialog .modal-content .modal-header button {
+    margin: 0;
+    z-index: 1;
+    border: none;
+    background: none;
+    background-color: var(--bs-white);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-popup .modal-dialog .modal-content .modal-header button:focus {
+    box-shadow: none;
+}
+
+.transactions-popup .modal-dialog .modal-content .modal-header button i {
+    color: #797979;
+    font-size: 24px;
+}
+
+.transactions-popup .modal-dialog .modal-content .icon-area {
+    padding: 40px 0;
+}
+
+.transactions-popup .modal-dialog .modal-content .text-area h3,
+.transactions-popup .modal-dialog .modal-content .text-area h6 {
+    font-weight: 700;
+}
+
+.transactions-popup .modal-dialog .modal-content .text-area p {
+    margin: 20px 0;
+}
+
+.transactions-popup .modal-dialog .modal-content .text-area .com {
+    color: #49C96D;
+    font-weight: 700;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area {
+    padding: 30px;
+    border-left: 1px solid #E6E5FF;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area h6 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-details {
+    padding: 10px 0;
+    border-top: 1px solid #E6E6FF;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-details li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-details li:last-child {
+    border-top: 1px solid #E6E6FF;
+    border-bottom: 1px solid #E6E6FF;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-info li {
+    margin-top: 15px;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-info li p {
+    color: #000000;
+}
+
+.transactions-popup .modal-dialog .modal-content .right-area .payment-info li span {
+    color: #696D8D;
+}
+
+.transactions-popup.mycard .main-content {
+    padding: 40px;
+}
+
+.transactions-popup.mycard .modal-header {
+    background: transparent;
+    position: absolute;
+    right: 0;
+    padding: 5px !important;
+}
+
+.transactions-popup.mycard .right-area {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.transactions-popup.mycard .right-area .card-details {
+    border: 1px solid #E8E9EB;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.transactions-popup.mycard .right-area .card-details img {
+    margin-right: 10px;
+}
+
+.transactions-popup.mycard .right-area .payment-details {
+    border: none !important;
+}
+
+.transactions-popup.mycard .right-area .payment-details li {
+    border: none !important;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination .page-item,
+.pagination .page-link {
+    width: 34px;
+    height: 34px;
+    background: #F8F8F8;
+    border-radius: 10px;
+    border: none;
+    color: var(--para-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination .page-item:first-child,
+.pagination .page-item:last-child,
+.pagination .page-link:first-child,
+.pagination .page-link:last-child {
+    border-radius: 10px;
+}
+
+.pagination .page-item i,
+.pagination .page-link i {
+    font-size: 14px;
+}
+
+.pagination .page-item:hover,
+.pagination .page-item.active,
+.pagination .page-link:hover,
+.pagination .page-link.active {
+    background-color: #5B2EDF;
+    color: var(--bs-white);
+}
+
+.transfer-popup .modal-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.transfer-popup .modal-dialog {
+    max-width: 480px;
+}
+
+.transfer-popup .modal-dialog .modal-content {
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header {
+    padding: 0;
+    border: none;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header a {
+    display: flex;
+    align-items: center;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header a i {
+    margin-right: 5px;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header h6 {
+    font-weight: 700;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header button {
+    margin: 0;
+    z-index: 1;
+    border: none;
+    background: none;
+    background-color: var(--bs-white);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header button:focus {
+    box-shadow: none;
+}
+
+.transfer-popup .modal-dialog .modal-content .modal-header button i {
+    color: #797979;
+    font-size: 24px;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content form .userInput {
+    display: flex;
+    margin: 30px 0;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content form .userInput input {
+    text-align: center;
+    margin: 0 15px;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content form .userInput input:first-child {
+    margin-left: 0;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content form .userInput input:last-child {
+    margin-right: 0;
+}
+
+.transfer-popup .modal-dialog .modal-content .main-content form button {
+    background: #5732C6;
+    border: 1px solid #AAA9E3;
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    color: var(--bs-white);
+}
+
+.transfer-popup .modal-dialog #success .modal-content {
+    background: #5732C6;
+    width: 180%;
+}
+
+.transfer-popup .modal-dialog #success .modal-header {
+    justify-content: end;
+}
+
+.transfer-popup .modal-dialog #success h3 {
+    margin: 25px 0 10px;
+    font-weight: 600;
+}
+
+.transfer-popup .modal-dialog #success h3,
+.transfer-popup .modal-dialog #success p {
+    color: var(--bs-white);
+}
+
+.purchased-popup .modal-header {
+    padding: 0;
+    border: none;
+}
+
+.purchased-popup .modal-header a {
+    display: flex;
+    align-items: center;
+}
+
+.purchased-popup .modal-header a i {
+    margin-right: 5px;
+}
+
+.purchased-popup .modal-header button {
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchased-popup .modal-header button:focus {
+    box-shadow: none;
+}
+
+.purchased-popup .modal-header button i {
+    color: #EFF4FF;
+    font-size: 24px;
+}
+
+.purchased-popup .modal-content {
+    background: #5732C6;
+    border-radius: 20px;
+}
+
+.purchased-popup .modal-dialog {
+    max-width: 480px;
+}
+
+.purchased-popup .main-content h5 {
+    font-weight: 700;
+    color: var(--bs-white);
+    width: 80%;
+    margin: auto;
+}
+
+.purchased-popup .main-content h5 span {
+    font-weight: inherit;
+    font-size: inherit;
+    color: #05FF00;
+}
+
+.purchased-popup .main-content ul {
+    border: 1px solid #E4E4E4;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0 30px;
+    margin-top: 40px;
+}
+
+.purchased-popup .main-content ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.purchased-popup .main-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.purchased-popup .main-content ul li span {
+    color: var(--bs-white);
+}
+
+.purchased-popup.congratulations-popup .main-content h4,
+.purchased-popup.congratulations-popup .main-content p,
+.purchased-popup.congratulations-popup .main-content a {
+    color: var(--bs-white);
+}
+
+.purchased-popup.congratulations-popup .main-content p {
+    margin: auto;
+    width: 60%;
+}
+
+.purchased-popup.congratulations-popup .main-content a {
+    padding: 8px 20px;
+    background: #5F3DC4;
+    border: 1px solid #6A4BC8;
+    border-radius: 10px;
+}
+
+.add-card .modal-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.add-card .modal-dialog {
+    max-width: 400px;
+}
+
+.add-card .modal-dialog .modal-content {
+    border-radius: 20px;
+}
+
+.add-card .modal-dialog .modal-content .modal-header {
+    border-bottom: none;
+    padding: 20px;
+}
+
+.add-card .modal-dialog .modal-content .modal-header h6 {
+    font-weight: 700;
+}
+
+.add-card .modal-dialog .modal-content .modal-header button {
+    margin: 0;
+    z-index: 1;
+    border: none;
+    background: none;
+    background-color: var(--bs-white);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-card .modal-dialog .modal-content .modal-header button:focus {
+    box-shadow: none;
+}
+
+.add-card .modal-dialog .modal-content .modal-header button i {
+    color: #797979;
+    font-size: 24px;
+}
+
+.add-card .modal-dialog .modal-content form {
+    padding: 0 30px 30px 30px;
+}
+
+.add-card .modal-dialog .modal-content form .single-input {
+    margin-bottom: 20px;
+}
+
+.add-card .modal-dialog .modal-content form .single-input .select-area,
+.add-card .modal-dialog .modal-content form .single-input input {
+    background: #F9F9F9;
+    border: 1px solid #D0D3E8;
+    border-radius: 10px;
+}
+
+.add-card .modal-dialog .modal-content form .single-input .select-area input {
+    border: none;
+    border-left: 1px solid #D0D3E8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.add-recipients .modal-header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.add-recipients .modal-dialog {
+    max-width: 400px;
+}
+
+.add-recipients .modal-dialog .modal-content {
+    border-radius: 20px;
+}
+
+.add-recipients .modal-dialog .modal-content .modal-header {
+    border-bottom: none;
+    padding: 20px;
+}
+
+.add-recipients .modal-dialog .modal-content .modal-header h6 {
+    font-weight: 700;
+}
+
+.add-recipients .modal-dialog .modal-content .modal-header button {
+    margin: 0;
+    z-index: 1;
+    border: none;
+    background: none;
+    background-color: var(--bs-white);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-recipients .modal-dialog .modal-content .modal-header button:focus {
+    box-shadow: none;
+}
+
+.add-recipients .modal-dialog .modal-content .modal-header button i {
+    color: #797979;
+    font-size: 24px;
+}
+
+.add-recipients .modal-dialog .modal-content .nav-tabs {
+    justify-content: center;
+    border: none;
+}
+
+.add-recipients .modal-dialog .modal-content .nav-tabs li button {
+    background: #F7F9FD;
+    border: 1px solid #DDE8FF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    margin: 0 10px;
+    color: #7D7F93;
+    transition: 0.3s;
+}
+
+.add-recipients .modal-dialog .modal-content .nav-tabs li button .icon-area {
+    background: #FFFFFF;
+    border: 1px solid #E0DDFF;
+    border-radius: 20px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.add-recipients .modal-dialog .modal-content .nav-tabs li button:hover,
+.add-recipients .modal-dialog .modal-content .nav-tabs li button.active {
+    background: #5732C6;
+    color: var(--bs-white);
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form {
+    padding: 30px;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input {
+    margin-bottom: 30px;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .select-area,
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input input {
+    background: #F9F9F9;
+    border: 1px solid #D0D3E8;
+    border-radius: 10px;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .select-area .nice-select,
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input input .nice-select {
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .select-area input {
+    border: none;
+    border-left: 1px solid #D0D3E8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .nice-select {
+    float: initial;
+    background: #F9F9F9;
+    border: 1px solid #D0D3E8;
+    border-radius: 10px;
+    line-height: 50px;
+    height: 50px;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .nice-select::after {
+    width: 9px;
+    height: 9px;
+}
+
+.add-recipients .modal-dialog .modal-content .tab-content form .single-input .nice-select .list {
+    width: 100%;
+}
+
+@media (max-width: 1599px) {
+    .dashboard-section.account .nav-tabs {
+        justify-content: start;
+    }
+    .dashboard-section.account .nav-tabs .nav-link {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .dashboard-section.transactions.recipients .filters-item .search-area {
+        width: 80%;
+    }
+    .dashboard-section {
+        margin-left: 110px;
+        width: calc(100% - 100px);
+    }
+    .header-section.body-collapse {
+        margin-left: 140px;
+        width: calc(100% - 140px);
+    }
+    .dashboard-section.body-collapse {
+        margin-left: 110px;
+        width: calc(100% - 100px);
+    }
+    .header-section.body-collapse .sidebar-wrapper {
+        width: 270px;
+        left: -290px;
+    }
+    .header-section .sidebar-wrapper {
+        width: 130px;
+    }
+    .header-section .sidebar-wrapper.active .close-btn {
+        display: none;
+    }
+    .header-section .sidebar-wrapper .close-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 699px) {
+    .header-section.body-collapse,
+    .header-section,
+    .dashboard-section.body-collapse,
+    .dashboard-section {
+        width: calc(100%);
+        margin-left: 0;
+    }
+    .header-section.body-collapse .sidebar-wrapper,
+    .header-section .sidebar-wrapper,
+    .dashboard-section.body-collapse .sidebar-wrapper,
+    .dashboard-section .sidebar-wrapper {
+        left: -420px;
+    }
+    .header-section .sidebar-wrapper {
+        width: 270px;
+    }
+    .header-section .sidebar-wrapper ul li a {
+        justify-content: start;
+    }
+    .header-section .sidebar-wrapper ul li img {
+        margin-right: 10px;
+        width: auto;
+    }
+    .header-section .sidebar-wrapper ul li span {
+        display: block;
+    }
+    .header-section .sidebar-wrapper.active {
+        left: 0;
+    }
+    .header-section .sidebar-wrapper.active .close-btn {
+        display: block;
+    }
+    .header-section .sidebar-wrapper .invite-now {
+        display: block;
+    }
+    .header-section .sidebar-wrapper .close-btn {
+        display: block;
+    }
+    .header-section .sidebar-wrapper {
+        opacity: 1;
+        visibility: visible;
+        left: -150px !important;
+    }
+    .header-section .sidebar-wrapper.active {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 1199px) {
+    h1,
+    h1>a {
+        font-size: 57px;
+        line-height: 74.1px;
+        margin-top: -16px;
+    }
+    h2,
+    h2>a {
+        font-size: 43px;
+        line-height: 55.9px;
+        margin-top: -10px;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link,
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
+        font-size: 16px;
+    }
+    .banner-section .overlay .banner-content {
+        padding: 220px 0 230px;
+    }
+    .banner-section.inner-banner .overlay .banner-content {
+        padding: 215px 0 100px;
+    }
+    .dashboard-section.account .nav-tabs {
+        justify-content: start;
+    }
+    .dashboard-section.account .nav-tabs .nav-link {
+        margin-right: 20px;
+    }
+    .dashboard-section.account .owner-details {
+        margin-bottom: 30px;
+    }
+    .dashboard-section.pay.step .main-content .choose-recipient .recipient-list button {
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    .dashboard-section.pay.step .main-content .choose-recipient .recipient-list button i {
+        font-size: 20px !important;
+    }
+    .dashboard-section.exchange .side-area {
+        margin-top: 30px;
+    }
+    .dashboard-section.pay.step.exchange .main-content .user-select .single-user {
+        display: grid;
+    }
+    .dashboard-section.pay.step.exchange .main-content .user-select .single-user .right {
+        margin-top: 20px;
+    }
+    .dashboard-section.pay.step.exchange .main-content .user-select .single-user .right a {
+        padding: 5px 25px;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    .header-section .navbar-area {
+        padding: 10px 20px;
+    }
+    .dashboard-section .acc-details .top-area {
+        padding: 20px;
+    }
+    .dashboard-section .acc-details .bottom-area {
+        margin-top: 15px;
+    }
+    .dashboard-section.transactions.recipients .filters-item .search-area {
+        width: 45%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file {
+        margin-bottom: 55px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+        width: 120%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -45px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        bottom: -54px;
+    }
+    .dashboard-section .transactions-area .table-responsive .table {
+        width: 130%;
+    }
+}
+
+@media (max-width: 991px) {
+    h1,
+    h1>a {
+        font-size: 57px;
+        line-height: 68.4px;
+        margin-top: -16px;
+    }
+    h2,
+    h2>a {
+        font-size: 43px;
+        line-height: 51.6px;
+        margin-top: -10px;
+    }
+    h3,
+    h3>a {
+        font-size: 32px;
+        line-height: 38.4px;
+        margin-top: -8px;
+    }
+    h4,
+    h4>a {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: -6px;
+    }
+    h5,
+    h5>a {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: -4px;
+    }
+    h6,
+    h6>a,
+    table thead tr th,
+    a,
+    p,
+    span,
+    li {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .section-header {
+        margin-bottom: 40px;
+    }
+    .title {
+        margin-bottom: 20px;
+    }
+    .xxlr {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .xlr {
+        font-size: 18px;
+        line-height: 25.5px;
+    }
+    .header-section .navbar-toggler {
+        display: inline-block;
+    }
+    .header-section .navbar .navbar-brand {
+        margin-top: -5px;
+        width: 35%;
+    }
+    .header-section .navbar .navbar-brand img {
+        max-width: initial;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav {
+        height: 200px;
+        margin: 20px 0;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu .dropend .dropdown-menu {
+        left: 60px;
+    }
+    .header-section .nav-item.main-navbar .main-menu .sub-navbar .sub-menu {
+        right: 0;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu.show {
+        display: inline-block;
+        margin-left: 130px;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
+        display: none;
+    }
+    .header-section .navbar .navbar-collapse .navbar-nav .nav-item {
+        padding: 8px 0;
+    }
+    .header-section .nav-item.dropdown .dropdown-menu {
+        position: initial;
+    }
+    .header-section .navbar .navbar-collapse .right-area .lang {
+        display: none !important;
+    }
+    .header-section .navbar .navbar-collapse .right-area {
+        margin-left: 0;
+    }
+    .dashboard-section {
+        padding-top: 40px;
+    }
+    .dashboard-section .side-items {
+        margin-top: 30px;
+    }
+    .dashboard-section.crypto .table {
+        width: 160%;
+    }
+    .dashboard-section.crypto .left-area ul li a {
+        line-height: 30px;
+    }
+    .dashboard-section.crypto .spend-get {
+        padding: 30px;
+        display: grid;
+        gap: 20px;
+    }
+    .dashboard-section.pay.step-2 .main-content .pay-option {
+        background: #F8F8FF;
+        display: grid;
+    }
+    .dashboard-section.pay.step-2 .main-content .pay-option .nice-select {
+        margin-left: 20px;
+    }
+    .dashboard-section.pay.step-2 .main-content .pay-option .border-area {
+        border: none;
+    }
+    .dashboard-section.pay.step-2 .main-content .exchange-content {
+        display: grid;
+        gap: 0;
+    }
+    .dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
+        top: -40px;
+        left: calc(50%);
+    }
+    .dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
+        top: -30px;
+        left: calc(52%);
+    }
+    .dashboard-section .footer-area a {
+        padding: 12px 35px;
+    }
+    .dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single {
+        display: grid;
+    }
+    .dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single .nice-select {
+        margin-left: 0;
+    }
+    .add-recipients .modal-dialog .modal-content .nav-tabs li button .icon-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dashboard-section.transactions.recipients .filters-item {
+        display: grid !important;
+    }
+    .dashboard-section.transactions.recipients .filters-item .search-area {
+        width: 100%;
+    }
+    .dashboard-section .transactions-area .table-responsive .table {
+        width: 100%;
+    }
+    .dashboard-section.transactions.recipients .table {
+        width: 130%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file {
+        margin-bottom: 40px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+        width: 90%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -40px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        bottom: -35px;
+    }
+    .dashboard-section.transactions .transactions-main .filters-item .single-item button {
+        padding-left: 10px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-section .navbar-area .dashboard-nav {
+        margin-left: 30px;
+        gap: 20px;
+    }
+    .header-section .navbar-area .sidebar-icon {
+        margin-right: 40px;
+    }
+    .transactions-popup .modal-dialog .modal-content .right-area {
+        padding: 15px;
+    }
+    .dashboard-section.account .upload-avatar {
+        display: grid;
+    }
+    .dashboard-section.account .file-upload {
+        margin-top: 20px;
+    }
+    .dashboard-section.account .file-upload .file .file-custom::before {
+        left: 0;
+    }
+    .dashboard-section.account form .input-status .col-6 {
+        width: 100% !important;
+    }
+    .dashboard-section.account form .input-status .col-6 span {
+        margin-top: 15px;
+    }
+    .dashboard-section.account .tab-main {
+        padding: 20px;
+    }
+    .dashboard-section.account .single-content {
+        padding: 20px;
+    }
+    .dashboard-section.crypto .left-area {
+        position: initial;
+    }
+    .dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
+        left: 30px;
+    }
+    .dashboard-section.pay.step .main-content .user-select .single-user {
+        display: grid;
+    }
+    .dashboard-section.pay.step .main-content .user-select .single-user .right {
+        margin-top: 20px;
+    }
+    .dashboard-section.pay.step .main-content .user-select .single-user .right a {
+        justify-content: center;
+    }
+    .dashboard-section.transactions.recipients .filters-item .right-area {
+        display: grid !important;
+    }
+    .dashboard-section.transactions.recipients .filters-item .single-item .nice-select {
+        padding-left: 0;
+    }
+    .dashboard-section.transactions.recipients .table {
+        width: 185%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file {
+        margin-bottom: 55px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+        width: 65%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -40px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        bottom: -55px;
+    }
+    .dashboard-section.transactions .transactions-main .filters-item {
+        display: grid;
+        gap: 20px;
+    }
+    .dashboard-section.transactions .transactions-main .filters-item .nice-select {
+        width: 100%;
+    }
+    .dashboard-section.transactions .transactions-main .table {
+        width: 145%;
+    }
+    .dashboard-section.transactions .head-area h4 {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    h1,
+    h1>a {
+        font-size: 40px;
+        line-height: 46px;
+        margin-top: -9px;
+    }
+    h2,
+    h2>a {
+        font-size: 30px;
+        line-height: 36px;
+        margin-top: -7px;
+    }
+    h3,
+    h3>a {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: -6px;
+    }
+    h4,
+    h4>a {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: -4px;
+    }
+    a,
+    p,
+    span,
+    li,
+    .cmn-btn,
+    thead tr th,
+    tbody tr th,
+    tbody tr td,
+    input,
+    label,
+    textarea,
+    h6,
+    h6>a {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    .section-header {
+        margin-bottom: 30px;
+    }
+    .title {
+        margin-bottom: 15px;
+    }
+    .xxlr {
+        font-size: 18px;
+        line-height: 25.5px;
+    }
+    .xlr {
+        font-size: 16px;
+        line-height: 22.4px;
+    }
+    .header-section .navbar {
+        padding: 20px 15px;
+    }
+    .header-section .navbar-area .dashboard-nav .single-item .main-area {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        border-radius: 10px;
+    }
+    .dashboard-section .transactions-area .table-responsive table {
+        width: 110%;
+    }
+    .card-popup .modal-dialog {
+        max-width: initial;
+    }
+    .transactions-popup .modal-dialog .modal-content .right-area {
+        padding: 20px;
+        border: none;
+    }
+    .transactions-popup.mycard .main-content {
+        padding: 30px;
+    }
+    .preloader {
+        background-size: 50%;
+    }
+    .transfer-popup .modal-dialog,
+    .add-recipients .modal-dialog,
+    .add-card .modal-dialog {
+        margin: auto;
+    }
+    .dashboard-section.account .card-area .card-content {
+        width: 100%;
+    }
+    .dashboard-section.account .your-devices .single-setting,
+    .dashboard-section.account .single-content {
+        display: grid !important;
+    }
+    .dashboard-section.account .your-devices .single-setting .right,
+    .dashboard-section.account .single-content .right {
+        margin-top: 15px;
+    }
+    .dashboard-section.account .change-pass form {
+        margin-top: 30px;
+    }
+    .dashboard-section.crypto .table-area {
+        padding: 0;
+    }
+    .dashboard-section.pay.step .main-content form {
+        margin-top: 0;
+    }
+    .dashboard-section.crypto .exchange-content .recipient::before {
+        left: calc(50% - 12px);
+    }
+    .dashboard-section.crypto .exchange-content .recipient::after {
+        left: calc(45%);
+    }
+    .card-popup .modal-content .main-content .tab-content .bottom-area {
+        display: grid !important;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .card-popup .modal-content .main-content .tab-content .bottom-area a {
+        margin-bottom: 20px;
+    }
+    .dashboard-section.deposit-money .table-area {
+        padding: 30px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file {
+        margin-bottom: 55px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+        width: 60%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -30px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        bottom: -50px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom::before {
+        left: 10px;
+    }
+    .dashboard-section {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 20px;
+    }
+    .dashboard-section.account .file-upload .file {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -10px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-section .navbar-area .dashboard-nav {
+        margin-left: 10px;
+        gap: 15px;
+    }
+    .header-section .navbar-area .sidebar-icon {
+        margin-right: 20px;
+    }
+    .header-section .navbar-area .dashboard-nav .single-item .main-area {
+        padding: 15px;
+    }
+    .dashboard-section .acc-details .top-area {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+    }
+    .dashboard-section .acc-details .right-side {
+        margin-top: 30px;
+    }
+    .dashboard-section .acc-details .top-area .right-top {
+        justify-content: start;
+        padding-left: 15px;
+    }
+    .dashboard-section .acc-details .bottom-area {
+        margin-top: 20px;
+    }
+    .dashboard-section .transactions-area .table-responsive table {
+        width: 140%;
+    }
+    .dashboard-section.account .additional-security .single-setting {
+        display: grid !important;
+    }
+    .dashboard-section.account .additional-security .single-setting .right {
+        margin-top: 15px;
+    }
+    .dashboard-section.account .single-content button {
+        font-size: 15px;
+    }
+    .dashboard-section.account .notification-single {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    .transactions-popup.mycard .modal-dialog .modal-content .right-area {
+        padding: 0;
+    }
+    .transactions-popup.mycard .modal-dialog .modal-content .right-area .top-area {
+        display: grid !important;
+    }
+    .transactions-popup.mycard .modal-dialog .modal-content .right-area .top-area a {
+        margin-top: 10px;
+    }
+    .transactions-popup.mycard .main-content {
+        padding: 20px;
+    }
+    .dashboard-section.pay .main-content {
+        padding: 15px;
+    }
+    .dashboard-section.crypto .exchange-content .send-banance {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .dashboard-section.crypto .exchange-content .send-banance .input-area {
+        padding: 5px 12px;
+        margin: 10px 0;
+    }
+    .dashboard-section .main-content .footer-area a {
+        margin: 0 10px;
+        padding: 12px 12px;
+    }
+    .dashboard-section.crypto .exchange-content .recipient::before {
+        left: calc(50% - 0px);
+    }
+    .dashboard-section.crypto .spend-get {
+        padding: 20px;
+        display: grid;
+    }
+    .dashboard-section.crypto .spend-get .get {
+        margin-top: 15px;
+    }
+    .card-popup .modal-content .main-content .tab-area ul {
+        margin-bottom: 20px;
+    }
+    .card-popup .modal-content .main-content .tab-area ul li {
+        margin-bottom: 15px;
+    }
+    .card-popup .modal-content .main-content .bottom-area li p {
+        padding: 10px 0;
+    }
+    .dashboard-section.pay.step-3 .payment-details .details-list li {
+        display: grid;
+        text-align: start;
+    }
+    .dashboard-section.pay.step-3 .payment-details .top-area {
+        display: grid;
+        justify-content: start;
+    }
+    .dashboard-section.pay.step-3 .payment-details .top-area .right {
+        text-align: start;
+    }
+    .dashboard-section.pay.step-3 .payment-details .top-area a {
+        background: #F7F9FD;
+        border: 1px solid #DDE8FF;
+        border-radius: 20px;
+        padding: 5px 20px;
+        transition: 0.3s;
+        margin-top: 15px;
+    }
+    .dashboard-section.pay.step-2 .main-content .send-banance {
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
+        top: -30px;
+        left: calc(45%);
+    }
+    .dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
+        top: -40px;
+        left: calc(42%);
+    }
+    .dashboard-section.pay.step-2 .main-content .send-banance .input-area {
+        padding: 10px 20px;
+    }
+    .add-recipients .modal-dialog .modal-content .nav-tabs li button {
+        padding: 10px 14px;
+    }
+    .dashboard-section.pay.receive-3 .request-submitted .top-area .icon-area img {
+        max-width: 60%;
+    }
+    .dashboard-section.transactions.recipients .table {
+        width: 225%;
+    }
+    .card-popup.recipients .modal-content .main-content .tab-area ul li {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2 {
+        width: 60%;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -10px;
+        left: 20px;
+    }
+    .pagination .page-item,
+    .pagination .page-link {
+        width: 30px;
+        height: 30px;
+    }
+    .pagination li {
+        margin: 0 3px;
+    }
+    .dashboard-section.transactions .transactions-main .top-items {
+        display: grid;
+    }
+    .dashboard-section.transactions .transactions-main .top-items ul {
+        margin-top: 15px;
+    }
+    .dashboard-section.transactions .transactions-main .top-items ul li {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    .header-section .navbar-area {
+        padding: 10px 20px;
+    }
+    .dashboard-section.transactions .transactions-main .table {
+        width: 155%;
+    }
+}
+
+@media (max-width: 375px) {
+    .about .col-6 {
+        width: 100% !important;
+    }
+    .header-section .navbar-area form .form-group img {
+        display: none;
+    }
+    .header-section .navbar-area form .form-group {
+        padding: 0;
+    }
+    .dashboard-section .transactions-area .table-responsive table {
+        width: 180%;
+    }
+    .dashboard-section .side-items .single-item {
+        padding: 15px;
+    }
+    .dashboard-section .side-items .single-item .recipients-item .left {
+        margin-right: 15px;
+    }
+    .dashboard-section.crypto .table {
+        width: 175%;
+    }
+    .dashboard-section.crypto .checkbox-single .item-title .img-area {
+        margin-left: 50px;
+        width: initial;
+        height: initial;
+        min-width: 45px;
+        min-height: 45px;
+    }
+    .add-recipients .modal-dialog .modal-content .nav-tabs li button {
+        margin-bottom: 15px;
+    }
+    .dashboard-section.transactions.recipients .table {
+        width: 300%;
+    }
+    .dashboard-section.pay.step-2 .main-content .user-select .right {
+        display: grid !important;
+    }
+    .dashboard-section.pay.step-2 .main-content .user-select .right a {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    .dashboard-section.pay.step-2 .main-content .total-fees {
+        padding: 20px;
+    }
+    .dashboard-section.crypto .checkbox-single {
+        padding: 20px;
+    }
+    .dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
+        left: 15px;
+    }
+    .dashboard-section.deposit-money .table-area {
+        padding: 15px;
+    }
+    .dashboard-section.exchange .side-area .deposit-details li {
+        display: grid;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before {
+        top: -20px;
+        left: 40px;
+    }
+    .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after {
+        display: none;
+    }
+    .preloader {
+        background-size: 60%;
+    }
+    .dashboard-section.transactions .transactions-main .table {
+        width: 220%;
+    }
+    .purchased-popup .main-content ul {
+        padding: 15px;
+        margin: 0 15px;
+        margin-top: 30px;
+    }
+    .dashboard-section.account .nav-tabs .nav-link {
+        padding: 13px 25px;
+    }
+    .dashboard-section.pay.step .main-content .choose-recipient .recipient-list {
+        margin-bottom: 15px;
+    }
+}
+
+/*# sourceMappingURL=style.css.map */

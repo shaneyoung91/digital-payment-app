@@ -12,7 +12,7 @@ class KYCForm(forms.ModelForm):
     class Meta:
         model = KYC
         fields = [
-            'full-name',
+            'full_name',
             'image',
             'marital_status',
             'gender',
