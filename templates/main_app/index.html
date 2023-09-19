@@ -1,9 +1,603 @@
+{% extends "partials/base.html" %}
+{% block content %}
+{% load static %}
+    <!-- Banner Section start -->
+    <section class="banner-section index">
+        <div class="overlay">
+            <div class="shape-area">
+                <img src="{% static 'assets/images/banner-box.png' %}" class="obj-1" alt="image">
+                <img src="{% static 'assets/images/banner-human.png' %}" class="obj-2" alt="image">
+                <img src="{% static 'assets/images/banner-rocket.png' %}" class="obj-3" alt="image">
+                <img src="{% static 'assets/images/banner-clock.png' %}" class="obj-4" alt="image">
+            </div>
+            <div class="banner-content">
+                <div class="container wow fadeInUp">
+                    <div class="content-shape">
+                        <img src="{% static 'assets/images/banner-wallet.png' %}" class="obj-1" alt="image">
+                    </div>
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="main-content">
+                                <div class="top-area section-text">
+                                    <h5 class="sub-title">Trusted by over 3M customers</h5>
+                                    <h1 class="title">Pay Anyone, Anywhere</h1>
+                                    <p class="xlr">Quickly and easily send, receive and request money online with MoneySpread. Get a customized solution to fit your business needs.</p>
+                                </div>
+                                <div class="bottom-area d-xxl-flex">
+                                    <a href="sign-up.html" class="cmn-btn">Open a Free Account</a>
+                                    <a class="cmn-btn active mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">See How it Works</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-5 col-md-6">
+                            <div class="send-money">
+                                <form action="#">
+                                    <div class="currency-area">
+                                        <div class="left-side">
+                                            <span class="mdr">You send</span>
+                                            <input type="text" class="xlr" placeholder="Enter Amount" value="1000">
+                                        </div>
+                                        <div class="right-side">
+                                            <select>
+                                                <option value="1">USD</option>
+                                                <option value="2">GBP</option>
+                                                <option value="3">AUS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="calculation">
+                                        <div class="head-area">
+                                            <img src="{% static 'assets/images/icon/conversion.png' %}" alt="image">
+                                            <span class="mdr highlight">Show calculation</span>
+                                        </div>
+                                        <div class="calculation-details">
+                                            <div class="single-area d-flex align-items-center">
+                                                <div class="left-area">
+                                                    <i class="fas fa-minus"></i>
+                                                    <span class="mdr">10.04 USD</span>
+                                                </div>
+                                                <div class="right-area">
+                                                    <span class="mdr">Our fee</span>
+                                                </div>
+                                            </div>
+                                            <div class="single-area d-flex align-items-center">
+                                                <div class="left-area">
+                                                    <i class="fas fa-equals"></i>
+                                                    <span class="mdr">989.96 USD</span>
+                                                </div>
+                                                <div class="right-area">
+                                                    <span class="mdr">We’ll Convert</span>
+                                                </div>
+                                            </div>
+                                            <div class="single-area d-flex align-items-center">
+                                                <div class="left-area">
+                                                    <i class="fas fa-times"></i>
+                                                    <span class="mdr">1.3947</span>
+                                                </div>
+                                                <div class="right-area">
+                                                    <span class="mdr highlight">MoneySpread Rate</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="currency-area">
+                                        <div class="left-side">
+                                            <span class="mdr">Recipient gets</span>
+                                            <h5>1,380.69</h5>
+                                        </div>
+                                        <div class="right-side recipient">
+                                            <select>
+                                                <option value="1">AUS</option>
+                                                <option value="2">USD</option>
+                                                <option value="3">GBP</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="btn-area mt-40">
+                                        <a href="javascript:void(0)" class="cmn-btn w-100">Get Started</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="counter-section">
+            <div class="container wow fadeInUp">
+                <div class="row cus-mar">
+                    <div class="col-xl-3 col-md-3 col-sm-6">
+                        <div class="single-area d-flex align-items-center justify-content-center">
+                            <div class="text-area text-center">
+                                <h2><span class="counter">50</span><span>+</span></h2>
+                                <p>Supported Currencies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-6">
+                        <div class="single-area d-flex align-items-center justify-content-center">
+                            <div class="text-area text-center">
+                                <h2><span class="counter">100</span><span>+</span></h2>
+                                <p>Available Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-6">
+                        <div class="single-area d-flex align-items-center justify-content-center">
+                            <div class="text-area text-center">
+                                <h2><span class="counter">70</span><span>+</span></h2>
+                                <p>Payment Methods</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-6">
+                        <div class="single-area d-flex align-items-center justify-content-center">
+                            <div class="text-area text-center">
+                                <h2><span class="counter">7</span><span>/</span><span class="counter">24</span><span>+</span></h2>
+                                <p>Support Team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section end -->
 
-{% if request.user.is_authenticated %}
-    <h4>Welcome {{ request.user.username|title }}</h4>
-    <a href="{% url "userauths:sign-out" %}">Sign Out</a>
-{% else %}
-    <a href="{% url "userauths:sign-in" %}">Sign In</a>
-    <a href="{% url "userauths:sign-up" %}">Sign Up</a>
+    <!-- Global Payment start -->
+    <section class="global-payment">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">Send money in a heartbeat</h5>
+                            <h2 class="title">The World At Your Fingertips</h2>
+                            <p>Sign up to start saving on international money transfers and currency exchange.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-5 order-xl-0 order-1">
+                        <div class="image-area d-rtl left-side">
+                            <img src="{% static 'assets/images/global-payment-img.png' %}" alt="images" class="max-un">
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-7">
+                        <div class="row cus-mar">
+                            <div class="col-sm-6 col-6">
+                                <div class="single-item">
+                                    <img src="{% static 'assets/images/icon/global-payment-icon-1.png' %}" alt="icon">
+                                    <h5>Peace of Mind</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="single-item">
+                                    <img src="{% static 'assets/images/icon/global-payment-icon-2.png' %}" alt="icon">
+                                    <h5>Business-Ready</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="single-item">
+                                    <img src="{% static 'assets/images/icon/global-payment-icon-3.png' %}" alt="icon">
+                                    <h5>100% Transparent</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="single-item">
+                                    <img src="{% static 'assets/images/icon/global-payment-icon-4.png' %}" alt="icon">
+                                    <h5>International Network</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Global Payment end -->
 
-{% endif %}
+    <!-- Our Solutions start -->
+    <section class="our-solutions">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header dark-sec text-center">
+                            <h5 class="sub-title">High speeds. Low fees. No hassle.</h5>
+                            <h2 class="title">All Your Payments In One Place</h2>
+                            <p>Get used to low fees and great exchange rates on international money transfers.Expand your business worldwide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cus-mar">
+                    <div class="col-xl-3 col-6">
+                        <div class="single-item">
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-1.png' %}" alt="icon">
+                            <h5>Payments</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-6">
+                        <div class="single-item">
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-2.png' %}" alt="icon">
+                            <h5>Collections</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-6">
+                        <div class="single-item">
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-3.png' %}" alt="icon">
+                            <h5>Conversions</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-6">
+                        <div class="single-item">
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-4.png' %}" alt="icon">
+                            <h5>Global Account</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Solutions end -->
+
+    <!-- How it Works start -->
+    <section class="how-it-works">
+        <div class="overlay pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">How it works?</h5>
+                            <h2 class="title">Just few steps to start</h2>
+                            <p>It's easier than you think. Follow 3 simple easy steps</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cus-mar">
+                    <div class="col-xl-3 col-sm-6 col-6">
+                        <div class="single-item first text-center">
+                            <img src="{% static 'assets/images/icon/how-works-icon-1.png' %}" alt="icon">
+                            <h5>Register for free</h5>
+                            <p>Simply sign up online for free and verify your identity</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-6">
+                        <div class="single-item second text-center">
+                            <img src="{% static 'assets/images/icon/how-works-icon-2.png' %}" alt="icon">
+                            <h5>Set up your transfer</h5>
+                            <p>Add a recipient's details and choose which currency ...</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-6">
+                        <div class="single-item first text-center">
+                            <img src="{% static 'assets/images/icon/how-works-icon-3.png' %}" alt="icon">
+                            <h5>Make your payment</h5>
+                            <p>Send us your funds with a bank transfer and we'll notify..</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-6">
+                        <div class="single-item text-center">
+                            <img src="{% static 'assets/images/icon/how-works-icon-4.png' %}" alt="icon">
+                            <h5>You're all done!</h5>
+                            <p>We inform you when the money has been sent and can also ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How it Works end -->
+
+    <!-- App Download start -->
+    <section class="app-download">
+        <div class="overlay pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-6 order-lg-0 order-1">
+                        <div class="image-area d-rtl left-side">
+                            <img src="{% static 'assets/images/app-download-img.png' %}" alt="images" class="max-un">
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="section-area">
+                            <h5 class="sub-title">App Download</h5>
+                            <h2 class="title">Fast, Secure Money Transfers</h2>
+                            <p>Access your account via your mobile phone. View balance, transfer funds, view transactions wherever you are.</p>
+                        </div>
+                        <ul class="features">
+                            <li>
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Login with fingerprint or Face ID.
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Simple few Taps to send money
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> View transaction history.
+                            </li>
+                            <li>
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Get instant App notifications.
+                            </li>
+                        </ul>
+                        <div class="brand-area mt-40">
+                            <a href="javascript:void(0)">
+                                <img src="{% static 'assets/images/GooglePlay-btn.png' %}" alt="icon">
+                            </a>
+                            <a href="javascript:void(0)">
+                                <img src="{% static 'assets/images/apple-btn.png' %}" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- App Download end -->
+
+    <!-- Testimonials start -->
+    <section class="testimonials">
+        <div class="overlay pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">Testimonials</h5>
+                            <h2 class="title">What Our Customers Say</h2>
+                            <p>245m+ happy clients all around the world. Don’t just take our word for it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid wow fadeInUp">
+                <div class="testimonials-carousel">
+                    <div class="single-slide">
+                        <div class="single-content">
+                            <div class="start-area">
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                            </div>
+                            <h5 class="title-area">Great Fast Reliable Service</h5>
+                            <p class="xlr">"MoneySpread has always been a reliable solution for my business. I am very satisfied with their speedy service and professional customer care. I highly recommend MoneySpread to businesses with regular overseas payments."</p>
+                            <div class="profile-area d-flex align-items-center">
+                                <div class="icon-area">
+                                    <img src="{% static 'assets/images/testimonials-img-1.png' %}" alt="icon">
+                                </div>
+                                <div class="text-area">
+                                    <h5>Aspen Press</h5>
+                                    <p>Web Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-slide">
+                        <div class="single-content">
+                            <div class="start-area">
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                            </div>
+                            <h5 class="title-area">Great Fast Reliable Service</h5>
+                            <p class="xlr">"MoneySpread has always been a reliable solution for my business. I am very satisfied with their speedy service and professional customer care. I highly recommend MoneySpread to businesses with regular overseas payments."</p>
+                            <div class="profile-area d-flex align-items-center">
+                                <div class="icon-area">
+                                    <img src="{% static 'assets/images/testimonials-img-2.png' %}" alt="icon">
+                                </div>
+                                <div class="text-area">
+                                    <h5>Courtney Henry</h5>
+                                    <p>Balance Studio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-slide">
+                        <div class="single-content">
+                            <div class="start-area">
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                            </div>
+                            <h5 class="title-area">Great Fast Reliable Service</h5>
+                            <p class="xlr">"MoneySpread has always been a reliable solution for my business. I am very satisfied with their speedy service and professional customer care. I highly recommend MoneySpread to businesses with regular overseas payments."</p>
+                            <div class="profile-area d-flex align-items-center">
+                                <div class="icon-area">
+                                    <img src="{% static 'assets/images/testimonials-img-3.png' %}" alt="icon">
+                                </div>
+                                <div class="text-area">
+                                    <h5>Paul Howell</h5>
+                                    <p>President of Sales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-slide">
+                        <div class="single-content">
+                            <div class="start-area">
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                            </div>
+                            <h5 class="title-area">Great Fast Reliable Service</h5>
+                            <p class="xlr">"MoneySpread has always been a reliable solution for my business. I am very satisfied with their speedy service and professional customer care. I highly recommend MoneySpread to businesses with regular overseas payments."</p>
+                            <div class="profile-area d-flex align-items-center">
+                                <div class="icon-area">
+                                    <img src="{% static 'assets/images/testimonials-img-2.png' %}" alt="icon">
+                                </div>
+                                <div class="text-area">
+                                    <h5>Courtney Henry</h5>
+                                    <p>Balance Studio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- App Download end -->
+
+    <!-- FAQs In start -->
+    <section class="faqs-section">
+        <div class="overlay pt-120 pb-120">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">Frequently Asked Questions</h5>
+                            <h2 class="title">If you got questions we have answer</h2>
+                            <p>We have a list of frequently asked questions about us</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cus-mar">
+                    <div class="col-lg-6">
+                        <div class="accordion" id="accordionLeft">
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingLeftOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftOne" aria-expanded="false" aria-controls="collapseLeftOne">
+                                        How to send money online?
+                                    </button>
+                                </h6>
+                                <div id="collapseLeftOne" class="accordion-collapse collapse" aria-labelledby="headingLeftOne" data-bs-parent="#accordionLeft">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingLeftTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftTwo" aria-expanded="false" aria-controls="collapseLeftTwo">
+                                        How much are money transfer fees?
+                                    </button>
+                                </h6>
+                                <div id="collapseLeftTwo" class="accordion-collapse collapse" aria-labelledby="headingLeftTwo" data-bs-parent="#accordionLeft">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingLeftThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftThree" aria-expanded="false" aria-controls="collapseLeftThree">
+                                        What is the fastest way to send money abroad?
+                                    </button>
+                                </h6>
+                                <div id="collapseLeftThree" class="accordion-collapse collapse" aria-labelledby="headingLeftThree" data-bs-parent="#accordionLeft">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingLeftFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFour" aria-expanded="false" aria-controls="collapseLeftFour">
+                                        How to use MoneySpread?
+                                    </button>
+                                </h6>
+                                <div id="collapseLeftFour" class="accordion-collapse collapse" aria-labelledby="headingLeftFour" data-bs-parent="#accordionLeft">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingLeftFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFive" aria-expanded="false" aria-controls="collapseLeftFive">
+                                        How does MoneySpread protect your money?
+                                    </button>
+                                </h6>
+                                <div id="collapseLeftFive" class="accordion-collapse collapse" aria-labelledby="headingLeftFive" data-bs-parent="#accordionLeft">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="accordion" id="accordionRight">
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingRightOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightOne" aria-expanded="false" aria-controls="collapseRightOne">
+                                        Are money transfer apps safe?
+                                    </button>
+                                </h6>
+                                <div id="collapseRightOne" class="accordion-collapse collapse" aria-labelledby="headingRightOne" data-bs-parent="#accordionRight">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingRightTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightTwo" aria-expanded="false" aria-controls="collapseRightTwo">
+                                        How much money can I send?
+                                    </button>
+                                </h6>
+                                <div id="collapseRightTwo" class="accordion-collapse collapse" aria-labelledby="headingRightTwo" data-bs-parent="#accordionRight">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingRightThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightThree" aria-expanded="false" aria-controls="collapseRightThree">
+                                        Which currency can I send?
+                                    </button>
+                                </h6>
+                                <div id="collapseRightThree" class="accordion-collapse collapse" aria-labelledby="headingRightThree" data-bs-parent="#accordionRight">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingRightFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFour" aria-expanded="false" aria-controls="collapseRightFour">
+                                        Cancel transaction
+                                    </button>
+                                </h6>
+                                <div id="collapseRightFour" class="accordion-collapse collapse" aria-labelledby="headingRightFour" data-bs-parent="#accordionRight">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header" id="headingRightFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFive" aria-expanded="false" aria-controls="collapseRightFive">
+                                        Can I send multiple payments?
+                                    </button>
+                                </h6>
+                                <div id="collapseRightFive" class="accordion-collapse collapse" aria-labelledby="headingRightFive" data-bs-parent="#accordionRight">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQs In end -->
+
+{% endblock content %}

@@ -100,14 +100,27 @@
                                 </li>
                             </ul>
                             <div class="right-area header-action d-flex align-items-center max-un">
-                                <a href="login.html" class="login">Login</a>
-                                <a href="sign-up.html" class="cmn-btn">Sign Up
-                                    <i class="icon-d-right-arrow-2"></i>
-                                </a>
+                                {% if request.user.is_authenticated %}
+                                    <a href="{% url "userauths:sign-out" %}" class="login cmn-btn">Sign Out</a>
+                                    {% else %}
+                                    <a href="{% url "userauths:sign-in" %}" class="login">Login</a>
+                                    <a href="{% url "userauths:sign-up" %}" class="cmn-btn">Sign Up
+                                        <i class="fas fa-caret-right"></i>
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </nav>
                 </div>
+                <!-- alert start -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            <strong>{{ message }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <!-- alert end -->
             </div>
         </div>
     </header>
