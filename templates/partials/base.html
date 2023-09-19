@@ -101,6 +101,7 @@
                             </ul>
                             <div class="right-area header-action d-flex align-items-center max-un">
                                 {% if request.user.is_authenticated %}
+                                    <a href="/admin" class="login cmn-btn">Admin</a>
                                     <a href="{% url "userauths:sign-out" %}" class="login cmn-btn">Sign Out</a>
                                     {% else %}
                                     <a href="{% url "userauths:sign-in" %}" class="login">Login</a>

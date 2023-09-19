@@ -127,23 +127,27 @@
                             <div class="single-item user-area">
                                 <div class="profile-area d-flex align-items-center">
                                     <span class="user-profile">
-                                        <img src="{% static 'assets1/images/avatar.png' %}" alt="User">
+                                        <img style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover" src="{{ kyc.image.url }}" alt="User">
                                     </span>
                                     <i class="fa-solid fa-sort-down"></i>
                                 </div>
                                 <div class="main-area user-content">
                                     <div class="head-area d-flex align-items-center">
                                         <div class="profile-img">
-                                            <img src="{% static 'assets1/images/avatar-2.png' %}" alt="User">
+                                            <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover" src="{{ kyc.image.url }}" alt="User">
                                         </div>
                                         <div class="profile-head">
-                                            <a href="javascript:void(0)">
-                                                <h5>Kevin Martin</h5>
+                                            <a href="{% url "account:account" %}">
+                                                <h5>{{kyc.full_name|title}}</h5>
                                             </a>
-                                            <p class="wallet-id">Wallet ID: 6264849965</p>
+                                            <p class="wallet-id"><small>Account No: {{account.account_number}}</small></p>
+                                            <p class="wallet-id"><small>Pin No: {{account.pin_number}}</small></p>
                                         </div>
                                     </div>
                                     <ul>
+                                        <li class="border-area">
+                                            <a href="/admin"><i class="fas fa-user"></i>Admin</a>
+                                        </li>
                                         <li class="border-area">
                                             <a href="account.html"><i class="fas fa-cog"></i>Settings</a>
                                         </li>
@@ -211,7 +215,7 @@
                         </ul>
                         <ul class="bottom-item">
                             <li class="active">
-                                <a href="account.html">
+                                <a href="{% url "account:account" %}">
                                     <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>Account</span>
                                 </a>
                             </li>
@@ -239,11 +243,15 @@
                 </div>
             </div>
         </div>
-        <!-- alert start -->
-        <div class="alert alert-success">
-            <strong>Success</strong>
-        </div>
-        <!-- alert end -->
+            <!-- alert start -->
+            {% if messages %}
+                {% for m in messages %}
+                    <div class="alert alert-{{m.tags}}">
+                        <strong>{{ m }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <!-- alert end -->
     </header>
     <!-- header-section end -->
 

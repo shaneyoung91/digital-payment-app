@@ -22,12 +22,6 @@
                             <span class="or">Or Continue With</span> {% endcomment %}
                         </div>
 
-                        {% if messages %}
-                            {% for message in messages %}
-                                <strong>{{ message }}</strong>
-                            {% endfor %}
-                        {% endif %}
-
                         <form method="POST">
                             {% csrf_token %}
                             <div class="row">
