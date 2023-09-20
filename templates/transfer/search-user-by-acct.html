@@ -1,0 +1,237 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Make a Payment</h4>
+                        <div class="icon-area">
+                            <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    {% comment %} <div class="choose-recipient">
+                        <div class="step-area">
+                            <span class="mdr">Step 1 of 3</span>
+                            <h5>Choose Recipient</h5>
+                        </div>
+                        <div class="recipient-list">
+                            <button class="my-recipients active">
+                                <span class="icon-area">
+                                    <i class="icon-f-user"></i>
+                                </span>
+                                <span>My Recipients</span>
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#recipientsMod">
+                                <span class="icon-area">
+                                    <i class="icon-e-plus"></i>
+                                </span>
+                                <span>New Recipients</span>
+                            </button>
+                            <button>
+                                <span class="icon-area">
+                                    <i class="icon-f-user"></i>
+                                </span>
+                                <span>Send to myself</span>
+                            </button>
+                        </div>
+                        <p class="recipients-item">200 Recipients</p>
+                    </div> {% endcomment %}
+                    <form method="POST" class="flex-fill">
+                        {% csrf_token %}
+                        <div class="form-group d-flex align-items-center">
+                            <img src="{% static 'assets/images/icon/search.png' %}" alt="icon">
+                            <input type="text" name="account_number" placeholder="Enter Account No. or Account ID">
+                            <button type="submit"><i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </form>
+                    <div class="user-select">
+                        {% if query %}
+                        {% for a in account %}
+                        <div class="single-user">
+                            <div class="left d-flex align-items-center">
+                                <div class="img-area">
+                                    <img src="{{ a.user.kyc.image.url }}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover"  alt="image">
+                                </div>
+                                <div class="text-area">
+                                    <p>{{a.user.kyc.full_name|title}}</p>
+                                    <span class="mdr"><b>{{a.account_number}}</b></span><br>
+                                    <span class="mdr">{{a.user.email}}</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <a href="">Choose</a>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div>
+                            <h4 class="mt-4">Account does not exist.</h4>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="footer-area mt-40">
+                        <a href="pay.html">Previous Step</a>
+                        <a href="pay-step-2.html" class="active">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+    <!-- Add Recipients Popup start -->
+    <div class="add-recipients">
+        <div class="container-fruid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="modal fade" id="recipientsMod" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-between">
+                                    <h6>Add Recipients</h6>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="true">
+                                            <span class="icon-area">
+                                                <img src="{% static 'assets/images/icon/company-icon.png' %}" alt="icon">
+                                            </span>
+                                            Company
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="individual-tab" data-bs-toggle="tab" data-bs-target="#individual" type="button" role="tab" aria-controls="individual" aria-selected="false">
+                                            <span class="icon-area">
+                                                <img src="{% static 'assets/images/icon/individual-icon.png' %}" alt="icon">
+                                            </span>
+                                            Individual
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="company" role="tabpanel" aria-labelledby="company-tab">
+                                        <div class="image-area mt-30 text-center">
+                                            <img src="{% static 'assets/images/user-profile.png' %}" alt="icon">
+                                        </div>
+                                        <form action="#">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="companyfname">First Name</label>
+                                                        <input type="text" id="companyfname" placeholder="Dana">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="companylname">Last Name</label>
+                                                        <input type="text" id="companylname" placeholder="Patton">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="single-input">
+                                                        <label for="companyemail">Email</label>
+                                                        <input type="text" id="companyemail" placeholder="danap24@gmail.com">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="single-input">
+                                                        <label for="companyphone">Phone</label>
+                                                        <div class="select-area d-flex align-items-center">
+                                                            <select>
+                                                                <option value="1">+1</option>
+                                                                <option value="2">+2</option>
+                                                                <option value="3">+3</option>
+                                                            </select>
+                                                            <input type="text" id="companyphone" placeholder="(070) 4567-8800">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="single-input">
+                                                        <label>Select Country</label>
+                                                        <select>
+                                                            <option value="1">Canada</option>
+                                                            <option value="2">Japan</option>
+                                                            <option value="3">Germany</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="btn-border w-100">
+                                                        <button class="cmn-btn w-100">Add Recipients</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="individual" role="tabpanel" aria-labelledby="individual-tab">
+                                        <div class="image-area mt-30 text-center">
+                                            <img src="{% static 'assets/images/user-profile.png' %}" alt="icon">
+                                        </div>
+                                        <form action="#">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="fname">First Name</label>
+                                                        <input type="text" id="fname" placeholder="Dana">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-input">
+                                                        <label for="lname">Last Name</label>
+                                                        <input type="text" id="lname" placeholder="Patton">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="single-input">
+                                                        <label for="email">Email</label>
+                                                        <input type="text" id="email" placeholder="danap24@gmail.com">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="single-input">
+                                                        <label for="phone">Phone</label>
+                                                        <div class="select-area d-flex align-items-center">
+                                                            <select>
+                                                                <option value="1">+1</option>
+                                                                <option value="2">+2</option>
+                                                                <option value="3">+3</option>
+                                                            </select>
+                                                            <input type="text" id="phone" placeholder="(070) 4567-8800">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="single-input">
+                                                        <label>Select Country</label>
+                                                        <select>
+                                                            <option value="1">Canada</option>
+                                                            <option value="2">Japan</option>
+                                                            <option value="3">Germany</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="btn-border w-100">
+                                                        <button class="cmn-btn w-100">Add Recipients</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Transactions Popup start -->
+
+{% endblock content %}
