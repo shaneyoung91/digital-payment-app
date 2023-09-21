@@ -1,0 +1,162 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2 step-3">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Make a Payment</h4>
+                        <div class="icon-area">
+                            <img src="{% static 'assets/images/icon/support-icon.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="choose-recipient">
+                        <div class="step-area">
+                            <span class="mdr">Step 3 of 3</span>
+                            <h5>Confirm Your Transfer</h5>
+                        </div>
+                        <div class="user-select">
+                            <div class="single-user">
+                                <div class="left d-flex align-items-center">
+                                    <div class="img-area">
+                                        <img src="{{ account.user.kyc.image.url }}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover"  alt="image">
+                                    </div>
+                                    <div class="text-area">
+                                        <p>{{ account.user.kyc.full_name|title }}</p>
+                                        <span class="mdr"><b>{{ account.account_number }}</b></span><br>
+                                        <span class="mdr">{{ account.user.email }}</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <a href="{% url "main_app:search-acct" %}">
+                                        <i class="icon-h-edit"></i>
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-details">
+                        <div class="top-area">
+                            <h6>Payment Details</h6>
+                            <div class="right">
+                                <a href="javascript:void(0)">
+                                    <i class="icon-h-edit"></i>
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <ul class="details-list">
+                                    <li>
+                                        <span><b>{{request.user.kyc.full_name}}</b> --> Sending</span>
+                                        <b>${{transaction.amount}} USD</b>
+                                    </li>
+                                    <li>
+                                        <span><b>{{account.user.kyc.full_name}}</b> --> Receiving</span>
+                                        <b>${{transaction.amount}} USD</b>
+                                    </li>
+                                    <li>
+                                        <span>Recipient's Email</span>
+                                        <b>{{account.user.email}}</b>
+                                    </li>
+                                    <li>
+                                        <span>Fee</span>
+                                        <b>Free</b>
+                                    </li>
+                                    <li>
+                                        <span>Description</span>
+                                        <b>{{transaction.description}}</b>
+                                    </li>
+                                    <li>
+                                        <span>Transfer was initiated on </span>
+                                        <b>{{transaction.date}} </b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="checkbox">
+                            <input type="checkbox" id="confirm">
+                            <label for="confirm">I confirm the payment details above</label>
+                        </div>
+                        <div class="footer-area mt-40">
+                            <a href="pay-step-2.html">Previous Step</a>
+                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Pay</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+    <!-- Transfer Popup start -->
+    <div class="transfer-popup">
+        <div class="container-fruid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="modal fade" id="transferMod" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <ul class="nav nav-tabs d-none" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="transfer-tab" data-bs-toggle="tab" data-bs-target="#transfer" type="button" role="tab" aria-controls="transfer" aria-selected="true">transfer</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="success-tab" data-bs-toggle="tab" data-bs-target="#success" type="button" role="tab" aria-controls="success" aria-selected="false">Confirm</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="transfer" role="tabpanel" aria-labelledby="transfer-tab">
+                                    <div class="modal-content">
+                                        <div class="modal-header mb-60 justify-content-between">
+                                            <a href="javascript:void(0)">
+                                                <i class="icon-a-left-arrow"></i>
+                                                Back
+                                            </a>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                        <div class="main-content">
+                                            <h4>Confirm Transfer!</h4>
+                                            <p>We have sent a verification code on your phone + Number +44831***932. Please enter verification code below</p>
+                                            <form action="javascript:void(0)">
+                                                <div class="userInput">
+                                                    <input type="text">
+                                                    <input type="text">
+                                                    <input type="text">
+                                                    <input type="text">
+                                                </div>
+                                                <a href="javascript:void(0)">Don’t receive a code?</a>
+                                                <button class="mt-60 confirm">Confirm</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close d-md-none d-block" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                        <div class="main-content text-center pt-120 pb-120">
+                                            <img src="{% static 'assets/images/icon/success.png' %}" alt="icon">
+                                            <h3>Success</h3>
+                                            <p>Transfer was completed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Transfer Popup start -->
+
+{% endblock content %}
