@@ -1,0 +1,104 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Make a Payment</h4>
+                        <div class="icon-area">
+                            <img src="{% static 'assets/images/icon/support-icon.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="choose-recipient">
+                        <div class="step-area">
+                            <span class="mdr">Step 2 of 3</span>
+                            <h5>Set Amount to Transfer</h5>
+                        </div>
+                        <div class="user-select">
+                            <div class="single-user">
+                                <div class="left d-flex align-items-center">
+                                    <div class="img-area">
+                                        <img src="{{ account.user.kyc.image.url }}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover"  alt="image">
+                                    </div>
+                                    <div class="text-area">
+                                        <p>{{ account.user.kyc.full_name|title }}</p>
+                                        <span class="mdr"><b>{{ account.account_number }}</b></span><br>
+                                        <span class="mdr">{{ account.user.email }}</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <a href="{% url "main_app:search-acct" %}">
+                                        <i class="icon-h-edit"></i>
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="send-banance">
+                            <span class="mdr">You Send</span>
+                            <div class="input-area">
+                                <input class="xxlr" id="amount-send" onkeyup="calculateBalance()" placeholder="{{request.user.account.account_balance|intcomma}}" type="number">
+                                <select>
+                                    <option value="1">USD</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">USD</option>
+                                </select>
+                            </div>
+                            <p>Available Balance<b>{{request.user.account.account_balance|intcomma}}</b></p>
+                            <p id="new-balance"></p>
+                            <p class="text-danger" id="error-div"></p>
+                        </div>
+                        <!-- JS -->
+                        <script>
+                            function calculateBalance(){
+                                let availableBalance = "{{ request.user.account.account_balance }}" // Get user's current account balance
+                                let newBalance = document.getElementById("new-balance")
+                                let sendAmountInput = document.getElementById("amount-send")
+                                let sendAmount = sendAmountInput.value
+                                let errorDiv = document.getElementById("error-div")
+                                let totalToPay = document.getElementById("total-to-pay")
+
+                                let errors = []
+
+                                newBal = availableBalance - sendAmount
+                                newBalance.innerHTML = `New Balance <b> $ ${newBal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`
+                                totalToPay.innerHTML = `USD <b> $ ${sendAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`
+
+                                if (newBal < 0) {
+                                    newBalance.style.color = "red"
+                                    alert("You can only send $" + availableBalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                                } else {
+                                    newBalance.style.color = "#0c266c"
+                                }
+
+                            }
+                        </script>
+
+
+                        <ul class="total-fees">
+                            <li>Total Fees</li>
+                            <li>Free</li>
+                        </ul>
+                        <ul class="total-fees pay">
+                            <li><h5>Total To Pay</h5></li>
+                            <li><h5 id="total-to-pay">USD $0.00</h5></li>
+                        </ul>
+                        <div class="footer-area mt-40">
+                            <a href="pay-step-1.html">Previous Step</a>
+                            <a href="pay-step-3.html" class="active">Next</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+{% endblock content %}
