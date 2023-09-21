@@ -40,11 +40,12 @@
                             </div>
                         </div>
                     </div>
-                    <form action="">
+                    <form action={% url "main_app:amount-transfer-process" account.account_number %}  method="POST">
+                        {% csrf_token %}
                         <div class="send-banance">
                             <span class="mdr">You Send</span>
                             <div class="input-area">
-                                <input class="xxlr" id="amount-send" onkeyup="calculateBalance()" placeholder="{{request.user.account.account_balance|intcomma}}" type="number">
+                                <input class="xxlr" id="amount-send" name="amount-send" onkeyup="calculateBalance()" placeholder="{{request.user.account.account_balance|intcomma}}" type="number">
                                 <select>
                                     <option value="1">USD</option>
                                     <option value="2">USD</option>
@@ -55,6 +56,14 @@
                             <p id="new-balance"></p>
                             <p class="text-danger" id="error-div"></p>
                         </div>
+
+                        <div class="send-banance pt-0 mt-0">
+                            <span class="mdr">Payment Description/Note</span>
+                            <div class="input-area">
+                                <input class="xxlr" name="description" onkeyup="calculateBalance()" placeholder="Payment for..." type="text">
+                            </div>
+                        </div>
+                        
                         <!-- JS -->
                         <script>
                             function calculateBalance(){
@@ -79,7 +88,6 @@
                                 }
                             }
                         </script>
-
                         <ul class="total-fees">
                             <li>Total Fees</li>
                             <li>Free</li>
@@ -90,7 +98,7 @@
                         </ul>
                         <div class="footer-area mt-40">
                             <a href="pay-step-1.html">Previous Step</a>
-                            <a href="pay-step-3.html" class="active">Next</a>
+                            <button type="submit" style="padding: 10px 30px; border-radius: 10px; background: rgb(98, 0, 255); color: #fff" class="active">Next</button>
                         </div>
                     </form>
                 </div>

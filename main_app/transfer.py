@@ -3,6 +3,7 @@ from account.models import Account
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib import messages
+from main_app.models import Transaction
 
 @login_required
 def search_users_acct_number(request):
@@ -33,3 +34,39 @@ def amount_transfer(request, account_number):
         "account" : account,
     }
     return render(request, "transfer/amount-transfer.html", context)
+
+def amount_transfer_process(request, account_number):
+    account = Account.objects.get(account_number=account_number) # Get recipient's account number
+    sender = request.user # Logged-in user
+    recipient = account.user
+    
+    sender_account = request.user.account # Logged-in user's account
+    recipient_account = account
+    
+    if request.method == "POST":
+        amount = request.POST.get("amount-send")
+        description = request.POST.get("description")
+        
+        if sender_account.account_balance > 0 and amount:
+            new_transaction = Transaction.objects.create(
+                user=request.user,
+                amount=amount,
+                description=description,
+                recipient=recipient,
+                sender=sender,
+                sender_account=sender_account,
+                recipient_account=recipient_account,
+                status="Processing",
+                transaction_type="Transfer",
+            )
+            new_transaction.save()
+            
+            # Get the id of the recently created transaction
+            transaction_id = new_transaction.transaction_id
+            return redirect("main_app:transfer-confirmation", account.account_number, transaction_id)
+        else:
+            messages.warning(request, "Insufficient funds.")
+            return redirect("main_app:amount-transfer", account.account_number)
+    else:
+        messages.warning(request, "An error occurred. Try again later.")
+        return redirect("account:account")
