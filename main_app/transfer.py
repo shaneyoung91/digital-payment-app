@@ -86,3 +86,40 @@ def transfer_confirmation(request, account_number, transaction_id):
     }
     
     return render(request, "transfer/transfer-confirmation.html", context)
+
+def transfer_process(request, account_number, transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+    
+    sender = request.user
+    recipient = account.user
+    
+    sender_account = request.user.account
+    recipient_account = account
+    
+    completed = False
+    
+    if request.method == "POST":
+        pin_number = request.POST.get("pin-number")
+        
+        if pin_number == sender_account.pin_number:
+            transaction.status = "Completed"
+            transaction.save()
+            
+            # Subtract transaction amount from sender's balance, save & update sender's account balance
+            sender_account.account_balance -= transaction.amount
+            sender_account.save()
+            
+            # Add transaction amount from sender's balance, save & update recipient's account balance
+            recipient_account.account_balance += transaction.amount
+            recipient_account.save()
+            
+            messages.success(request, "Transfer Successful!")
+            return redirect("account:account")
+        
+        else:
+            messages.warning(request, "Incorrect Pin. Please try again.")
+            return redirect("main_app:transfer-confirmation", account.account_number, transaction.transaction_id)
+    else:
+        messages.warning(request, "An error occurred. Try again later.")
+        return redirect("account:account")
