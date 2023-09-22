@@ -164,7 +164,7 @@
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="sidebar-logo">
-                            <a href="dashboard.html"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
+                            <a href="dashboard.html"><img src="{% static 'assets1/images/logo.png' %}" alt="logo" style="height: 50px; border-radius: 50%"></a>
                         </div>
                         <ul>
                             <li>
@@ -173,7 +173,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="transactions.html">
+                                <a href="{% url "main_app:transactions" %}">
                                     <img src="{% static 'assets1/images/icon/transactions.png' %}" alt="Transactions"> <span>Transactions</span>
                                 </a>
                             </li>

@@ -15,5 +15,6 @@ urlpatterns = [
     path("transfer-completed/<account_number>/<transaction_id>/", transfer.transfer_completed, name='transfer-completed'),
     
     # Transactions
-    path("transactions/", transaction.transaction_lists, name="transactions")
+    path("transactions/", transaction.transaction_list, name="transactions"),
+    path("transaction-detail/<transaction_id>/", transaction.transaction_detail, name="transaction-detail"),
 ]

@@ -1,0 +1,105 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="row">
+                    <div class="col-xl-11 col-lg-11">
+                        <div class="section-content">
+                            <div class="transactions-popup">
+                                <div class="container-fruid">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div>
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header justify-content-between">
+                                                            <h5>Transaction Details</h5>
+                                                            <a href="{% url 'main_app:transactions' %}"><i class="material-symbols-outlined">Back to All Transactions</i></a>
+                                                        </div>
+                                                        <div class="main-content">
+                                                            <div class="row">
+                                                                <div class="col-sm-5 text-center">
+                                                                    <div class="icon-area">
+                                                                        <img style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;" src="{{transaction.recipient.kyc.image.url}}" alt="icon">
+                                                                    </div>
+                                                                    <div class="text-area">
+                                                                        {% comment %} <h6>Sender: {{transaction.sender.kyc.full_name|title}}</h6> {% endcomment %}
+                                                                        <h4 class="mt-2"><b>{{transaction.recipient.kyc.full_name|title}}</b></h4><br>
+                                                                        <h5><b>{{transaction.amount|intcomma}} USD</b></h5>
+                                                                        <p>{{transaction.date}}</p>
+                                                                        <!-- <p class="text-warning com ">{{transaction.status|title}}</p> -->
+                                                                        {% if transaction.status == 'Completed' %}
+                                                                            <p class="text-success">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                        {% if transaction.status == 'Pending' %}
+                                                                            <p class="text-warning">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                        {% if transaction.status == 'Failed' %}
+                                                                            <p class="danger">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                        {% if transaction.status == 'Processing' %}
+                                                                            <p class="text-warning">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-7">
+                                                                    <div class="right-area">
+                                                                        <h5 class="mb-3"><b>Transaction Details</b></h5>
+                                                                        <ul class="payment-details">
+                                                                            <li>
+                                                                                <span>Payment Amount</span>
+                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Fee</span>
+                                                                                <span>Free USD</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Total Amount</span>
+                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <ul class="payment-info">
+                                                                            <li>
+                                                                                <p>Payment From</p>
+                                                                                <span class="mdr">{{transaction.sender.kyc.full_name|title}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>Payment To</p>
+                                                                                <span class="mdr">{{transaction.recipient.kyc.full_name|title}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>Description / Notes</p>
+                                                                                <span class="mdr">{{transaction.description}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p>Transaction ID</p>
+                                                                                <span class="mdr">{{transaction.transaction_id}}</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+{% endblock content %}

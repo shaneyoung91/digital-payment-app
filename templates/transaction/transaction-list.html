@@ -71,7 +71,7 @@
                                                                 <p>-${{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
-                                                                <a href="" class=""><i class="fa-eye"></i></a>
+                                                                <a href="{% url "main_app:transaction-detail" s.transaction_id %}" class=""><i class="fa-eye"></i></a>
                                                             </td>
                                                         </tr>
                                                     {% endfor %}
@@ -120,11 +120,10 @@
                                                             <p>+${{r.amount|intcomma}}</p>
                                                         </td>
                                                         <td>
-                                                            <a href="" class=""><i class="fa-eye"></i></a>
+                                                            <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class=""><i class="fa-eye"></i></a>
                                                         </td>
                                                     </tr>
                                                     {% endfor %}
-
                                                 </tbody>
                                             </table>
                                         </div>
