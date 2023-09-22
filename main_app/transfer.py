@@ -3,6 +3,7 @@ from account.models import Account
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib import messages
+from decimal import Decimal
 from main_app.models import Transaction
 
 @login_required
@@ -47,7 +48,7 @@ def amount_transfer_process(request, account_number):
         amount = request.POST.get("amount-send")
         description = request.POST.get("description")
         
-        if sender_account.account_balance > 0 and amount:
+        if sender_account.account_balance >= Decimal(amount):
             new_transaction = Transaction.objects.create(
                 user=request.user,
                 amount=amount,
@@ -70,7 +71,6 @@ def amount_transfer_process(request, account_number):
     else:
         messages.warning(request, "An error occurred. Try again later.")
         return redirect("account:account")
-
 
 def transfer_confirmation(request, account_number, transaction_id):
     try:
@@ -115,7 +115,7 @@ def transfer_process(request, account_number, transaction_id):
             recipient_account.save()
             
             messages.success(request, "Transfer Successful!")
-            return redirect("account:account")
+            return redirect("main_app:transfer-completed", account.account_number, transaction.transaction_id)
         
         else:
             messages.warning(request, "Incorrect Pin. Please try again.")
@@ -123,3 +123,18 @@ def transfer_process(request, account_number, transaction_id):
     else:
         messages.warning(request, "An error occurred. Try again later.")
         return redirect("account:account")
+
+def transfer_completed(request, account_number, transaction_id):
+    try:
+        account = Account.objects.get(account_number=account_number)
+        transaction = Transaction.objects.get(transaction_id=transaction_id)
+    except:
+        messages.warning(request, "Transaction does not exist.")
+        return redirect("account:account")
+    
+    context = {
+        "account":account,
+        "transaction":transaction,
+    }
+    
+    return render(request, "transfer/transfer-completed.html", context)

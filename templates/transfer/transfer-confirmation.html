@@ -124,13 +124,12 @@
                                         </div>
                                         <div class="main-content">
                                             <h4>Confirm Transfer!</h4>
-                                            <p>We have sent a verification code on your phone + Number +44831***932. Please enter verification code below</p>
+                                            <p>Please enter your four (4) digit PIN number</p>
                                             <form action="{% url "main_app:transfer-process" account.account_number transaction.transaction_id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="userInput">
-                                                    <input minlength="4" maxlength="4" name="pin-number" type="text">
+                                                    <input minlength="4" maxlength="4" name="pin-number" type="password">
                                                 </div>
-                                                <a href="javascript:void(0)">Didn't receive a code?</a>
                                                 <button type="submit" class="mt-60 confirm">Confirm</button>
                                             </form>
                                         </div>

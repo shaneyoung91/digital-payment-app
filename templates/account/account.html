@@ -35,20 +35,17 @@
                                             <span class="mdr">{{account.account_number}}</span>
                                         </li>
                                         <li>
-                                            <p>Pin Numberr:</p>
+                                            <p>Pin Number:</p>
                                             <span class="mdr">{{account.pin_number}}</span>
                                         </li>
                                         <li>
-                                            <p>Joined:</p>
+                                            <p>Date Joined:</p>
                                             <span class="mdr">{{account.date|date:"d M, Y"}}</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="owner-action">
-
                                     {% if request.user.is_authenticated %}
-
-
                                     <a href="{% url "userauths:sign-out" %}">
                                         <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
                                         Logout
