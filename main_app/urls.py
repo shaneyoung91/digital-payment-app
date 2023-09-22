@@ -19,5 +19,6 @@ urlpatterns = [
     path("transaction-detail/<transaction_id>/", transaction.transaction_detail, name="transaction-detail"),
     
     # Payment Request
-    path("request-search-acct/", payment_request.search_users_request, name="request-search-acct" )
+    path("request-search-acct/", payment_request.search_users_request, name="request-search-acct"),
+    path("amount-request/<account_number>/", payment_request.amount_request, name="amount-request"),
 ]
