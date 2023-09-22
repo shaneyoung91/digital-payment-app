@@ -52,3 +52,22 @@ def kyc_registration(request):
         "kyc": kyc,
     }
     return render(request, "account/kyc-form.html", context)
+
+def dashboard(request):
+    if request.user.is_authenticated:
+        try:
+            kyc = KYC.objects.get(user=request.user)
+        except:
+            messages.warning(request, "You need to submit your KYC Form.")
+            return redirect("account:kyc-reg")
+        
+        account = Account.objects.get(user=request.user)
+    else:
+        messages.warning(request, "You need to login to access the dashboard")
+        return redirect("userauths:sign-in")
+
+    context = {
+        "kyc": kyc,
+        "account": account
+    }
+    return render(request, "account/dashboard.html", context)
