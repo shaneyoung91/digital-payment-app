@@ -40,9 +40,9 @@ def LoginView(request):
             user = User.objects.get(email=email)
             user = authenticate(request, email=email, password=password)
             
-            if user is not None: # check if there is a user
+            if user is not None: # checks if there is a User
                 login(request, user)
-                messages.success(request, f"Welcome back {user}!")
+                messages.success(request, f"Welcome back, {user}!")
                 return redirect("account:account")
             else:
                 messages.warning(request, "Username or password does not exist.")
