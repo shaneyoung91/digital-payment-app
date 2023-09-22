@@ -21,4 +21,5 @@ urlpatterns = [
     # Payment Request
     path("request-search-acct/", payment_request.search_users_request, name="request-search-acct"),
     path("amount-request/<account_number>/", payment_request.amount_request, name="amount-request"),
+    path("amount-request-process/<account_number>/", payment_request.amount_request_process, name="amount-request-process"),
 ]

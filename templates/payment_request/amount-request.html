@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action={% url "main_app:amount-transfer-process" account.account_number %}  method="POST">
+                    <form action={% url "main_app:amount-request-process" account.account_number %}  method="POST">
                         {% csrf_token %}
                         <div class="send-banance">
                             <span class="mdr">Requested Amount</span>

@@ -19,6 +19,7 @@ TRANSACTION_STATUS = (
     ("Completed", "Completed"),
     ("Pending", "Pending"),
     ("Processing", "Processing"),
+    ("Requested", "Requested"),
 )
 
 class Transaction(models.Model):

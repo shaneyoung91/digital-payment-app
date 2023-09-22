@@ -30,3 +30,38 @@ def amount_request(request, account_number):
         "account": account,
     }
     return render(request, "payment_request/amount-request.html", context)
+
+def amount_request_process(request, account_number):
+    account = Account.objects.get(account_number=account_number)
+    
+    sender = request.user
+    recipient = account.user
+    
+    sender_account = request.user.account
+    recipient_account = account
+    
+    if request.method == "POST":
+        amount = request.POST.get("amount-request") # input name
+        description = request.POST.get("description")  # input name
+        
+        new_request = Transaction.objects.create(
+            user = request.user,
+            amount = amount,
+            description = description,
+            
+            sender = sender,
+            recipient = recipient,
+            
+            sender_account=sender_account,
+            recipient_account=recipient_account,
+            
+            status="Requested",
+            transaction_type="Request",
+        )
+        new_request.save()
+        transaction_id = new_request.transaction_id
+        return redirect("main_app:request-confirmation", account.account_number, transaction_id)
+    else:
+        messages.warning(request, "An error occurred. Try again later!")
+        return redirect("account:dashboard")
+    
