@@ -152,7 +152,7 @@
                                             <a href="account.html"><i class="fas fa-cog"></i>Settings</a>
                                         </li>
                                         <li>
-                                            <a href="/)"><i class="fas fa-sign-out"></i>Logout</a>
+                                            <a href="{% url "main_app:index" %}"><i class="fas fa-sign-out"></i>Logout</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -179,12 +179,12 @@
                             </li>
                             <li>
                                 <a href="{% url "main_app:search-acct" %}">
-                                    <img src="{% static 'assets1/images/icon/pay.png' %}" alt="Pay"> <span>Pay</span>
+                                    <img src="{% static 'assets1/images/icon/pay.png' %}" alt="Pay"> <span>Make Payment</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url "main_app:request-search-acct" %}">
-                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>Receive</span>
+                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>Request Payment</span>
                                 </a>
                             </li>
                             <li>

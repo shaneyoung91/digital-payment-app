@@ -60,4 +60,4 @@ def LoginView(request):
 def logoutView(request):
     logout(request)
     messages.success(request, "You have been logged out.")
-    return redirect ("userauths:sign-in")
+    return redirect ("main_app:index")
