@@ -10,7 +10,7 @@ TRANSACTION_TYPE = (
     ("Received", "Received"),
     ("Withdraw", "Withdraw"),
     ("Refund", "Refund"),
-    ("Request", "Request"),
+    ("Request", "Payment Request"),
     ("None", "None"),
 )
 
@@ -19,7 +19,9 @@ TRANSACTION_STATUS = (
     ("Completed", "Completed"),
     ("Pending", "Pending"),
     ("Processing", "Processing"),
-    ("Requested", "Requested"),
+    ("Request_Sent", "Request Sent"),
+    ("Request_Settled", "Request Settled"),
+    ("Request_Processing", "Request Processing"),
 )
 
 class Transaction(models.Model):

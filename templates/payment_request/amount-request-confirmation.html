@@ -84,7 +84,7 @@
                         </div>
                         <div class="footer-area mt-40">
                             <a href="pay-step-2.html">Previous Step</a>
-                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Pay</a>
+                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Submit Request</a>
                         </div>
                     </form>
                 </div>
@@ -121,7 +121,7 @@
                                         <div class="main-content">
                                             <h4>Confirm Your Request</h4>
                                             <p>Please enter your four (4) digit PIN number</p>
-                                            <form action="" method="POST">
+                                            <form action="{% url "main_app:amount-request-final-process" account.account_number transaction.transaction_id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="userInput">
                                                     <input minlength="4" maxlength="4" name="pin-number" type="password">
@@ -131,7 +131,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
+                                {% comment %} <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="btn-close d-md-none d-block" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
@@ -142,7 +142,7 @@
                                             <p>Transfer was completed.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
