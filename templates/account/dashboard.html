@@ -588,6 +588,11 @@
     <!-- Add Card Popup start -->
     <div class="add-card">
         <div class="container-fluid">
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{form.errors}}</strong>
+                </div>
+            {% endif %}
             <div class="row">
                 <div class="col-lg-6">
                     <div class="modal fade" id="addcardMod" aria-hidden="true">
@@ -597,35 +602,48 @@
                                     <h6>Add Card</h6>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                                 </div>
-                                <form action="#">
+                                <form method="POST">
+                                    {% csrf_token %}
                                     <div class="row justify-content-center">
                                         <div class="col-md-12">
                                             <div class="single-input">
-                                                <label for="cardNumber">Card Number</label>
-                                                <input type="text" id="cardNumber" placeholder="5890 - 6858 - 6332 - 9843">
+                                                <label for="cardNumber">Card Name</label>
+                                                {{form.name}}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-input">
-                                                <label for="cardHolder">Card Holder</label>
-                                                <input type="text" id="cardHolder" placeholder="Alfred Davis">
+                                                <label for="cardNumber">Card Number</label>
+                                                {{form.card_number}}
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="single-input">
-                                                <label for="month">Month</label>
-                                                <input type="text" id="month" placeholder="12">
+                                                <label for="cardNumber">Exp Month</label>
+                                                {{form.month}}
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="single-input">
-                                                <label for="year">Year</label>
-                                                <input type="text" id="year" placeholder="2025">
+                                                <label for="cardNumber">Exp Year</label>
+                                                {{form.year}}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-input">
+                                                <label for="cardNumber">CVV</label>
+                                                {{form.cvv}}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-input">
+                                                <label for="cardNumber">Card Type</label>
+                                                {{form.card_type}}
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="btn-border w-100">
-                                                <button class="cmn-btn w-100">Add Card</button>
+                                                <button type="submit" class="cmn-btn w-100">Add Card</button>
                                             </div>
                                         </div>
                                     </div>
