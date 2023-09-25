@@ -6,7 +6,7 @@
     <!-- Dashboard Section start -->
     <section class="dashboard-section body-collapse">
         <div class="overlay pt-120">
-            <div class="container-fruid">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
                         <div class="section-content">
@@ -261,7 +261,7 @@
                                                                 <p>+${{r.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
-                                                                <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-primary">APPROVE</i></a>
+                                                                <a href="{% url "main_app:settlement-confirmation" r.sender.account.account_number r.transaction_id %}" class="btn btn-primary">REVIEW</i></a>
                                                                 <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-danger">DECLINE</i></a>
                                                             </td>
                                                         </tr>
