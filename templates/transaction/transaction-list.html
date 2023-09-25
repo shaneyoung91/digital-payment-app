@@ -203,8 +203,8 @@
                                                         </td>
                                                         <td>
                                                             {% if r.status == "Request Sent" or r.status == "Request Processing" %}
-                                                                <a href="{% url "main_app:settlement-confirmation" r.sender.account.account_number r.transaction_id %}" class="btn btn-primary">REVIEW</i></a>
-                                                                <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-danger">DELETE</i></a>
+                                                                <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-primary">REVIEW</i></a>
+                                                                <a href="{% url "main_app:delete-request" r.sender.account.account_number r.transaction_id %}" class="btn btn-danger">DELETE</i></a>
                                                             {% endif %}
 
                                                             {% if r.status == "Request Settled" %}
