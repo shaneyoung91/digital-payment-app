@@ -55,11 +55,11 @@
                                 <ul class="details-list">
                                     <li>
                                         <span><b>{{ request.user.kyc.full_name }}</b> --> Requested</span>
-                                        <b>${{ transaction.amount }} USD</b>
+                                        <b>${{ transaction.amount|intcomma }} USD</b>
                                     </li>
                                     <li>
                                         <span><b>{{ account.user.kyc.full_name }}</b> --> To Send</span>
-                                        <b>${{ transaction.amount }} USD</b>
+                                        <b>${{ transaction.amount|intcomma }} USD</b>
                                     </li>
                                     <li>
                                         <span>Fee</span>
@@ -83,7 +83,7 @@
                             <label for="confirm">I confirm the payment details above</label>
                         </div>
                         <div class="footer-area mt-40">
-                            <a href="pay-step-2.html">Previous Step</a>
+                            <a href="{% url "main_app:amount-request" account.account_number %}">Go Back</a>
                             <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Submit Request</a>
                         </div>
                     </form>
