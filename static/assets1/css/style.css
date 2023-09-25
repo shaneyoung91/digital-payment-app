@@ -734,10 +734,6 @@ label {
     margin-right: 10px;
 }
 
-.header-section .navbar-area .dashboard-nav .single-item .main-area ul li a {
-    width: 100%;
-}
-
 .header-section .navbar-area .dashboard-nav .single-item .user-content .head-area {
     background: #F8F8FF;
     border-radius: 20px;
@@ -4799,3 +4795,383 @@ label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap");
+        /* * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        } */
+
+        .cc__main__container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #87a4ae;
+        }
+
+        .header {
+        position: absolute;
+        top: 15px;
+        left: 220px;
+        width: 100%;
+        color: rgb(0, 128, 255);
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        font-size: 40px;
+        }
+        .subheader {
+        position: absolute;
+        top: 65px;
+        left: 450px;
+        width: 100%;
+        color: rgb(120, 120, 120);
+        }
+
+        .subheader span {
+        text-transform: uppercase;
+        }
+
+        /* Card Form Info */
+
+        .form__container {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        margin-left: 200px;
+        background-color: #ffffff;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+            rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        border-radius: 20px;
+        }
+
+        .cc__main__container form {
+        width: 500px;
+        padding: 30px;
+        flex-flow: column;
+        padding-bottom: 60px;
+        }
+
+        .cc__main__container form .inputBox {
+        margin-top: 40px;
+        }
+
+        .cc__main__container form .inputBox span {
+        display: block;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: rgb(97, 97, 97);
+        padding: 5px 0;
+        }
+
+        .cc__main__container form .inputBox input {
+        width: 100%;
+        font-size: 20px;
+        color: rgb(116, 116, 116);
+        padding: 10px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+            rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        }
+
+        .cc__main__container form .inputBox input::placeholder {
+        color: rgb(203, 203, 203);
+        }
+
+        .cc__main__container form .multi__box {
+        display: flex;
+        gap: 20px;
+        }
+
+        .card__main {
+        position: abdsolute;
+        width: 100%;
+        height: 170px;
+        left: -230px;
+        margin-bottom: 20px;
+        }
+
+        /* Card Front Part */
+
+        .card__main .Front_card {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        background: linear-gradient(248.61deg, #01c2ff 0.03%, #2d0067 99.03%);
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.4s ease-out;
+        }
+
+
+        .Front_card {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        background: linear-gradient(248.61deg, #01c2ff 0.03%, #2d0067 99.03%);
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.4s ease-out;
+        }
+
+        .masterCard {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        background: linear-gradient(258.61deg, #9501ff 5.03%, #00956d 99.03%);
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.4s ease-out;
+        }
+
+        .visaCard {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            background: linear-gradient(258.61deg, #ff9501 5.03%, #19a400 99.03%);
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.4s ease-out;
+        }
+
+        .top_card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        }
+
+        .visa {
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: -5px;
+        font-style: italic;
+        color: #ffffff;
+        text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+        margin-top: 5px;
+        position: relative;
+        width: 140px;
+        height: 30px;
+        /* object-fit: fill; */
+        }
+        .logo span {
+        position: absolute;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        /* background-color: #5600c2; */
+        border-radius: 50%;
+        }
+
+        .top_card .logo span:nth-child(2) {
+        position: absolute;
+        left: 15px;
+        bottom: 5px;
+        /* background-color: #00ff85; */
+        width: 40px;
+        height: 40px;
+        }
+        .top_card .logo span:nth-child(3) {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        /* background-color: #0094c2; */
+        width: 30px;
+        height: 30px;
+        }
+
+        .middle_card {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 35px;
+        padding: 10px;
+        }
+
+        .middle_card .chip {
+        display: block;
+        background-color: #281830;
+        width: 60px;
+        
+        height: 30px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 20px #505050;
+        }
+
+        .middle_card .card_number {
+        position: absolute;
+        left: 15px;
+        padding-top: 30px;
+        margin-bottom: 20px;
+        font-size: 15px;
+        letter-spacing: 3px;
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .bottom_card {
+        position: absolute;
+        bottom: 35px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        }
+
+        .bottom_card .card_info {
+        font-size: 17px;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Back Part */
+
+        .back_card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(248.61deg, #01c2ff 0.03%, #2d0067 99.03%);
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        transform: perspective(1000px) rotateY(180deg);
+        transition: transform 0.4s ease-out;
+        }
+
+        .card__main .back_card .top_card {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 200px;
+        }
+
+        .card__main .back_card .top_card .black_strip {
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        background-color: black;
+        top: 30px;
+        left: 0;
+        }
+
+        .card__main .back_card .top_card .cvc_strip {
+        position: absolute;
+        right: 50px;
+        bottom: 30px;
+        width: 80%;
+        height: 50px;
+        background-color: white;
+        }
+
+        .card__main .back_card .top_card .cvc_strip span {
+        font-size: 25px;
+        display: flex;
+        justify-content: end;
+        margin-top: 8px;
+        padding-right: 20px;
+        }
+
+        .card__main .back_card .bottom_card {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 120px;
+        }
+
+        .card__main .back_card .bottom_card .flex {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        padding: 0 20px;
+        }
+
+        .card__main .back_card .bottom_card .flex .sticker {
+        width: 100px;
+        height: 60px;
+        background: linear-gradient(
+            251.7deg,
+            #999999 2.53%,
+            #dcdcdc 53.8%,
+            #8b8b8b 100%
+        );
+        display: flex;
+        margin-top: 10px;
+        border-radius: 10px;
+        }
+
+        .card__main .back_card .bottom_card .flex .logo1 {
+        margin-top: 5px;
+        position: relative;
+        width: 80px;
+        height: 70px;
+        }
+        .card__main .back_card .bottom_card .flex .logo1 span {
+        position: absolute;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #5600c2;
+        border-radius: 50%;
+        }
+
+        .card__main .back_card .bottom_card .flex .logo1 span:nth-child(2) {
+        position: absolute;
+        left: 15px;
+        bottom: 5px;
+        background-color: #00ff85;
+        width: 40px;
+        height: 40px;
+        }
+        .card__main .back_card .bottom_card .flex .logo1 span:nth-child(3) {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        background-color: #0094c2;
+        width: 30px;
+        height: 30px;
+        }
+
+        .expire_month{
+            padding-top: 20px;
+        }
+
+        .expire_month, .expire_year, .slash{
+            color: #fff;
+            font-weight: 700;
+            padding-top: 10%;
+            
+        }
