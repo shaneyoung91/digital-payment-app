@@ -19,9 +19,9 @@ TRANSACTION_STATUS = (
     ("Completed", "Completed"),
     ("Pending", "Pending"),
     ("Processing", "Processing"),
-    ("Request_Sent", "Request Sent"),
-    ("Request_Settled", "Request Settled"),
-    ("Request_Processing", "Request Processing"),
+    ("Request Sent", "Request Sent"),
+    ("Request Settled", "Request Settled"),
+    ("Request Processing", "Request Processing"),
 )
 
 class Transaction(models.Model):

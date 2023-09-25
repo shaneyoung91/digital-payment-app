@@ -55,7 +55,7 @@ def amount_request_process(request, account_number):
             sender_account=sender_account,
             recipient_account=recipient_account,
             
-            status="Request_Processing",
+            status="Request Processing",
             transaction_type="Request",
         )
         new_request.save()
@@ -81,7 +81,7 @@ def amount_request_final_process(request, account_number, transaction_id):
     if request.method == "POST":
         pin_number = request.POST.get("pin-number")
         if pin_number == request.user.account.pin_number:
-            transaction.status = "Request_Sent"
+            transaction.status = "Request Sent"
             transaction.save()
             
             messages.success(request, "Your payment request has been sent successfully.")

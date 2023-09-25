@@ -18,10 +18,16 @@
                                 <div class="top-area d-flex align-items-center justify-content-between">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab" aria-controls="latest" aria-selected="true">Sent</button>
-                                        </li>
+                                            <button class="nav-link active" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab" aria-controls="latest" aria-selected="true">Sent Transfers</button>
+                                        </li> | &nbsp;
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received</button>
+                                            <button class="nav-link" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received Transfers</button>
+                                        </li> | &nbsp;
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="sender-request-tab" data-bs-toggle="tab" data-bs-target="#sender-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Sent Requests</button>
+                                        </li> | &nbsp;
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="recipient-request-tab" data-bs-toggle="tab" data-bs-target="#recipient-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received Requests</button>
                                         </li>
                                     </ul>
                                     <div class="view-all d-flex align-items-center">
@@ -66,15 +72,21 @@
                                                                 {% if s.status == 'Processing' %}
                                                                     <p class="inprogress">{{s.status|title}}</p>
                                                                 {% endif %}
-                                                                {% if s.status == 'Requested' %}
-                                                                    <p class="inprogress">{{s.status|title}}</p>
+                                                                {% if s.status == 'Request Sent' %}
+                                                                    <p class="text-success">{{s.status|title}}</p>
                                                                 {% endif %}
+                                                                {% if s.status == 'Request Settled' %}
+                                                                    <p class="text-success">{{s.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if s.status == 'Request Processing' %}
+                                                                    <p class="inprogress">{{s.status|title}}</p>
+                                                                {% endif %}  
                                                             </td>
                                                             <td>
                                                                 <p>-${{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
-                                                                <a href="{% url "main_app:transaction-detail" s.transaction_id %}" class=""><i class="fa-eye"></i></a>
+                                                                <a href="{% url "main_app:transaction-detail" s.transaction_id %}" class="btn btn-primary">VIEW</i></a>
                                                             </td>
                                                         </tr>
                                                     {% endfor %}
@@ -118,17 +130,143 @@
                                                             {% if r.status == 'Processing' %}
                                                                 <p class="inprogress">{{r.status|title}}</p>
                                                             {% endif %}
-                                                            {% if r.status == 'Requested' %}
-                                                                <p class="text-info">{{r.status|title}}</p>
+                                                            {% if r.status == 'Request Sent' %}
+                                                            <p class="text-success">{{r.status|title}}</p>
                                                             {% endif %}
+                                                            {% if r.status == 'Request Settled' %}
+                                                                <p class="text-success">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Request Processing' %}
+                                                                <p class="inprogress">{{r.status|title}}</p>
+                                                            {% endif %}                                                            
                                                         </td>
                                                         <td>
                                                             <p>+${{r.amount|intcomma}}</p>
                                                         </td>
                                                         <td>
-                                                            <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class=""><i class="fa-eye"></i></a>
+                                                            <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-primary">VIEW</i></a>
                                                         </td>
                                                     </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="sender-request" role="tabpanel" aria-labelledby="sender-request-tab">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Name / Business</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for r in request_sender_transaction %}
+                                                    <tr data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                        <th scope="row">
+                                                            <p>{{r.recipient.kyc.full_name|title}}</p>
+                                                            <p class="mdr">{{r.transaction_type|title}}</p>
+                                                        </th>
+                                                        <td>
+                                                            <p><small>{{r.date|date:"h:i"}}</small></p>
+                                                            <p class="mdr">{{r.date|date:"d M, Y"}}</p>
+                                                        </td>
+                                                        <td>
+                                                            {% if r.status == 'Completed' %}
+                                                                <p class="text-success">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Pending' %}
+                                                                <p class="inprogress">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Failed' %}
+                                                                <p class="text-danger">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Processing' %}
+                                                                <p class="inprogress">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Request Sent' %}
+                                                            <p class="text-success">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Request Settled' %}
+                                                                <p class="text-success">{{r.status|title}}</p>
+                                                            {% endif %}
+                                                            {% if r.status == 'Request Processing' %}
+                                                                <p class="inprogress">{{r.status|title}}</p>
+                                                            {% endif %}                                                            
+                                                        </td>
+                                                        <td>
+                                                            <p>+${{r.amount|intcomma}}</p>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-primary">VIEW</i></a>
+                                                            <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-danger">DELETE</i></a>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="recipient-request" role="tabpanel" aria-labelledby="recipient-request-tab">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Name / Business</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for r in request_recipient_transaction %}
+                                                        <tr data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                            <th scope="row">
+                                                                <p>{{r.sender.kyc.full_name|title}}</p>
+                                                                <p class="mdr">{{r.transaction_type|title}}</p>
+                                                            </th>
+                                                            <td>
+                                                                <p><small>{{r.date|date:"h:i"}}</small></p>
+                                                                <p class="mdr">{{r.date|date:"d M, Y"}}</p>
+                                                            </td>
+                                                            <td>
+                                                                {% if r.status == 'Completed' %}
+                                                                    <p class="text-success">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Pending' %}
+                                                                    <p class="inprogress">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Failed' %}
+                                                                    <p class="text-danger">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Processing' %}
+                                                                    <p class="inprogress">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Request Sent' %}
+                                                                <p class="text-success">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Request Settled' %}
+                                                                    <p class="text-success">{{r.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if r.status == 'Request Processing' %}
+                                                                    <p class="inprogress">{{r.status|title}}</p>
+                                                                {% endif %}                                                            
+                                                            </td>
+                                                            <td>
+                                                                <p>+${{r.amount|intcomma}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-primary">APPROVE</i></a>
+                                                                <a href="{% url "main_app:transaction-detail" r.transaction_id %}" class="btn btn-danger">DECLINE</i></a>
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                    <li>No Received Requests</li>
                                                     {% endfor %}
                                                 </tbody>
                                             </table>

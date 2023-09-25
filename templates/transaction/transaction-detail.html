@@ -45,6 +45,15 @@
                                                                         {% if transaction.status == 'Processing' %}
                                                                             <p class="text-warning">{{transaction.status|title}}</p>
                                                                         {% endif %}
+                                                                        {% if transaction.status == 'Request Sent' %}
+                                                                            <p class="text-success">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                        {% if transaction.status == 'Request Settled' %}
+                                                                            <p class="text-warning">{{transaction.status|title}}</p>
+                                                                        {% endif %}
+                                                                        {% if transaction.status == 'Request Processing' %}
+                                                                            <p class="text-warning">{{transaction.status|title}}</p>
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-7">
