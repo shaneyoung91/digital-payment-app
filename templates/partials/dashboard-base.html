@@ -137,7 +137,7 @@
                                         </div>
                                         <div class="profile-head">
                                             <a href="{% url "account:account" %}">
-                                                <h5>{{kyc.full_name|title}}</h5>
+                                                <h5>{{user.kyc.full_name|title}}</h5>
                                             </a>
                                             <p class="wallet-id"><small>Account No: {{user.account.account_number}}</small></p>
                                             <p class="wallet-id"><small>Pin No: {{user.account.pin_number}}</small></p>

@@ -4957,7 +4957,7 @@ label {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px;
+        padding: 10px;
         }
 
         .visa {
@@ -5007,14 +5007,13 @@ label {
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-top: 35px;
-        padding: 10px;
+        padding: 2px;
         }
 
         .middle_card .chip {
         display: block;
         background-color: #281830;
-        width: 88px;
-        
+        width: 90px;
         height: 35px;
         border-radius: 10px;
         box-shadow: inset 0px 0px 20px #505050;
@@ -5171,6 +5170,6 @@ label {
         .expire_month, .expire_year, .slash{
             color: #fff;
             font-weight: 700;
-            padding-top: 10%;
+            padding-top: 0%;
             
         }

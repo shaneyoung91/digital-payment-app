@@ -2,6 +2,7 @@ from django.db import models
 from userauths.models import User
 from account.models import Account
 from shortuuid.django_fields import ShortUUIDField
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 
 # Create your models here.
 
@@ -61,7 +62,7 @@ class CreditCard(models.Model):
     card_id = ShortUUIDField(unique=True, length=5, max_length=20, prefix="CARD", alphabet="1234567890")
     
     name = models.CharField(max_length=100)
-    card_number = models.IntegerField()
+    card_number = models.PositiveBigIntegerField()
     month = models.IntegerField()
     year = models.IntegerField()
     cvv = models.IntegerField()

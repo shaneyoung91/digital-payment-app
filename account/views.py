@@ -45,7 +45,7 @@ def kyc_registration(request):
             new_form.account = account
             new_form.save()
             messages.success(request, "KYC Form submitted successfully. In review now.")
-            return redirect("main_app:index")
+            return redirect("account:dashboard")
     else:
         form = KYCForm(instance=kyc)
     context = {
