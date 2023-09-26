@@ -182,9 +182,6 @@ STATIC_LOCATION = 'static'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 
 
-
-
-
 # Other settings above
 # Configure Django App for Heroku.
 import django_on_heroku
