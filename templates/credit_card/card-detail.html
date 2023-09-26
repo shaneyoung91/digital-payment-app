@@ -83,7 +83,7 @@
                                                                                 <span>${{credit_card.amount|intcomma}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>Name of holder</span>
+                                                                                <span>Name of Holder</span>
                                                                                 <span>{{credit_card.name|title}}</span>
                                                                             </li>
                                                                             <li>
@@ -110,10 +110,9 @@
                                                                                         <button type="button" class="reg btn btn-success w-100 mb-2" data-bs-toggle="modal" data-bs-target="#withdraw_fund">
                                                                                             Withdraw Money
                                                                                         </button>  
-                                                                                        {% comment %} <a href="{% url 'main_app:delete_card' credit_card.card_id %}" class="reg btn btn-danger w-100 mb-2">
+                                                                                        <a href="{% url 'main_app:delete-card' credit_card.card_id %}" class="reg btn btn-danger w-100 mb-2">
                                                                                             Delete Card
-                                                                                        </a>  {% endcomment %}
-                                                                                </div>    
+                                                                                        </a>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -148,13 +147,13 @@
                                 <h6>Fund Credit Card</h6>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{% url "main_app:fund-card" credit_card.card_id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <div class="single-input">
                                             <label for="cardNumber">Card Number</label>
-                                            <input type="text" id="cardNumber" value="{{ credit_card.number }}">
+                                            <input type="text" id="cardNumber" value="{{ credit_card.card_number }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -165,7 +164,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="single-input">
-                                            <label for="month">Paylio Available Balance</label>
+                                            <label for="month">MoneySpread Available Balance</label>
                                             <input type="text" id="month" value="${{ account.account_balance|intcomma }}">
                                         </div>
                                     </div>

@@ -33,5 +33,8 @@ urlpatterns = [
     path("delete-request/<account_number>/<transaction_id>/", payment_request.delete_payment_request, name="delete-request"),
     
     # Credit Card 
-    path("card/<card_id>/", credit_card.card_detail, name="card-detail")
+    path("card/<card_id>/", credit_card.card_detail, name="card-detail"),
+    path("fund-card/<card_id>/", credit_card.fund_card, name="fund-card"),
+    # path("withdraw-fund/<card_id>/", credit_card.withdraw_fund, name="withdraw-fund"),
+    path("delete-card/<card_id>/", credit_card.delete_card, name="delete-card"),
 ]
