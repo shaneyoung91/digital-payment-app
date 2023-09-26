@@ -1,0 +1,238 @@
+{% extends 'partials/dashboard-base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content  %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="row">
+                    <div class="col-xl-11 col-lg-11">
+                        <div class="section-content">
+                            <div class="transactions-popup">
+                                <div class="container-fruid">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div>
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header justify-content-between">
+                                                            <h5>Credit Card</h5>
+                                                            <a href="{% url 'account:dashboard' %}"><i class="material-symbols-outlined">arrow_back</i></a>
+                                                        </div>
+                                                        <div class="main-content">
+                                                            <div class="row">
+                                                                <div class="col-sm-5 text-center">
+                                                                    <div class="icon-area p-3">
+                                                                        <div class="col-12">
+                                                                            <div class="card__main">
+                                                                                <div class="{% if credit_card.card_type == 'Discover' %}Front_card{% endif %} {% if credit_card.card_type == 'American Express' %}Front_card{% endif %}    {% if credit_card.card_type == 'Mastercard' %}masterCard{% endif %}    {% if credit_card.card_type == 'Visa' %}visaCard{% endif %}">
+                                                                                <div class="top_card">
+                                                                                    <span class="visa">{{credit_card.card_type|upper}}</span>
+                                                                                    {% comment %} <div class="logo">
+                                                                                        <img src="{% static 'assets1/images/logo.png' %}" class="logo" alt="logo">
+                                                                                    </div> {% endcomment %}
+                                                                                </div>
+                                                                                <div class="middle_card">
+                                                                                    <span class="chip"></span>
+                                                                                    <div class="card_number">{{credit_card.card_number}}</div>
+                                                                                </div><br>
+                                                                                <div class="bottom_card">
+                                                                                    <div class="card_info">
+                                                                                    <div class="card_holder_name" style="text-align: left">${{credit_card.amount|intcomma}}</div>
+                                                                                    <div class="card_holder_name">{{credit_card.name}}</div>
+                                                                                    </div>
+                                                                                    <div class="card_info">
+                                                                                    <div class="card_holder_info">
+                                                                                        <span class="expire_month" >{{credit_card.month}}</span>
+                                                                                        <span class="slash">/</span>
+                                                                                        <span class="expire_year">{{credit_card.year}}</span>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="back_card">
+                                                                                <div class="top_card">
+                                                                                    <span class="black_strip"></span>
+                                                                                    <div class="cvc_strip">
+                                                                                    <span class="cvc_number">{{credit_card.cvv}}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="bottom_card">
+                                                                                    <div class="flex">
+                                                                                    <span class="sticker"></span>
+                                                                                    <div class="logo1">
+                                                                                        <span></span>
+                                                                                        <span></span>
+                                                                                        <span></span>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-7">
+                                                                    <div class="right-area">
+                                                                        <h6>Details</h6>
+                                                                        <ul class="payment-details">
+                                                                            <li>
+                                                                                <span>Current Amount</span>
+                                                                                <span>${{credit_card.amount|intcomma}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Name of holder</span>
+                                                                                <span>{{credit_card.name|title}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Card Type</span>
+                                                                                <span>{{credit_card.card_type|upper}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Card Number</span>
+                                                                                <span>{{credit_card.card_number}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>Expiry Month & Year</span>
+                                                                                <span>{{credit_card.month}}/{{credit_card.year}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>CVV</span>
+                                                                                <span>{{credit_card.cvv}}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="row">
+                                                                                        <button type="button" class="reg btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#addcardMod">
+                                                                                            Deposit Money
+                                                                                        </button>  
+                                                                                        <button type="button" class="reg btn btn-success w-100 mb-2" data-bs-toggle="modal" data-bs-target="#withdraw_fund">
+                                                                                            Withdraw Money
+                                                                                        </button>  
+                                                                                        {% comment %} <a href="{% url 'main_app:delete_card' credit_card.card_id %}" class="reg btn btn-danger w-100 mb-2">
+                                                                                            Delete Card
+                                                                                        </a>  {% endcomment %}
+                                                                                </div>    
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+<!-- Add Card Popup start -->
+<div class="add-card">
+    <div class="container-fruid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="modal fade" id="addcardMod" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-between">
+                                <h6>Fund Credit Card</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="cardNumber">Card Number</label>
+                                            <input type="text" id="cardNumber" value="{{ credit_card.number }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="cardHolder">Card Holder</label>
+                                            <input type="text" id="cardHolder" value="{{ credit_card.name|title }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="month">Paylio Available Balance</label>
+                                            <input type="text" id="month" value="${{ account.account_balance|intcomma }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="year">Enter Amount</label>
+                                            <input type="number" name="funding_amount"  id="amount" placeholder="$20">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="btn-border w-100">
+                                            <button type="submit" class="cmn-btn w-100">Confirm Transaction</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add Card Popup start -->
+
+<!-- Add Card Popup start -->
+<div class="add-card">
+    <div class="container-fruid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="modal fade" id="withdraw_fund" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-between">
+                                <h6>Withdraw from Card</h6>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div class="row justify-content-center">
+                                    
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="month">Card's Available Balance</label>
+                                            <input type="text" id="month" value="${{ credit_card.amount|intcomma }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-input">
+                                            <label for="year">Enter Amount</label>
+                                            <input type="number" name="amount" id="amount" placeholder="$20">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="btn-border w-100">
+                                            <button class="cmn-btn w-100">Confirm Transaction</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add Card Popup start -->
+
+{% endblock content %}
