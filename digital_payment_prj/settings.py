@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import psycopg2
 
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production! 
+# Replace the DEBUG = True with:
+DEBUG = True if os.environ['MODE'] == 'dev' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['moneyspread.herokuapp.com']
 
 
 # Application definition
@@ -85,7 +90,11 @@ WSGI_APPLICATION = 'digital_payment_prj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'digital_payment_app',
+        'NAME': 'd2g4ijqn282lmh',
+        'USER': 'llnpplrdgxecvq',
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': 'ec2-34-236-103-63.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -156,3 +165,6 @@ JAZZMIN_SETTINGS = {
 # Configure Django App for Heroku.
 import django_on_heroku
 django_on_heroku.settings(locals())
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
