@@ -64,7 +64,7 @@ def dashboard(request):
             return redirect("account:kyc-reg")
         
         account = Account.objects.get(user=request.user)
-        credit_card = CreditCard.objects.filter(user=request.user)
+        credit_card = CreditCard.objects.filter(user=request.user).order_by("-id")
         
         if request.method == "POST":
             form = CreditCardForm(request.POST)

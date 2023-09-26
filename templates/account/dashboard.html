@@ -334,10 +334,10 @@
                                 <div class="row">
 
                                     {% for c in credit_card %}
-                                        {% comment %} <a href="{% url 'core:card-detail' c.card_id %}"> {% endcomment %}
+                                        <a href="">
                                             <div class="col-12">
                                                 <div class="card__main">
-                                                    <div class="{% if c.card_type == 'verve' %}Front_card{% endif %}    {% if c.card_type == 'master' %}masterCard{% endif %}    {% if c.card_type == 'visa' %}visaCard{% endif %}">
+                                                    <div class="{% if c.card_type == 'Discover' %}Front_card{% endif %} {% if c.card_type == 'American Express' %}Front_card{% endif %}    {% if c.card_type == 'Mastercard' %}masterCard{% endif %}    {% if c.card_type == 'Visa' %}visaCard{% endif %}">
                                                     <div class="top_card">
                                                         <span class="visa">{{c.card_type|upper}}</span>
                                                         {% comment %} <div class="logo">
@@ -348,7 +348,7 @@
                                                     <div class="middle_card">
                                                         <span class="chip"></span>
                                                         <div class="card_number">{{c.card_number}}</div>
-                                                    </div>
+                                                    </div><br>
                                                     <div class="bottom_card">
                                                         <div class="card_info">
                                                         <div class="card_holder_name">${{c.amount|intcomma}}</div>

@@ -290,7 +290,7 @@ li,
 label {
     margin: 0;
     font-family: var(--body-font);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--para-color);
     line-height: 30px;
@@ -4892,7 +4892,6 @@ label {
         }
 
         .card__main {
-        position: abdsolute;
         width: 100%;
         height: 170px;
         left: -230px;
@@ -5014,9 +5013,9 @@ label {
         .middle_card .chip {
         display: block;
         background-color: #281830;
-        width: 60px;
+        width: 88px;
         
-        height: 30px;
+        height: 35px;
         border-radius: 10px;
         box-shadow: inset 0px 0px 20px #505050;
         }
@@ -5024,7 +5023,7 @@ label {
         .middle_card .card_number {
         position: absolute;
         left: 15px;
-        padding-top: 30px;
+        padding-top: 40px;
         margin-bottom: 20px;
         font-size: 15px;
         letter-spacing: 3px;
@@ -5040,7 +5039,7 @@ label {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 15px;
+        padding: 13px 15px;
         }
 
         .bottom_card .card_info {
