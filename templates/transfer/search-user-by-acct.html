@@ -22,7 +22,7 @@
                         </div>
                     </form>
                     <div class="user-select">
-                        {% if query %}
+                        {% comment %} {% if query %} {% endcomment %}
                         {% for a in account %}
                         <div class="single-user">
                             <div class="left d-flex align-items-center">
@@ -44,7 +44,7 @@
                             <h4 class="mt-4">Account does not exist.</h4>
                         </div>
                         {% endfor %}
-                        {% endif %}
+                        {% comment %} {% endif %} {% endcomment %}
                     </div>
                     <div class="footer-area mt-40">
                         <a href="pay.html">Previous Step</a>

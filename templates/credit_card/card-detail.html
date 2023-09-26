@@ -6,7 +6,7 @@
     <!-- Dashboard Section start -->
     <section class="dashboard-section body-collapse">
         <div class="overlay pt-120">
-            <div class="container-fruid">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-11 col-lg-11">
                         <div class="section-content">
@@ -137,7 +137,7 @@
 
 <!-- Add Card Popup start -->
 <div class="add-card">
-    <div class="container-fruid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
                 <div class="modal fade" id="addcardMod" aria-hidden="true">
@@ -192,7 +192,7 @@
 
 <!-- Add Card Popup start -->
 <div class="add-card">
-    <div class="container-fruid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
                 <div class="modal fade" id="withdraw_fund" aria-hidden="true">
@@ -202,7 +202,7 @@
                                 <h6>Withdraw from Card</h6>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{% url "main_app:withdraw-fund" credit_card.card_id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="row justify-content-center">
                                     

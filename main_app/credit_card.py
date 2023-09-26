@@ -42,6 +42,26 @@ def fund_card(request, card_id):
     return render(request, "credit_card/card-detail.html", context)
     
 
+def withdraw_fund(request, card_id):
+    credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
+    account = Account.objects.get(user=request.user)
+    
+    if request.method == "POST":
+        amount = request.POST.get("amount")
+
+        if credit_card.amount >= Decimal(amount):
+            account.account_balance += Decimal(amount)
+            account.save()
+
+            credit_card.amount -= Decimal(amount)
+            credit_card.save()
+            
+            messages.success(request, "Withdrawal Successful")
+            return redirect("main_app:card-detail", credit_card.card_id)
+        else:
+            messages.success(request, "Withdrawal Denied - Insufficient Funds")
+            return redirect("main_app:card-detail", credit_card.card_id)
+
 
 def delete_card(request, card_id):
     credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
