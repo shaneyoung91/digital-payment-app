@@ -1,0 +1,1 @@
+web: gunicorn digital_payment_prj.wsgi --log-file -

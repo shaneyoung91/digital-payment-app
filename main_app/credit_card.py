@@ -40,7 +40,6 @@ def fund_card(request, card_id):
         "credit_card":credit_card,
     }
     return render(request, "credit_card/card-detail.html", context)
-    
 
 def withdraw_fund(request, card_id):
     credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
@@ -61,7 +60,6 @@ def withdraw_fund(request, card_id):
         else:
             messages.success(request, "Withdrawal Denied - Insufficient Funds")
             return redirect("main_app:card-detail", credit_card.card_id)
-
 
 def delete_card(request, card_id):
     credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
