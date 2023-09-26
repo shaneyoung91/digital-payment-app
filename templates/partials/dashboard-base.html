@@ -38,14 +38,14 @@
                         <div class="sidebar-icon">
                             <img src="{% static 'assets1/images/icon/menu.png' %}" alt="icon">
                         </div>
-                        <form method="POST" class="flex-fill">
+                        {% comment %} <form method="POST" class="flex-fill">
                             <div class="form-group d-flex align-items-center">
                                 <img src="{% static 'assets1/images/icon/search.png' %}" alt="icon">
                                 <input type="text" placeholder="Type to search...">
                             </div>
-                        </form>
+                        </form> {% endcomment %}
                         <div class="dashboard-nav">
-                            <div class="single-item language-area">
+                            {% comment %} <div class="single-item language-area">
                                 <div class="language-btn">
                                     <img src="{% static 'assets1/images/icon/lang.png' %}" alt="icon">
                                 </div>
@@ -57,8 +57,8 @@
                                     <li>Kannada</li>
                                     <li>Lithuanian</li>
                                 </ul>
-                            </div>
-                            <div class="single-item notifications-area">
+                            </div> {% endcomment %}
+                            {% comment %} <div class="single-item notifications-area">
                                 <div class="notifications-btn">
                                     <img src="{% static 'assets1/images/icon/bell.png' %}" class="bell-icon" alt="icon">
                                 </div>
@@ -123,13 +123,12 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="single-item user-area">
                                 <div class="profile-area d-flex align-items-center">
                                     <span class="user-profile">
                                         <img style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover" src="{{ user.kyc.image.url }}" alt="User">
                                     </span>
-                                    <i class="fa-solid fa-sort-down"></i>
                                 </div>
                                 <div class="main-area user-content">
                                     <div class="head-area d-flex align-items-center">
@@ -146,13 +145,13 @@
                                     </div>
                                     <ul>
                                         <li class="border-area">
-                                            <a href="/admin"><i class="fas fa-user"></i>Admin</a>
+                                            <a href="/admin" target="_blank">Admin</a>
                                         </li>
                                         <li class="border-area">
-                                            <a href="account.html"><i class="fas fa-cog"></i>Settings</a>
+                                            <a href="{% url "account:account" %}">Account Settings</a>
                                         </li>
                                         <li>
-                                            <a href="{% url "userauths:sign-out" %}"><i class="fas fa-sign-out"></i>Logout</a>
+                                            <a href="{% url "userauths:sign-out" %}">Logout</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -164,7 +163,7 @@
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="sidebar-logo">
-                            <a href="dashboard.html"><img src="{% static 'assets1/images/logo.png' %}" alt="logo" style="height: 50px; border-radius: 50%"></a>
+                            <a href=""><img src="{% static 'assets1/images/logo.png' %}" alt="logo" style="height: 50px; border-radius: 50%"></a>
                         </div>
                         <ul>
                             <li>
@@ -187,7 +186,7 @@
                                     <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>Request Payment</span>
                                 </a>
                             </li>
-                            <li>
+                            {% comment %} <li>
                                 <a href="money-exchange.html">
                                     <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange"> <span>Exchange</span>
                                 </a>
@@ -211,7 +210,7 @@
                                 <a href="withdraw-money-step-1.html">
                                     <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
                                 </a>
-                            </li>
+                            </li> {% endcomment %}
                         </ul>
                         <ul class="bottom-item">
                             <li class="active">
@@ -219,18 +218,18 @@
                                     <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>Account</span>
                                 </a>
                             </li>
-                            <li>
+                            {% comment %} <li>
                                 <a href="javascript:void(0)">
                                     <img src="{% static 'assets1/images/icon/support.png' %}" alt="Support"> <span>Support</span>
                                 </a>
-                            </li>
+                            </li> {% endcomment %}
                             <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{% static 'assets1/images/icon/quit.png' %}" alt="Quit"> <span>Quit</span>
+                                <a href="{% url "userauths:sign-out" %}">
+                                    <img src="{% static 'assets1/images/icon/quit.png' %}" alt="Quit"> <span>Logout</span>
                                 </a>
                             </li>
                         </ul>
-                        <div class="pt-120">
+                        {% comment %} <div class="pt-120">
                             <div class="invite-now">
                                 <div class="img-area">
                                     <img src="{% static 'assets1/images/invite-now-illus.png' %}" alt="Image">
@@ -238,7 +237,7 @@
                                 <p>Invite your friend and get $25</p>
                                 <a href="javascript:void(0)" class="cmn-btn">Invite Now</a>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>

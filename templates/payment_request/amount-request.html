@@ -32,8 +32,7 @@
                                     </div>
                                 </div>
                                 <div class="right">
-                                    <a href="{% url "main_app:search-acct" %}">
-                                        <i class="icon-h-edit"></i>
+                                    <a href="{% url "main_app:request-search-acct" %}">
                                         Edit
                                     </a>
                                 </div>
@@ -46,11 +45,11 @@
                             <span class="mdr">Requested Amount</span>
                             <div class="input-area">
                                 <input class="xxlr" id="amount-request" name="amount-request" placeholder="Enter Requested Amount $" type="number">
-                                <select>
+                                {% comment %} <select>
                                     <option value="1">USD</option>
                                     <option value="2">USD</option>
                                     <option value="3">USD</option>
-                                </select>
+                                </select> {% endcomment %}
                             </div>
                         </div>
 

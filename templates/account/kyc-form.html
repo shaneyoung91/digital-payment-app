@@ -87,30 +87,30 @@
                             <div class="owner-details">
                                 <div class="profile-area">
                                     <div class="profile-img">
-                                        <img src="{% static 'assets1/images/owner-profile.png' %}" alt="image">
+                                        <img src="{% static 'assets1/images/user-avatar.png' %}" alt="image" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover">
                                     </div>
                                     <div class="name-area">
-                                        <h6>Alfred Davis</h6>
-                                        <p class="active-status">Active</p>
+                                        <h6>Your Name</h6>
+                                        <p class="active-status">Inactive</p>
                                     </div>
                                 </div>
                                 <div class="owner-info">
                                     <ul>
                                         <li>
                                             <p>Account ID:</p>
-                                            <span class="mdr">Rex49484</span>
+                                            <span class="mdr"></span>
                                         </li>
                                         <li>
                                             <p>Joined:</p>
-                                            <span class="mdr">Aug 25,2021</span>
+                                            <span class="mdr"></span>
                                         </li>
-                                        <li>
+                                        {% comment %} <li>
                                             <p>Confirm status:</p>
-                                            <span class="mdr">80%</span>
-                                        </li>
+                                            <span class="mdr"></span>
+                                        </li> {% endcomment %}
                                     </ul>
                                 </div>
-                                <div class="owner-action">
+                                {% comment %} <div class="owner-action">
                                     <a href="javascript:void(0)">
                                         <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
                                         Logout
@@ -119,7 +119,7 @@
                                         <img src="{% static 'assets1/images/icon/delete-2.png' %}" alt="image">
                                         Delete Account
                                     </a>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                         <div class="col-xxl-9 col-xl-8">
@@ -299,7 +299,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                    {% comment %} <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
                                         <div class="single-content authentication d-flex align-items-center justify-content-between">
                                             <div class="left">
                                                 <h5>Two Factor Authentication</h5>
@@ -458,9 +458,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+                                    <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab"> {% endcomment %}
 
-                                        <div class="notification-single">
+                                        {% comment %} <div class="notification-single">
                                             <h6>Announcements</h6>
                                             <label class="switch">
                                                 <input type="checkbox" checked>
@@ -501,7 +501,7 @@
                                                 <input type="checkbox" checked>
                                                 <span class="slider round"></span>
                                             </label>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div>
                             </div>

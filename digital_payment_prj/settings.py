@@ -150,3 +150,8 @@ JAZZMIN_SETTINGS = {
     "copyright": "MoneySpread - All Rights Reserved ©️ Copyright 2023",
     # "order_with_respect_to": ["core", "userauths", "transactions", "addon", "blog"],
 }
+
+# Other settings above
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())

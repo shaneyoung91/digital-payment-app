@@ -31,12 +31,12 @@
                                         <span class="mdr">{{ account.user.email }}</span>
                                     </div>
                                 </div>
-                                <div class="right">
-                                    <a href="{% url "main_app:search-acct" %}">
+                                {% comment %} <div class="right">
+                                    <a href="{% url "main_app:request-search-acct" %}">
                                         <i class="icon-h-edit"></i>
                                         Edit
                                     </a>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -44,9 +44,8 @@
                         <div class="top-area">
                             <h5><b>Payment Details</b></h5>
                             <div class="right">
-                                <a href="javascript:void(0)">
-                                    <i class="icon-h-edit"></i>
-                                    Edit
+                                <a href="{% url "main_app:amount-request" account.account_number %}">
+                                    Edit Payment Details
                                 </a>
                             </div>
                         </div>
@@ -83,8 +82,8 @@
                             <label for="confirm">I confirm the payment details above</label>
                         </div>
                         <div class="footer-area mt-40">
-                            <a href="{% url "main_app:amount-request" account.account_number %}">Go Back</a>
-                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Submit Request</a>
+                            {% comment %} <a href="{% url "main_app:amount-request" account.account_number %}">Go Back</a> {% endcomment %}
+                            <a href="" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Submit Request</a>
                         </div>
                     </form>
                 </div>

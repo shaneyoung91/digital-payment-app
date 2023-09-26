@@ -1,1 +1,1 @@
-web: gunicorn digital_payment_prj.wsgi --log-file -
+web: gunicorn digital_payment_prj.wsgi

@@ -44,7 +44,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="owner-action">
+                                {% comment %} <div class="owner-action">
                                     {% if request.user.is_authenticated %}
                                     <a href="{% url "userauths:sign-out" %}">
                                         <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
@@ -55,7 +55,7 @@
                                         Delete Account
                                     </a>
                                     {% endif %}
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                         <div class="col-xxl-9 col-xl-8">
@@ -64,7 +64,7 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="account" aria-selected="true">Account</button>
                                     </li>
-                                    <li class="nav-item" role="presentation">
+                                    {% comment %} <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -72,11 +72,11 @@
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="notification-tab" data-bs-toggle="tab" data-bs-target="#notification" type="button" role="tab" aria-controls="notification" aria-selected="false">Notification</button>
-                                    </li>
+                                    </li> {% endcomment %}
                                 </ul>
                                 <div class="tab-content mt-40">
                                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-                                        <div class="upload-avatar">
+                                        {% comment %} <div class="upload-avatar">
                                             <div class="avatar-left d-flex align-items-center">
                                                 <div class="profile-img">
                                                     <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover" src="{{ kyc.image.url }}" alt="image">
@@ -85,7 +85,7 @@
                                                     <h6>Your Avatar</h6>
                                                 </div>
                                             </div>
-                                            {% comment %} <div class="avatar-right">
+                                            <div class="avatar-right">
                                                 <div class="file-upload">
                                                     <div class="right-area">
                                                         <label class="file">
@@ -94,8 +94,8 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                            </div> {% endcomment %}
-                                        </div>
+                                            </div>
+                                        </div> {% endcomment %}
                                         <form action="#">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6">
@@ -177,16 +177,15 @@
                                                     </div>
                                                 </div>
                                                 <br><br>
-
-                                                <div class="col-md-12">
+                                                {% comment %} <div class="col-md-12">
                                                     <div class="btn-border">
                                                         <button class="cmn-btn">Edit KYC</button>
                                                     </div>
-                                                </div>
+                                                </div> {% endcomment %}
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                    {% comment %} <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
                                         <div class="single-content authentication d-flex align-items-center justify-content-between">
                                             <div class="left">
                                                 <h5>Two Factor Authentication</h5>
@@ -346,7 +345,6 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
-
                                         <div class="notification-single">
                                             <h6>Announcements</h6>
                                             <label class="switch">
@@ -389,7 +387,7 @@
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                             </div>
                         </div>

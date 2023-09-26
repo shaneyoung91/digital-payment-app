@@ -23,7 +23,7 @@
                         </div>
                     </form>
                     <div class="user-select">
-                        {% if query %}
+                        {% comment %} {% if query %} {% endcomment %}
                         {% for a in account %}
                         <div class="single-user">
                             <div class="left d-flex align-items-center">
@@ -45,12 +45,12 @@
                             <h4 class="mt-4">Account does not exist.</h4>
                         </div>
                         {% endfor %}
-                        {% endif %}
+                        {% comment %} {% endif %} {% endcomment %}
                     </div>
-                    <div class="footer-area mt-40">
+                    {% comment %} <div class="footer-area mt-40">
                         <a href="pay.html">Previous Step</a>
                         <a href="pay-step-2.html" class="active">Next</a>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
     <!-- Dashboard Section end -->
 
     <!-- Add Recipients Popup start -->
-    <div class="add-recipients">
+    {% comment %} <div class="add-recipients">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
@@ -205,7 +205,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- Transactions Popup start -->
 
 {% endblock content %}

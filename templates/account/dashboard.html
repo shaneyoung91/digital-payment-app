@@ -13,12 +13,14 @@
                             <div class="acc-details">
                                 <div class="top-area">
                                     <div class="left-side">
-                                        <h5>Hi, {{kyc.full_name|title}}</h5>
+                                        <h4>Hi, {{kyc.full_name|title}}</h4>
+                                        <br>
                                         <h2>${{account.account_balance|intcomma}}</h2>
+                                        <h5>Available Balance</h5>
                                         {% comment %} <h5 class="receive">Last Received <span>$25,700.00</span></h5> {% endcomment %}
                                     </div>
                                     <div class="right-side">
-                                        <div class="right-top">
+                                        {% comment %} <div class="right-top">
                                             <select>
                                                 <option value="1">US Dollar</option>
                                                 <option value="2">US Dollar</option>
@@ -33,16 +35,16 @@
                                                     <li><a class="dropdown-item" href="#">crypto Currency</a></li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div>
                                 <div class="bottom-area">
                                     <div class="left-side">
                                         <a href="{% url "main_app:search-acct" %}" class="cmn-btn">Transfer Money</a>
-                                        <a href="deposit-money.html" class="cmn-btn">Add Money</a>
-                                        <a href="withdraw-money-step-1.html" class="cmn-btn">Withdraw</a>
+                                        {% comment %} <a href="deposit-money.html" class="cmn-btn">Add Money</a>
+                                        <a href="withdraw-money-step-1.html" class="cmn-btn">Withdraw</a> {% endcomment %}
                                     </div>
-                                    <div class="right-side">
+                                    {% comment %} <div class="right-side">
                                         <div class="dropdown-area">
                                             <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon">
@@ -54,10 +56,10 @@
                                                 <li><a class="dropdown-item" href="pay-step-1.html">Bill Pay</a></li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                             </div>
-                            <div class="transactions-area mt-40">
+                            {% comment %} <div class="transactions-area mt-40">
                                 <div class="section-text">
                                     <h5>Transactions</h5>
                                     <p>Updated every several minutes</p>
@@ -315,7 +317,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-5">
@@ -395,7 +397,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-item">
+                            {% comment %} <div class="single-item">
                                 <div class="section-text d-flex align-items-center justify-content-between">
                                     <h6>Payment Analytics</h6>
                                     <div class="select-box">
@@ -471,7 +473,7 @@
                                         </p>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -676,7 +678,7 @@
     <!-- Add Card Popup start -->
 
     <!-- Transactions Popup start -->
-    <div class="transactions-popup">
+    {% comment %} <div class="transactions-popup">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
@@ -741,7 +743,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- Transactions Popup start -->
 
 {% endblock content %}
