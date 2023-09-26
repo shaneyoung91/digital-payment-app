@@ -33,7 +33,6 @@
                                 </div>
                                 <div class="right">
                                     <a href="{% url "main_app:search-acct" %}">
-                                        <i class="icon-h-edit"></i>
                                         Edit
                                     </a>
                                 </div>
@@ -46,13 +45,13 @@
                             <span class="mdr">You Send</span>
                             <div class="input-area">
                                 <input class="xxlr" id="amount-send" name="amount-send" onkeyup="calculateBalance()" placeholder="{{request.user.account.account_balance|intcomma}}" type="number">
-                                <select>
+                                {% comment %} <select>
                                     <option value="1">USD</option>
                                     <option value="2">USD</option>
                                     <option value="3">USD</option>
-                                </select>
+                                </select> {% endcomment %}
                             </div>
-                            <p>Available Balance<b>{{request.user.account.account_balance|intcomma}}</b></p>
+                            <p>Available Balance<b>${{request.user.account.account_balance|intcomma}}</b></p>
                             <p id="new-balance"></p>
                             <p class="text-danger" id="error-div"></p>
                         </div>

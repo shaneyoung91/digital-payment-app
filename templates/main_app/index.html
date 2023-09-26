@@ -1,7 +1,7 @@
 {% extends "partials/base.html" %}
 {% block content %}
 {% load static %}
-    <!-- Banner Section start -->
+<!-- Banner Section start -->
     <section class="banner-section index">
         <div class="overlay">
             <div class="shape-area">
@@ -19,17 +19,17 @@
                         <div class="col-lg-5 col-md-6">
                             <div class="main-content">
                                 <div class="top-area section-text">
-                                    <h5 class="sub-title">Trusted by over 3M customers</h5>
+                                    {% comment %} <h5 class="sub-title">Trusted by over 3M customers</h5> {% endcomment %}
                                     <h1 class="title">Pay Anyone, Anywhere</h1>
-                                    <p class="xlr">Quickly and easily send, receive and request money online with MoneySpread. Get a customized solution to fit your business needs.</p>
+                                    <p class="xlr">Quickly and easily send, receive and request money online with MoneySpread.</p>
                                 </div>
                                 <div class="bottom-area d-xxl-flex">
-                                    <a href="sign-up.html" class="cmn-btn">Open a Free Account</a>
-                                    <a class="cmn-btn active mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">See How it Works</a>
+                                    <a href="{% url "userauths:sign-up" %}" class="cmn-btn">Open a Free Account</a>
+                                    {% comment %} <a class="cmn-btn active mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">See How it Works</a> {% endcomment %}
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-4 col-xl-5 col-md-6">
+                        {% comment %} <div class="col-xxl-4 col-xl-5 col-md-6">
                             <div class="send-money">
                                 <form action="#">
                                     <div class="currency-area">
@@ -98,12 +98,12 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="counter-section">
+        {% comment %} <div class="counter-section">
             <div class="container wow fadeInUp">
                 <div class="row cus-mar">
                     <div class="col-xl-3 col-md-3 col-sm-6">
@@ -133,27 +133,27 @@
                     <div class="col-xl-3 col-md-3 col-sm-6">
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
-                                <h2><span class="counter">7</span><span>/</span><span class="counter">24</span><span>+</span></h2>
+                                <h2><span class="counter">24</span><span>/</span><span class="counter">7</span><span>+</span></h2>
                                 <p>Support Team</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> {% endcomment %}
     </section>
-    <!-- Banner Section end -->
+<!-- Banner Section end -->
 
-    <!-- Global Payment start -->
+<!-- Global Payment start -->
     <section class="global-payment">
         <div class="overlay pt-120 pb-120">
             <div class="container wow fadeInUp">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Send money in a heartbeat</h5>
-                            <h2 class="title">The World At Your Fingertips</h2>
-                            <p>Sign up to start saving on international money transfers and currency exchange.</p>
+                            <h5 class="sub-title">Send Money Instantly</h5>
+                            <h2 class="title">Fast, Secure, and Efficient Banking At Your Fingertips</h2>
+                            <p>COMING SOON - International Money Transfers and Currency Exchange.</p>
                         </div>
                     </div>
                 </div>
@@ -169,28 +169,28 @@
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-1.png' %}" alt="icon">
                                     <h5>Peace of Mind</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p> {% endcomment %}
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-2.png' %}" alt="icon">
                                     <h5>Business-Ready</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p> {% endcomment %}
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-3.png' %}" alt="icon">
                                     <h5>100% Transparent</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p> {% endcomment %}
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-4.png' %}" alt="icon">
                                     <h5>International Network</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p> {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -199,9 +199,9 @@
             </div>
         </div>
     </section>
-    <!-- Global Payment end -->
+<!-- Global Payment end -->
 
-    <!-- Our Solutions start -->
+{% comment %} <!-- Our Solutions start -->
     <section class="our-solutions">
         <div class="overlay pt-120 pb-120">
             <div class="container wow fadeInUp">
@@ -247,9 +247,9 @@
             </div>
         </div>
     </section>
-    <!-- Our Solutions end -->
+<!-- Our Solutions end -->
 
-    <!-- How it Works start -->
+<!-- How it Works start -->
     <section class="how-it-works">
         <div class="overlay pb-120">
             <div class="container wow fadeInUp">
@@ -295,9 +295,9 @@
             </div>
         </div>
     </section>
-    <!-- How it Works end -->
+<!-- How it Works end -->
 
-    <!-- App Download start -->
+<!-- App Download start -->
     <section class="app-download">
         <div class="overlay pb-120">
             <div class="container wow fadeInUp">
@@ -340,9 +340,9 @@
             </div>
         </div>
     </section>
-    <!-- App Download end -->
+<!-- App Download end -->
 
-    <!-- Testimonials start -->
+<!-- Testimonials start -->
     <section class="testimonials">
         <div class="overlay pt-120 pb-120">
             <div class="container">
@@ -450,9 +450,9 @@
             </div>
         </div>
     </section>
-    <!-- App Download end -->
+<!-- App Download end -->
 
-    <!-- FAQs In start -->
+<!-- FAQs In start -->
     <section class="faqs-section">
         <div class="overlay pt-120 pb-120">
             <div class="container">
@@ -598,6 +598,6 @@
             </div>
         </div>
     </section>
-    <!-- FAQs In end -->
+<!-- FAQs In end --> {% endcomment %}
 
 {% endblock content %}

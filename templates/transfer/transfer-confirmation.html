@@ -31,12 +31,11 @@
                                         <span class="mdr">{{ account.user.email }}</span>
                                     </div>
                                 </div>
-                                <div class="right">
+                                {% comment %} <div class="right">
                                     <a href="{% url "main_app:search-acct" %}">
-                                        <i class="icon-h-edit"></i>
                                         Edit
                                     </a>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -44,9 +43,8 @@
                         <div class="top-area">
                             <h6>Payment Details</h6>
                             <div class="right">
-                                <a href="javascript:void(0)">
-                                    <i class="icon-h-edit"></i>
-                                    Edit
+                                <a href="{% url "main_app:amount-transfer" account.account_number %}">
+                                    Edit Payment Details
                                 </a>
                             </div>
                         </div>
@@ -116,11 +114,7 @@
                                 <div class="tab-pane fade show active" id="transfer" role="tabpanel" aria-labelledby="transfer-tab">
                                     <div class="modal-content">
                                         <div class="modal-header mb-60 justify-content-between">
-                                            <a href="javascript:void(0)">
-                                                <i class="icon-a-left-arrow"></i>
-                                                Back
-                                            </a>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                                         </div>
                                         <div class="main-content">
                                             <h4>Confirm Transfer!</h4>
