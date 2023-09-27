@@ -1241,7 +1241,7 @@ a.ui-button:active,
 
 /* states and images */
 
-.ui-icon {
+/* .ui-icon {
     width: 16px;
     height: 16px;
 }
@@ -1279,7 +1279,7 @@ a.ui-button:active,
 
 .ui-button .ui-icon {
     background-image: url("images/ui-icons_777777_256x240.png");
-}
+} */
 
 /* positioning */
 

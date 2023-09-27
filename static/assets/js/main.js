@@ -27,18 +27,17 @@ $(function($) {
         });
 
         // Navbar Dropdown
-        var dropdown_menu = $(".header-section .dropdown-menu");
         $(window).resize(function() {
             if ($(window).width() < 992) {
-                dropdown_menu.removeClass('show');
+                $(".dropdown-menu").removeClass('show');
             } else {
-                dropdown_menu.addClass('show');
+                $(".dropdown-menu").addClass('show');
             }
         });
         if ($(window).width() < 992) {
-            dropdown_menu.removeClass('show');
+            $(".dropdown-menu").removeClass('show');
         } else {
-            dropdown_menu.addClass('show');
+            $(".dropdown-menu").addClass('show');
         }
 
         // Sticky Header
@@ -51,98 +50,10 @@ $(function($) {
             }
         });
 
-        // language active
-        var language = $(".language-content li");
-        $(language).on('mouseover', function() {
-            $(language).removeClass('active');
-            $(this).addClass('active');
-        });
-
-        // checkbox active
-        var checkbox = $(".checkbox-single");
-        $(checkbox).on('mouseover', function() {
-            $(checkbox).removeClass('active');
-            $(this).addClass('active');
-        });
-
-        // Card Popup
-        $('.card-popup .cancel').click(function() {
-            $(".card-popup #limit-tab").click();
-        });
-
-        // Transactions Popup
-        $('.transactions .cancel').click(function() {
-            $(".card-popup #limit-tab").click();
-        });
-
-        // Confirm Popup
-        $('.transfer-popup .confirm').click(function() {
-            $(".transfer-popup #success-tab").click();
-        });
-
-        // transferMod Popup
-        $('.transferMod').click(function() {
-            if ($("#success").hasClass("active")) {
-                $(".transfer-popup #transfer-tab").click();
-            }
-        });
-
-        // User Active
-        $('.header-section .sidebar-icon').on('click', function() {
-            $('.sidebar-wrapper').toggleClass('active');
-            $(".header-section").toggleClass("body-collapse");
-            $(".dashboard-section").toggleClass("body-collapse");
-        });
-
-        // Sidebar Wrapper Close
-        $(".sidebar-wrapper .close-btn").click(function() {
-            $(".sidebar-wrapper").toggleClass("active");
-            $(".header-section").toggleClass("body-collapse");
-            $(".dashboard-section").toggleClass("body-collapse");
-        });
-
-        // sidebar body active
-        var sidebar_wrapper = $(".sidebar-wrapper");
-        var body_collapse = $(".header-section");
-        $(window).resize(function() {
-            if ($(window).width() > 1399) {
-                sidebar_wrapper.removeClass('active');
-                body_collapse.addClass('body-collapse');
-            } else {
-                sidebar_wrapper.addClass('active');
-                body_collapse.removeClass('body-collapse');
-            }
-        });
-        if ($(window).width() > 1399) {
-            sidebar_wrapper.removeClass('active');
-            body_collapse.addClass('body-collapse');
-        } else {
-            sidebar_wrapper.addClass('active');
-            body_collapse.removeClass('body-collapse');
-        }
-
-        // Header Active
-        $('.single-item .profile-area').on('click', function() {
-            $('.user-content').toggleClass('active');
-            $('.notifications-content').removeClass('active');
-            $('.language-content').removeClass('active');
-        });
-        $('.single-item .notifications-btn').on('click', function() {
-            $('.notifications-content').toggleClass('active');
-            $('.user-content').removeClass('active');
-            $('.language-content').removeClass('active');
-        });
-        $('.single-item .language-btn').on('click', function() {
-            $('.language-content').toggleClass('active');
-            $('.user-content').removeClass('active');
-            $('.notifications-content').removeClass('active');
-        });
-
-        // Dropdown Active Remove
-        $("section").click(function() {
-            $('.user-content').removeClass('active');
-            $('.notifications-content').removeClass('active');
-            $('.language-content').removeClass('active');
+        // Blog Reply btn
+        var replybtn = $(".reply-btn");
+        $(replybtn).on('click', function() {
+            $(this).next().slideToggle('slow');
         });
 
     });

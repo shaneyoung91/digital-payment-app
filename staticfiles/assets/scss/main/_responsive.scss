@@ -1,98 +1,84 @@
 // Responsive Area
-@media (max-width: 1599px) {
-	.dashboard-section.account .nav-tabs {
-		justify-content: start;
-		.nav-link{
-			margin-right: 20px;
+@media (max-width: 1799px) {
+	.banner-section.index .overlay .shape-area img {
+		width: 10%;
+	}
+	.counter-section::before {
+		width: 94%;
+		left: 3%;
+	}
+	.banner-section.corporate-card .overlay{
+		background-size: 35%;
+		background-position: left bottom, right 80px bottom;
+	}
+	.banner-section.corporate-card.budgeting-analytics .overlay {
+		background-size: 45%;
+	}
+	.banner-section.corporate-card.subscriptions .overlay .banner-content,
+	.banner-section.corporate-card .overlay .banner-content,
+	.banner-section.payment.two .overlay .banner-content,
+	.banner-section.payment .overlay .banner-content,
+	.banner-section.corporate-card.budgeting-analytics .overlay .banner-content {
+		padding: 200px 0 120px;
+	}
+	.banner-section.payment.two .overlay,
+	.banner-section.payment .overlay {
+		background-size: 45%;
+	}
+}
+
+@media (max-width: 1499px) {
+	.banner-section .overlay .shape-area {
+		.obj-1, .obj-2, .obj-4 {
+			display: none;
 		}
+	}
+	.call-action.earn-when-spend {
+		background-size: 20%;
+	}
+	.banner-section.payment.two .overlay,
+	.banner-section.payment .overlay {
+		background-size: 45%;
+		background-position: right;
+	}
+	.banner-section.invoice-management .overlay .shape-area img {
+		width: 20%;
 	}
 }
 
 @media (max-width: 1399px) {
-	.dashboard-section.transactions.recipients .filters-item .search-area {
-		width: 80%;
+	.banner-section .overlay .banner-content .container .content-shape .obj-1 {
+		left: calc(45%);
 	}
-	.dashboard-section{
-		margin-left: 110px;
-		width: calc(100% - 100px);
-	}
-	.header-section.body-collapse{
-		margin-left: 140px;
-		width: calc(100% - 140px);
-	}
-	.dashboard-section.body-collapse {
-		margin-left: 110px;
-		width: calc(100% - 100px);
-	}
-	.header-section.body-collapse .sidebar-wrapper {
-		width: 270px;
-		left: -290px;
-	}
-	.header-section .sidebar-wrapper {
-		width: 130px;
+	.banner-section .overlay .banner-content .main-content .bottom-area .cmn-btn{
+		margin-bottom: 20px;
 		&.active{
-			.close-btn {
-				display: none;
-			}
-		}
-		.close-btn {
-			display: block;
+			margin-bottom: 0;
 		}
 	}
-}
-
-@media (max-width: 699px) {
-	.header-section.body-collapse,
-	.header-section,
-	.dashboard-section.body-collapse,
-	.dashboard-section {
-		width: calc(100%);
-		margin-left: 0;
-		.sidebar-wrapper{
-			left: -420px;
-		}
+	.blog-section .single-post .thumbnail img {
+		max-width: 100%;
+		height: 100%;
 	}
-	.header-section {
-		.sidebar-wrapper {
-			width: 270px;
-			ul {
-				li {
-					a {
-						justify-content: start;
-					}
-					img {
-						margin-right: 10px;
-						width: auto;
-					}
-					span {
-						display: block;
-					}
-				}
-			}
-			&.active {
-				left: 0;
-				.close-btn {
-					display: block;
-				}
-			}
-			.invite-now{
-				display: block;
-			}
-			.close-btn{
-				display: block;
-			}
-		}
+	.blog-section .col-lg-12 .single-post .thumbnail,
+	.blog-section .col-lg-12 .single-post .blog-text{
+		width: 50%;
 	}
-	.header-section {
-		.sidebar-wrapper{
-			opacity: 1;
-			visibility: visible;
-			left: -150px !important;
-			&.active{
-				opacity: 0;
-				visibility: hidden;
-			}
-		}
+	.banner-section.blog-details .overlay .banner-content {
+		padding-top: 210px;
+	}
+	.banner-section.business-account.integrations .overlay form {
+		width: 70%;
+	}
+	.banner-section.invoice-management.rewards .overlay .banner-content,
+	.banner-section.invoice-management .overlay .banner-content {
+		padding: 200px 0 120px;
+	}
+	.banner-section.invoice-management .overlay .shape-area img {
+		width: 14%;
+	}
+	.more-features .overlay{
+		background-image: none;
 	}
 }
 
@@ -107,6 +93,9 @@
 		line-height: 55.9px;
 		margin-top: -10px;
 	}
+	.preloader {
+		background-size: 30%;
+	}
 	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link, 
 	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
 		font-size: 16px;
@@ -117,63 +106,83 @@
 	.banner-section.inner-banner .overlay .banner-content {
 		padding: 215px 0 100px;
 	}
-	.dashboard-section.account .nav-tabs {
-		justify-content: start;
-		.nav-link{
-			margin-right: 20px;
+
+	.how-it-works .single-item.second::after,
+	.banner-section .overlay .banner-content .container .content-shape img{
+		display: none;
+	}
+	.app-download .image-area,
+	.global-payment .image-area{
+		margin-top: 60px;
+		text-align: center;
+		img{
+			width: 80%;
+
 		}
 	}
-	.dashboard-section.account .owner-details{
+	.how-it-works .single-item::after {
+		right: calc(-10% - 10px);
+		top: calc(60% - 20px);
+	}
+	.how-it-works .cus-mar{
+		margin-bottom: -30px;
+	}
+	.how-it-works .single-item{
 		margin-bottom: 30px;
 	}
-	.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button {
-		padding: 10px;
-		margin-bottom: 20px;
-		margin-right: 20px;
-		i{
-			font-size: 20px !important;
-		}
+	.testimonials .slick-initialized .slick-slide{
+		opacity: 1;
 	}
-	.dashboard-section.exchange .side-area{
+	.footer-section .newsletter{
+		background-image: none;
+	}
+	.banner-section.inner-banner .shape-area .shape-1 {
+		width: 35%;
+	}
+	.blog-details-section .authors-area{
+		display: grid !important;
+		padding: 40px;
+	}
+	.blog-details-section .authors-area .right-item {
+		margin: 0;
 		margin-top: 30px;
 	}
-	.dashboard-section.pay.step.exchange .main-content .user-select .single-user {
-		display: grid;
-		.right {
-			margin-top: 20px;
-			a {
-				padding: 5px 25px;
-				margin-left: 0;
-				margin-right: 15px;
-			}
+	.banner-section.business-account .banner-img-bottom {
+		margin-top: -190px;
+	}
+	.banner-section.inner-banner.career-details .overlay .banner-content {
+		padding: 215px 0 150px;
+	}
+	.error {
+		background-size: contain;
+	}
+	.faqs-section .accordion .accordion-item .accordion-button {
+		padding-right: 70px;
+	}
+	.banner-section.business-account.integrations .overlay form {
+		width: 80%;
+	}
+	.login-reg .sec-img{
+		width: 70%;
+		margin: auto;
+		margin-top: 30px;
+		img{
+			max-width: 100%;
 		}
 	}
-	.header-section .navbar-area {
-		padding: 10px 20px;
-	}
-	.dashboard-section .acc-details .top-area {
-		padding: 20px;
-	}
-	.dashboard-section .acc-details .bottom-area {
-		margin-top: 15px;
-	}
-	.dashboard-section.transactions.recipients .filters-item .search-area {
-		width: 45%;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		margin-bottom: 55px;
-		.file-custom2 {
-			width: 120%;
-			&::before {
-				top: -45px;
-			}
-			&::after {
-				bottom: -54px;
-			}
+	.features-built .image-area{
+		width: 70%;
+		margin: auto;
+		margin-top: 30px;
+		img{
+			max-width: 100%;
 		}
 	}
-	.dashboard-section .transactions-area .table-responsive .table {
-		width: 130%;
+	.login-reg {
+		margin-top: 50px;
+	}
+	.call-action.security .main-content {
+		background-size: 35%;
 	}
 }
 
@@ -274,180 +283,243 @@
 		margin-left: 0;
 	}
 	// End Header
-	.dashboard-section {
-		padding-top: 40px;
+
+	.banner-section .overlay .banner-content .send-money .currency-area {
+		padding: 15px 20px;
 	}
-	.dashboard-section .side-items{
-		margin-top: 30px;
+	.banner-section .overlay .banner-content .send-money {
+		padding: 15px;
 	}
-	.dashboard-section.crypto .table{
-		width: 160%;
+	.testimonials .testimonials-carousel {
+		padding-bottom: 40px;
 	}
-	.dashboard-section.crypto .left-area ul li a {
-		line-height: 30px;
+	.how-it-works .single-item.first::after{
+		display: none;
 	}
-	.dashboard-section.crypto .spend-get {
-		padding: 30px;
-		display: grid;
-		gap: 20px;
+	.banner-section.about-us .overlay {
+		background-position: right top;
 	}
-	.dashboard-section.pay.step-2 .main-content .pay-option {
-		background: #F8F8FF;
-		display: grid;
-		.nice-select{
-			margin-left: 20px;
-		}
-		.border-area{
-			border: none;
-		}
+	.preloader {
+		background-size: 40%;
 	}
-	.dashboard-section.pay.step-2 .main-content .exchange-content {
-		display: grid;
-		gap: 0;
+	.banner-section.blog-details .overlay {
+		background-position: top 60px center;
 	}
-	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
-		top: -40px;
-		left: calc(50%);
+	.call-action.earn-when-spend {
+		background-size: 15%;
 	}
-	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
-		top: -30px;
-		left: calc(52%);
+	.banner-section.business-account .overlay .banner-content {
+		padding: 200px 0 365px;
 	}
-	.dashboard-section .footer-area a {
-		padding: 12px 35px;
+	.banner-section.business-account .banner-img-bottom {
+		margin-top: -140px;
 	}
-	.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single {
-		display: grid;
-		.nice-select{
-			margin-left: 0;
-		}
+	.banner-section.inner-banner.career-details .overlay .banner-content {
+		padding: 170px 0 140px;
 	}
-	.add-recipients .modal-dialog .modal-content .nav-tabs li button .icon-area {
-		display: flex;
-		align-items: center;
+	.supported-country ul {
 		justify-content: center;
-	}
-	.dashboard-section.transactions.recipients .filters-item{
-		display: grid !important;
-		.search-area{
-			width: 100%;
+		gap: 15px;
+		img{
+			max-width: 80%;
 		}
 	}
-	.dashboard-section .transactions-area .table-responsive .table {
+	.help-category {
+		margin-top: 70px;
+	}
+	.banner-section.business-account.integrations .overlay {
+		background-position: right top;
+	}
+	.banner-section.business-account.integrations .overlay form {
 		width: 100%;
 	}
-	.dashboard-section.transactions.recipients .table{
-		width: 130%;
+	.login-reg {
+		margin-top: 80px;
 	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		margin-bottom: 40px;
-		.file-custom2 {
-			width: 90%;
-			&::before {
-				top: -40px;
-			}
-			&::after {
-				bottom: -35px;
-			}
-		}
+	.accept-payments .left-side{
+		margin-top: 30px;
 	}
-	.dashboard-section.transactions .transactions-main .filters-item .single-item button {
-		padding-left: 10px;
-		margin-left: 0;
-	}
-
-
-
-
-
-
-
-
 }
 
 @media (max-width: 767px) {
-	.header-section .navbar-area .dashboard-nav {
-		margin-left: 30px;
-		gap: 20px;
+	.banner-section.about-us .overlay .banner-content,
+	.banner-section .overlay .banner-content {
+		padding: 200px 0 190px;
 	}
-	.header-section .navbar-area .sidebar-icon {
-		margin-right: 40px;
+	.banner-section.corporate-card .overlay .banner-content,
+	.banner-section.payment.two .overlay .banner-content,
+	.banner-section.corporate-card.subscriptions .overlay .banner-content,
+	.banner-section.payment .overlay .banner-content,
+	.banner-section.corporate-card.budgeting-analytics .overlay .banner-content {
+		padding: 170px 0 70px;
 	}
-	.transactions-popup .modal-dialog .modal-content .right-area {
-		padding: 15px;
+	.banner-section.corporate-card .overlay,
+	.banner-section.corporate-card.subscriptions .overlay,
+	.banner-section.corporate-card.expense .overlay,
+	.banner-section.corporate-card.budgeting-analytics .overlay{
+		background-image: unset;
 	}
-	.dashboard-section.account .upload-avatar {
-		display: grid;
+	.counter-section .single-area {
+		margin-bottom: 30px;
 	}
-	.dashboard-section.account .file-upload {
-		margin-top: 20px;
-		.file .file-custom::before {
-			left: 0;
-		}
+	.counter-section {
+		padding: 50px 30px 10px;
 	}
-	.dashboard-section.account form .input-status .col-6{
-		width: 100% !important;
-		span{
-			margin-top: 15px;
-		}
+
+	.banner-section .overlay .banner-content .send-money{
+		margin-top: 40px;
 	}
-	.dashboard-section.account .tab-main {
-		padding: 20px;
+	.banner-section.about-us .banner-img-bottom {
+		margin-top: -180px;
 	}
-	.dashboard-section.account .single-content {
-		padding: 20px;
+	.banner-section.about-us .magnific-area .mfp-iframe {
+		width: 90px;
+		height: 90px;
 	}
-	.dashboard-section.crypto .left-area {
-		position: initial;
+	.banner-section.about-us .magnific-area .mfp-iframe::before {
+		width: 124px;
+		height: 124px;
 	}
-	.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
-		left: 30px;
+	.banner-section.about-us .stars-info .single-box .icon-box {
+		width: 100px;
+		height: 100px;
 	}
-	.dashboard-section.pay.step .main-content .user-select .single-user {
-		display: grid;
-		.right{
-			margin-top: 20px;
-			a{
-				justify-content: center;
-			}
-		}
+	.blog-details-section .authors-area .left-area{
+		text-align: center;
 	}
-	.dashboard-section.transactions.recipients .filters-item .right-area {
+	.our-values .single-box {
+		padding: 30px;
+		margin-bottom: 30px;
+	}
+	.blog-section .single-post{
 		display: grid !important;
 	}
-	.dashboard-section.transactions.recipients .filters-item .single-item .nice-select{
-		padding-left: 0;
+	.blog-section .single-post .thumbnail img{
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
 	}
-	.dashboard-section.transactions.recipients .table {
-		width: 185%;
+	.blog-section .single-post .thumbnail img,
+	.blog-section .col-lg-12 .single-post .thumbnail,
+	.blog-section .col-lg-12 .single-post .blog-text{
+		width: 100%;
 	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		margin-bottom: 55px;
-		.file-custom2 {
-			width: 65%;
-			&::before {
-				top: -40px;
-			}
-			&::after {
-				bottom: -55px;
-			}
+	.blog-section .top-area{
+		display: grid !important;
+	}
+	.banner-section.inner-banner .shape-area img {
+		display: none;
+	}
+	.partner-perks .nav-tabs li .cmn-btn,
+	.help-center-section .nav-tabs-area .nav-tabs li .cmn-btn,
+	.pricing-plan .nav-tabs-area .nav-tabs li .cmn-btn,
+	.current-openings .nav-tabs li .cmn-btn,
+	.blog-section .nav-tabs .cmn-btn {
+		padding: 10px 15px;
+	}
+	.blog-details-section .authors-area .right-item {
+		.top-area{
+			display: grid !important;
 		}
 	}
-	.dashboard-section.transactions .transactions-main .filters-item {
-		display: grid;
-		gap: 20px;
-		.nice-select{
-			width: 100%;
+	.blog-details-section .main-content .head-area{
+		display: grid !important;
+		margin-bottom: -35px;
+		.right-area{
+			margin-top: 20px;
+		}
+		a{
+			margin-left: 0;
+			margin-right: 15px;
 		}
 	}
-	.dashboard-section.transactions .transactions-main .table{
-		width: 145%;
-	}
-	.dashboard-section.transactions .head-area h4{
+	.blog-details-section .main-content .social-link {
 		margin-bottom: 20px;
+		a{
+			margin-left: 0;
+			margin-right: 15px;
+		}
 	}
-
-
+	.accept-payments .image-area,
+	.earn-cashback.features .image-area,
+	.features-built .image-area,
+	.secure-integrated .sec-image,
+	.stay-control .sec-image,
+	.earn-cashback .sec-image,
+	.multi-currency .sec-image,
+	.business-account .sec-image,
+	.global-payment.features .sec-image,
+	.earn-cashback.features .sec-image{
+		width: 70%;
+		margin: auto;
+		margin-top: 30px;
+		img{
+			max-width: 100%;
+		}
+	}
+	.partner-perks .cus-mar{
+		justify-content: center;
+	}
+	.call-action.earn-when-spend {
+		background-size: 10%;
+	}
+	.banner-section.business-account .banner-img-bottom {
+		margin-top: -40px;
+	}
+	.banner-section.business-account .overlay .banner-content {
+		padding: 170px 0 200px;
+	}
+	.banner-section.business-account .banner-img-bottom .img-area .right-img {
+		width: 70%;
+	}
+	.banner-section.business-account .overlay {
+		background-size: 55%;
+	}
+	.banner-section.inner-banner.career-details .banner-bottom .top-box {
+		padding: 40px 30px 30px;
+		display: grid !important;
+		.right-box{
+			margin-top: 20px;
+		}
+	}
+	.error {
+		padding: 290px 0 50px;
+		background-size: cover;
+	}
+	.blog-details-section .authors-area {
+		padding: 30px;
+	}
+	.features-built .single-area .icon-area img{
+		max-width: unset;
+	}
+	.help-category .tab-content {
+		padding: 30px;
+		margin-top: 25px;
+	}
+	.blog-details-section .authors-area .profile-item{
+		justify-content: center;
+	}
+	.blog-details-section .authors-area .right-item .top-area {
+		justify-content: center !important;
+	}
+	.banner-section.business-account.integrations .overlay {
+		background-size: cover;
+	}
+	.banner-section.business-account.integrations .banner-img-bottom {
+		margin-top: -180px;
+	}
+	.banner-section.business-account.integrations .overlay form .cmn-btn {
+		width: 50%;
+	}
+	.banner-section.business-account.integrations .overlay .banner-content {
+		padding: 208px 0 200px;
+	}
+	.banner-section.invoice-management .overlay .shape-area img {
+		display: none;
+	}
+	.banner-section.payment.two .overlay,
+	.banner-section.payment .overlay{
+		background-image: none;
+	}
 }
 
 @media (max-width: 575px) {
@@ -476,7 +548,7 @@
         line-height: 19px;
     }
 	.section-header {
-		margin-bottom: 30px;
+		margin-bottom: 35px;
 	}
 	.title {
 		margin-bottom: 15px;
@@ -492,361 +564,266 @@
 	.header-section .navbar {
 		padding: 20px 15px;
 	}
-	.header-section .navbar-area .dashboard-nav .single-item .main-area {
-		width: 300px;
-		padding: 20px;
-		border-radius: 10px;
-		border-radius: 10px;
+	.banner-section.about-us .overlay .banner-content,
+	.banner-section .overlay .banner-content {
+		padding: 170px 0 180px;
 	}
-	.dashboard-section .transactions-area .table-responsive table{
-		width: 110%;
+	.banner-section.inner-banner .overlay .banner-content{
+		padding: 170px 0 65px;
 	}
-	.card-popup .modal-dialog {
-		max-width: initial;
+	.banner-section.blog-details .overlay .banner-content {
+		padding: 170px 0 60px;
+		padding-top: 210px;
 	}
-	.transactions-popup .modal-dialog .modal-content .right-area {
-		padding: 20px;
-		border: none;
-	}
-	.transactions-popup.mycard .main-content {
-		padding: 30px;
-	}
-	.preloader {
-		background-size: 50%;
-	}
-	.transfer-popup .modal-dialog,
-	.add-recipients .modal-dialog,
-	.add-card .modal-dialog{
-		margin: auto;
-	}
-	.dashboard-section.account .card-area .card-content{
-		width: 100%;
-	}
-	.dashboard-section.account .your-devices .single-setting,
-	.dashboard-section.account .single-content {
-		display: grid !important;
-		.right{
-			margin-top: 15px;
-		}
-	}
-	.dashboard-section.account .change-pass form {
-		margin-top: 30px;
-	}
-	.dashboard-section.crypto .table-area {
-		padding: 0;
-	}
-	.dashboard-section.pay.step .main-content form{
-		margin-top: 0;
-	}
-	.dashboard-section.crypto .exchange-content .recipient::before{
-		left: calc(50% - 12px);
-	}
-	.dashboard-section.crypto .exchange-content .recipient::after {
-		left: calc(45%);
-	}
-	.card-popup .modal-content .main-content .tab-content .bottom-area {
-		display: grid !important;
-		margin: 0;
-		margin-top: 20px;
-		a{
-			margin-bottom: 20px;		
-		}
-	}
-	.dashboard-section.deposit-money .table-area{
-		padding: 30px;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		margin-bottom: 55px;
-		.file-custom2 {
-			width: 60%;
-			&::before {
-				top: -30px;
-			}
-			&::after {
-				bottom: -50px;
-			}
-		}
-		.file-custom::before{
-			left: 10px;
-		}
-	}
-	.dashboard-section {
-		padding-left: 15px;
-		padding-right: 15px;
-		padding-bottom: 20px;
-	}
-	.dashboard-section.account .file-upload .file{
-		width: 100%;
-		margin-bottom: 15px;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before{
-		top: -10px;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after{
-		display: none;
-	}
-}
-
-@media (max-width: 480px) {
-	.header-section .navbar-area .dashboard-nav {
-		margin-left: 10px;
-		gap: 15px;
-	}
-	.header-section .navbar-area .sidebar-icon {
-		margin-right: 20px;
-	}
-	.header-section .navbar-area .dashboard-nav .single-item .main-area {
-		padding: 15px;
-	}
-	.dashboard-section .acc-details .top-area {
-		display: grid;
-		align-items: center;
-		justify-content: space-between;
-		padding: 30px;
-	}
-	.dashboard-section .acc-details .right-side{
-		margin-top: 30px;
-	}
-	.dashboard-section .acc-details .top-area .right-top {
-		justify-content: start;
-		padding-left: 15px;
-	}
-	.dashboard-section .acc-details .bottom-area {
-		margin-top: 20px;
-	}
-	.dashboard-section .transactions-area .table-responsive table{
-		width: 140%;
-	}
-	.dashboard-section.account .additional-security .single-setting{
-		display: grid !important;
-		.right{
-			margin-top: 15px;
-		}
-	}
-	.dashboard-section.account .single-content button{
-		font-size: 15px;
-	}
-	.dashboard-section.account .notification-single {
-		padding: 20px;
-		margin-bottom: 15px;
-	}
-	.transactions-popup.mycard .modal-dialog .modal-content .right-area {
-		padding: 0;
-		.top-area{
-			display: grid !important;
-			a{
-				margin-top: 10px;
-			}
-		}
-	}
-	.transactions-popup.mycard .main-content {
-		padding: 20px;
-	}
-
-	.dashboard-section.pay .main-content {
-		padding: 15px;
-	}
-	.dashboard-section.crypto .exchange-content .send-banance {
-		padding: 15px;
-		margin-top: 20px;
-	}
-	.dashboard-section.crypto .exchange-content .send-banance .input-area {
-		padding: 5px 12px;
-		margin: 10px 0;
-	}
-	.dashboard-section .main-content .footer-area a {
-		margin: 0 10px;
-		padding: 12px 12px;
-	}
-	.dashboard-section.crypto .exchange-content .recipient::before {
-		left: calc(50% - 0px);
-	}
-	.dashboard-section.crypto .spend-get {
-		padding: 20px;
-		display: grid;
-		.get{
-			margin-top: 15px;
-		}
-	}
-	.card-popup .modal-content .main-content .tab-area ul {
+	.footer-section .footer-area .menu-item {
 		margin-bottom: 20px;
 		li{
-			margin-bottom: 15px;
+			margin: 0 10px !important;
 		}
 	}
-	.card-popup .modal-content .main-content .bottom-area li p {
-		padding: 10px 0;
+	.footer-section .newsletter {
+		padding: 40px 30px;
+		form {
+			width: 100%;
+		}
 	}
-	.dashboard-section.pay.step-3 .payment-details .details-list li {
+	.counter-section {
+		padding: 40px 30px 5px;
+	}
+	.how-it-works .col-6,
+	.our-solutions .col-6,
+	.global-payment .col-6{
+		width: 70% !important;
+		margin: auto;
+	}
+	.banner-section.about-us .stars-info {
+		margin-bottom: -30px;
+	}
+	.banner-section.about-us .stars-info .single-box{
+		margin-bottom: 30px;
+	}
+	.our-team .cus-mar{
+		text-align: center;
+	}
+	.our-team .single-box{
+		display: inline-block;
+	}
+	.banner-section.blog-details .overlay {
+		background-position: top 80px center;
+		background-size: 100%;
+	}
+	.banner-section.business-account .overlay ul {
 		display: grid;
+		justify-content: center;
+		margin-top: 10px;
 		text-align: start;
-	}
-	.dashboard-section.pay.step-3 .payment-details .top-area {
-		display: grid;
-		justify-content: start;
-		.right{
-			text-align: start;
-		}
-		a {
-			background: #F7F9FD;
-			border: 1px solid #DDE8FF;
-			border-radius: 20px;
-			padding: 5px 20px;
-			transition: 0.3s;
+		li{
 			margin-top: 15px;
 		}
 	}
-	.dashboard-section.pay.step-2 .main-content .send-banance {
-		border-radius: 10px;
-		padding: 15px;
-		margin-top: 20px;
+	.job-details .left-area{
+		margin-bottom: 30px;
 	}
-	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
-		top: -30px;
-		left: calc(45%);
+	.our-solutions .single-item img,
+	.more-features .overlay .single-item img{
+		width: 25%;
 	}
-	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
-		top: -40px;
-		left: calc(42%);
+	.banner-section.about-us .stars-info .single-box .icon-box {
+		width: 80px;
+		height: 80px;
 	}
-	.dashboard-section.pay.step-2 .main-content .send-banance .input-area {
-		padding: 10px 20px;
+	.global-payment .single-item img{
+		width: 20%;
 	}
-	.add-recipients .modal-dialog .modal-content .nav-tabs li button {
-		padding: 10px 14px;
-	}
-	.dashboard-section.pay.receive-3 .request-submitted .top-area .icon-area{
+	.supported-country ul {
+		gap: 10px;
 		img{
 			max-width: 60%;
 		}
 	}
-	.dashboard-section.transactions.recipients .table {
-		width: 225%;
+	.how-it-works.second .single-item h3 {
+		min-width: 60px;
+		min-height: 60px;
 	}
-	.card-popup.recipients .modal-content .main-content .tab-area ul li {
-		width: 100%;
-		margin-bottom: 0;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		.file-custom2 {
-			width: 60%;
-			&::before {
-				top: -10px;
-    			left: 20px;
-			}
+	.faqs-section.help-category .accordion .accordion-item .accordion-header {
+		.accordion-button {
+			padding-left: 30px;
+		}
+		&:after{
+			display: none;
 		}
 	}
-	.pagination {
-		.page-item, .page-link {
-			width: 30px;
-			height: 30px;
-		}
-		li{
-			margin: 0 3px;
-		}
+	.help-category .tab-content {
+		padding: 20px;
 	}
-	.dashboard-section.transactions .transactions-main .top-items {
-		display: grid;
-		ul{
-			margin-top: 15px;
-			li{
-				margin-left: 0;
-				margin-right: 15px;
-			}
-		}
+	.banner-section.business-account.integrations .overlay .banner-content {
+		padding: 178px 0 200px;
 	}
-	.header-section .navbar-area {
-		padding: 10px 20px;
+	.banner-section.invoice-management.rewards .overlay .banner-content,
+	.banner-section.invoice-management .overlay .banner-content {
+		padding: 170px 0 80px;
 	}
-	.dashboard-section.transactions .transactions-main .table {
-		width: 155%;
+	.accept-payments .overlay{
+		background-image: none;
 	}
+	.how-it-works .single-item h5 {
+		margin: 12px 0 16px;
+	}
+	.global-payment .single-item h5,
+	.our-solutions .single-item h5,
+	.global-payment .single-item h5,
+	.more-features .overlay .single-item h5 {
+		margin: 16px 0 18px;
+	}
+	.call-action.security .main-content{
+		background-image: none;
+		padding: 50px 30px;
+	}
+}
 
+@media (max-width: 480px) {
+	.footer-section .menu-item {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+	}
+	.faqs-section .accordion .accordion-item .accordion-button {
+		padding: 15px 15px;
+		padding-right: 70px;
+	}
+	.faqs-section .accordion .accordion-item .accordion-collapse .accordion-body{
+		padding: 15px 15px;
+	}
+	.faqs-section .accordion .accordion-item .accordion-button::after {
+		right: 20px;
+	}
+	.faqs-section .accordion .accordion-item .accordion-button::before {
+		right: 15px;
+	}
+	.testimonials .single-slide .single-content {
+		padding: 24px 15px 20px;
+	}
+	.call-action.earn-when-spend ul {
+		column-count: 2;
+		display: block;
+		img{
+			width: 50%;
+		}
+	}
+	.partner-perks .col-9,
+	.our-solutions .col-6,
+	.pricing-plan .col-9,
+	.global-payment .col-6,
+	.global-payment.features .col-6,
+	.our-solutions.payment .col-6,
+	.our-solutions.business-model .col-6,
+	.our-values.perks .col-8{
+		width: 100% !important;
+	}
+	.banner-section.business-account.integrations .overlay form .cmn-btn {
+		width: 60%;
+		padding: 10px;
+	}
+	.blog-section .single-post .blog-text .bottom-area {
+		padding-top: 20px;
+		margin-top: 20px;
+	}
+	.preloader {
+		background-size: 65%;
+	}
+	.blog-section.details .section-text{
+		display: grid !important;
+		a{
+			margin-top: 20px;
+		}
+	}
+	.help-center-section .tab-content .col-9{
+		width: 100% !important;
+		margin: auto;
+	}
+	.call-action.earn-when-spend .btn-area a{
+		margin: 5px 0;
+	}
+	.call-action .btn-area .cmn-btn {
+		margin: 5px;
+	}
+	.banner-section.inner-banner.career-details ul{
+		display: grid;
+	}
+	.current-openings .single-box ul {
+		margin: 18px 0 17px;
+		display: grid;
+	}
+	.banner-section.inner-banner.career-details ul li,
+	.banner-section.inner-banner.career-details ul li:first-child,
+	.current-openings .single-box ul li,
+	.current-openings .single-box ul li:first-child {
+		list-style: disc;
+		margin-left: 0;
+		list-style-position: inside;
+	}
+	.current-openings .single-box .right-box a {
+		width: 50px;
+		height: 50px;
+	}
+	.faqs-section.help-category .accordion .accordion-item .accordion-header .accordion-button {
+		padding-left: 15px;
+	}
 }
 
 @media (max-width: 375px) {
 	.about .col-6{
 		width: 100% !important;
 	}
-	.header-section .navbar-area form .form-group img{
-		display: none;
+
+	.banner-section .overlay .banner-content .send-money .nice-select .current::before{
+		background-image: unset !important;
 	}
-	.header-section .navbar-area form .form-group {
-		padding: 0;
+	.banner-section .overlay .banner-content .send-money .currency-area .right-side .nice-select {
+		padding: 30px 50px 30px 15px;
 	}
-	.dashboard-section .transactions-area .table-responsive table{
-		width: 180%;
+	.banner-section .overlay .banner-content .send-money .calculation .single-area .left-area {
+		min-width: 60%;
 	}
-	.dashboard-section .side-items .single-item {
-		padding: 15px;
+	.our-values .single-box {
+		padding: 20px;
+		margin-bottom: 20px;
 	}
-	.dashboard-section .side-items .single-item .recipients-item .left{
-		margin-right: 15px;
+	.our-values.perks .single-box .text-box {
+		margin-left: 0;
 	}
-	.dashboard-section.crypto .table {
-		width: 175%;
+	.our-values .single-box .text-box {
+		margin-left: 20px;
 	}
-	.dashboard-section.crypto .checkbox-single .item-title .img-area {
-		margin-left: 50px;
-		width: initial;
-		height: initial;
-		min-width: 45px;
-		min-height: 45px;
+	.location .single-box {
+		padding: 25px 20px 15px;
+		margin-bottom: 20px;
 	}
-	.add-recipients .modal-dialog .modal-content .nav-tabs li button {
-		margin-bottom: 15px;
+	.location .single-box .head-area .img-box {
+		margin-right: 20px;
 	}
-	.dashboard-section.transactions.recipients .table {
-		width: 300%;
-	}
-	.dashboard-section.pay.step-2 .main-content .user-select .right{
-		display: grid !important;
-		a{
-			margin-left: 0;
-			margin-bottom: 15px;
-		}
-	}
-	.dashboard-section.pay.step-2 .main-content .total-fees {
+	.blog-section .single-post .blog-text {
 		padding: 20px;
 	}
-	.dashboard-section.crypto .checkbox-single {
-		padding: 20px;
+	.blog-details-section .main-content {
+		padding: 35px 20px 0;
 	}
-	.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
-		left: 15px;
-	}
-	.dashboard-section.deposit-money .table-area {
-		padding: 15px;
-	}
-	.dashboard-section.exchange .side-area .deposit-details li {
-		display: grid;
-	}
-	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
-		.file-custom2 {
-			&::before {
-				top: -20px;
-				left: 40px;
-			}
-			&::after {
-				display: none;
-			}
+	.blog-details-section .authors-area .profile-img {
+		text-align: center;
+		img {
+			max-width: 60%;
 		}
 	}
-	.preloader {
-		background-size: 60%;
+	.banner-section.business-account .banner-img-bottom .img-area .right-img {
+		bottom: 30px;
 	}
-	.dashboard-section.transactions .transactions-main .table {
-		width: 220%;
+	.pricing-plan .pricing-single .pricing-body ul {
+		padding: 20px 15px;
 	}
-	.purchased-popup .main-content ul {
-		padding: 15px;
-		margin: 0 15px;
-		margin-top: 30px;
+	.banner-section.business-account.integrations .banner-img-bottom {
+		margin-top: -135px;
 	}
-	.dashboard-section.account .nav-tabs .nav-link {
-		padding: 13px 25px;
-	}
-	.dashboard-section.pay.step .main-content .choose-recipient .recipient-list {
-		margin-bottom: 15px;
+	.banner-section.business-account.integrations .overlay .banner-content {
+		padding: 178px 0 150px;
 	}
 }

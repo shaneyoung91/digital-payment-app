@@ -158,6 +158,7 @@ JAZZMIN_SETTINGS = {
     # "order_with_respect_to": ["core", "userauths", "transactions", "addon", "blog"],
 }
 
+AWS_STORAGE_BUCKET_NAME = 'bucket-moneyspread'
 
 AWS_S3_FILE_OVERWRITE = False
 

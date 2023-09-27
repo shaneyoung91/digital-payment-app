@@ -2,7 +2,7 @@
 
 :root {
 	--body-font: "Jost", sans-serif;
-	--body-color: #F7F9FD;
+	--body-color: #FFFFFF;
 	--primary-color: #4743c9;
 	--secondary-color: #00FE83;
 	--head-color: #0c266c;
@@ -61,7 +61,7 @@ h6,
 h6 > a {
 	font-family: var(--body-font);
 	color: var(--para-color);
-	font-weight: 400;
+	font-weight: 600;
 	text-transform: initial;
 	transition: all 0.3s;
 }
@@ -446,7 +446,7 @@ label {
 	z-index: 99999999;
 	overflow: visible;
 	background: url(../images/preloader.gif) no-repeat center center;
-	background-size: 30%;
+	background-size: 20%;
 	background-color: #F8F8F7;
 }
 

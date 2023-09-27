@@ -8,8 +8,7 @@ $(function($) {
         // Apexcharts
         if (document.querySelector('#chart') !== null) {
             var options = {
-                labels: ["Send", "Receive", "Payment", "Deposit", "Withdraw"],
-                series: [44, 55, 13, 33, 22],
+                series: [44, 55, 13, 33],
                 chart: {
                     width: 350,
                     type: 'donut',
@@ -20,6 +19,7 @@ $(function($) {
                 responsive: [{
                         breakpoint: 1449,
                         options: {
+                            series: [44, 55, 13, 33],
                             chart: {
                                 width: 300
                             },
@@ -31,6 +31,7 @@ $(function($) {
                     {
                         breakpoint: 1200,
                         options: {
+                            series: [44, 55, 13, 33],
                             chart: {
                                 width: 250
                             },
@@ -42,6 +43,7 @@ $(function($) {
                     {
                         breakpoint: 992,
                         options: {
+                            series: [44, 55, 13, 33],
                             chart: {
                                 width: 350
                             },
@@ -53,6 +55,7 @@ $(function($) {
                     {
                         breakpoint: 577,
                         options: {
+                            series: [44, 55, 13, 33],
                             chart: {
                                 width: 250
                             },

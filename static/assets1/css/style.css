@@ -290,7 +290,7 @@ li,
 label {
     margin: 0;
     font-family: var(--body-font);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--para-color);
     line-height: 30px;
@@ -4892,6 +4892,7 @@ label {
         }
 
         .card__main {
+        position: abdsolute;
         width: 100%;
         height: 170px;
         left: -230px;
@@ -4957,7 +4958,7 @@ label {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px;
+        padding: 5px;
         }
 
         .visa {
@@ -5007,14 +5008,15 @@ label {
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-top: 35px;
-        padding: 2px;
+        padding: 10px;
         }
 
         .middle_card .chip {
         display: block;
         background-color: #281830;
-        width: 90px;
-        height: 35px;
+        width: 60px;
+        
+        height: 30px;
         border-radius: 10px;
         box-shadow: inset 0px 0px 20px #505050;
         }
@@ -5022,7 +5024,7 @@ label {
         .middle_card .card_number {
         position: absolute;
         left: 15px;
-        padding-top: 40px;
+        padding-top: 30px;
         margin-bottom: 20px;
         font-size: 15px;
         letter-spacing: 3px;
@@ -5038,7 +5040,7 @@ label {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 13px 15px;
+        padding: 5px 15px;
         }
 
         .bottom_card .card_info {
@@ -5170,6 +5172,6 @@ label {
         .expire_month, .expire_year, .slash{
             color: #fff;
             font-weight: 700;
-            padding-top: 0%;
+            padding-top: 10%;
             
         }
