@@ -31,7 +31,6 @@ def RegisterView(request):
     }
     return render(request, 'userauths/sign-up.html', context)
 
-
 def LoginView(request):
     if request.method == "POST":
         email = request.POST.get("email")
@@ -44,7 +43,7 @@ def LoginView(request):
             if user is not None: # checks if there is a User
                 login(request, user)
                 messages.success(request, f"Welcome back, {user}!")
-                return redirect("account:dashboard")
+                return redirect("account:account")
             else:
                 messages.warning(request, "Username or password does not exist.")
                 return redirect("userauths:sign-in")
