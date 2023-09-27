@@ -9,14 +9,14 @@
                 <div class="main-content">
                     <div class="head-area d-flex align-items-center justify-content-between">
                         <h4>Make a Payment</h4>
-                        <div class="icon-area">
+                        {% comment %} <div class="icon-area">
                             <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                     <form method="POST" class="flex-fill">
                         {% csrf_token %}
                         <div class="form-group d-flex align-items-center">
-                            <img src="{% static 'assets/images/icon/search.png' %}" alt="icon">
+                            <img src="{% static 'assets1/images/icon/search.png' %}" alt="icon">
                             <input type="text" name="account_number" placeholder="Enter Account No. or Account ID">
                             <button type="submit"><i class="fas fa-angle-right"></i></button>
                         </div>
@@ -72,7 +72,7 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="true">
                                             <span class="icon-area">
-                                                <img src="{% static 'assets/images/icon/company-icon.png' %}" alt="icon">
+                                                <img src="{% static 'assets1/images/icon/company-icon.png' %}" alt="icon">
                                             </span>
                                             Company
                                         </button>
@@ -80,7 +80,7 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="individual-tab" data-bs-toggle="tab" data-bs-target="#individual" type="button" role="tab" aria-controls="individual" aria-selected="false">
                                             <span class="icon-area">
-                                                <img src="{% static 'assets/images/icon/individual-icon.png' %}" alt="icon">
+                                                <img src="{% static 'assets1/images/icon/individual-icon.png' %}" alt="icon">
                                             </span>
                                             Individual
                                         </button>
@@ -89,7 +89,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="company" role="tabpanel" aria-labelledby="company-tab">
                                         <div class="image-area mt-30 text-center">
-                                            <img src="{% static 'assets/images/user-profile.png' %}" alt="icon">
+                                            <img src="{% static 'assets1/images/user-profile.png' %}" alt="icon">
                                         </div>
                                         <form action="#">
                                             <div class="row justify-content-center">
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="individual" role="tabpanel" aria-labelledby="individual-tab">
                                         <div class="image-area mt-30 text-center">
-                                            <img src="{% static 'assets/images/user-profile.png' %}" alt="icon">
+                                            <img src="{% static 'assets1/images/user-profile.png' %}" alt="icon">
                                         </div>
                                         <form action="#">
                                             <div class="row justify-content-center">

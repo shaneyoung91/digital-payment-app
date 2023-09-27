@@ -10,9 +10,9 @@
                 <div class="main-content">
                     <div class="head-area d-flex align-items-center justify-content-between">
                         <h4>Make a Payment</h4>
-                        <div class="icon-area">
+                        {% comment %} <div class="icon-area">
                             <img src="{% static 'assets/images/icon/support-icon.png' %}" alt="icon">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                     <div class="choose-recipient">
                         <div class="step-area">
@@ -129,18 +129,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
+                                {% comment %} <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="btn-close d-md-none d-block" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                                         </div>
                                         <div class="main-content text-center pt-120 pb-120">
-                                            <img src="{% static 'assets/images/icon/success.png' %}" alt="icon">
+                                            <img src="{% static 'assets1/images/icon/success-icon.png' %}" alt="icon">
                                             <h3>Success</h3>
                                             <p>Transfer was completed.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
