@@ -32,7 +32,6 @@ DEBUG = True if os.environ['MODE'] == 'dev' else False
 
 ALLOWED_HOSTS = ['https://moneyspread-259abb181ed5.herokuapp.com/']
 
-
 # Application definition
 
 INSTALLED_APPS = [
