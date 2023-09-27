@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # Replace the DEBUG = True with:
 DEBUG = True if os.environ['MODE'] == 'dev' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://moneyspread-259abb181ed5.herokuapp.com/']
 
 
 # Application definition
