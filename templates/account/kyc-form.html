@@ -87,7 +87,7 @@
                             <div class="owner-details">
                                 <div class="profile-area">
                                     <div class="profile-img">
-                                        <img src="{% static 'assets1/images/user-avatar.png' %}" alt="image" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover">
+                                        <img src="{% static 'assets1/images/default.jpg' %}" alt="image" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover">
                                     </div>
                                     <div class="name-area">
                                         <h6>Your Name</h6>
@@ -568,7 +568,7 @@
     <!-- Add Card Popup start -->
 
     <!-- My Card Popup start -->
-    <div class="transactions-popup mycard">
+    {% comment %} <div class="transactions-popup mycard">
         <div class="container-fruid">
             <div class="row">
                 <div class="col-lg-6">
@@ -634,7 +634,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- My Card Popup start -->
 
 {% endblock content %}
