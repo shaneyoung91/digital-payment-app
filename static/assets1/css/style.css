@@ -1778,7 +1778,7 @@ label {
     height: 26px;
     left: -20px;
     z-index: 1;
-    background-image: url(../images/icon/exchange-icon.png);
+    background-image: url(../images/icon/exchange.png);
     background-repeat: no-repeat;
 }
 
@@ -1794,7 +1794,7 @@ label {
 }
 
 .dashboard-section.pay.step-2 .main-content .exchange-content .recipient .nice-select .current::before {
-    background-image: url(../images/icon/flag-bd.png);
+    background-image: url(../images/icon/flag-usa.png);
 }
 
 .dashboard-section.pay.step-2 .main-content .pay-option {
@@ -1993,7 +1993,6 @@ label {
 .dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom::before {
     position: absolute;
     left: 0;
-    background-image: url(../images/icon/upload-icons.png);
     background-repeat: no-repeat;
     content: "";
     width: 70px;
@@ -2455,7 +2454,7 @@ label {
     top: -22px;
     left: calc(50% - -12px);
     z-index: 1;
-    background-image: url(../images/icon/exchange-icon.png);
+    background-image: url(../images/icon/exchange.png);
     background-repeat: no-repeat;
 }
 
@@ -2472,7 +2471,7 @@ label {
 }
 
 .dashboard-section.crypto .exchange-content .recipient .nice-select .current::before {
-    background-image: url(../images/icon/flag-btc.png);
+    background-image: url(../images/icon/flag-usa.png);
 }
 
 .dashboard-section.crypto .exchange-content .pay-details ul {
@@ -2684,7 +2683,6 @@ label {
     content: '';
     width: 16px;
     height: 16px;
-    background-image: url(../images/icon/check-2.png);
     background-repeat: no-repeat;
     z-index: 2;
 }

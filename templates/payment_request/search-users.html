@@ -9,15 +9,15 @@
                 <div class="main-content">
                     <div class="head-area d-flex align-items-center justify-content-between">
                         <h4>Request Payment</h4>
-                        <div class="icon-area">
+                        {% comment %} <div class="icon-area">
                             <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
 
                     <form method="POST" class="flex-fill">
                         {% csrf_token %}
                         <div class="form-group d-flex align-items-center">
-                            <img src="{% static 'assets/images/icon/search.png' %}" alt="icon">
+                            <img src="{% static 'assets1/images/icon/search.png' %}" alt="icon">
                             <input type="text" name="account_number" placeholder="Enter Account No. or Account ID">
                             <button type="submit"><i class="fas fa-angle-right"></i></button>
                         </div>

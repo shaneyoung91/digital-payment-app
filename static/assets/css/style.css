@@ -926,7 +926,7 @@ label {
 }
 
 .banner-section.payment .overlay {
-    background-image: url(../images/payment-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: top 130px right 50px;
     position: relative;
@@ -947,7 +947,7 @@ label {
 }
 
 .banner-section.payment.two .overlay {
-    background-image: url(../images/payment-banner-2-bg.png);
+
     background-position: center right 50px;
 }
 
@@ -956,7 +956,7 @@ label {
 }
 
 .banner-section.business-account .overlay {
-    background-image: url(../images/business-globe-1.png), url(../images/business-globe-2.png);
+
     background-repeat: no-repeat;
     background-position: left top 50px, right bottom;
 }
@@ -1000,7 +1000,7 @@ label {
 }
 
 .banner-section.business-account.integrations .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
 }
@@ -1028,7 +1028,7 @@ label {
 }
 
 .banner-section.corporate-card .overlay {
-    background-image: url(../images/corporate-card-globe.png), url(../images/corporate-banner-img.png);
+
     background-repeat: no-repeat;
     background-position: left bottom, right 120px bottom;
 }
@@ -1038,14 +1038,14 @@ label {
 }
 
 .banner-section.corporate-card.expense .overlay {
-    background-image: url(../images/corporate-card-globe.png), url(../images/expense-illus.png);
+
     background-repeat: no-repeat;
     background-position: left bottom, right bottom 120px;
 }
 
 .banner-section.corporate-card.subscriptions .overlay {
     background-color: transparent;
-    background-image: url(../images/corporate-card-globe.png), url(../images/subscriptions-illus.png);
+
     background-repeat: no-repeat;
     background-position: left bottom, right bottom 120px;
     border-bottom: 1px solid #a9a8bc;
@@ -1057,7 +1057,7 @@ label {
 
 .banner-section.corporate-card.budgeting-analytics .overlay {
     background-color: transparent;
-    background-image: url(../images/budgeting-analytics-banner.png);
+
     background-repeat: no-repeat;
     background-position: right 40px bottom;
     border-bottom: 1px solid #a9a8bc;
@@ -1073,7 +1073,7 @@ label {
 }
 
 .banner-section.invoice-management .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
 }
@@ -1142,7 +1142,7 @@ label {
 }
 
 .banner-section.inner-banner .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -1175,7 +1175,7 @@ label {
 }
 
 .banner-section.inner-banner .banner-content .main-content .breadcrumb-area .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-    background-image: url(../images/icon/arrow-right-3.png);
+    background-image: url(../images/icon/arrow-right-2.png);
     background-repeat: no-repeat;
     width: 24px;
     height: 14px;
@@ -1229,7 +1229,7 @@ label {
 }
 
 .banner-section.about-us .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
 }
@@ -1293,7 +1293,7 @@ label {
 }
 
 .banner-section.help-center .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
 }
@@ -1330,7 +1330,7 @@ label {
 }
 
 .banner-section.blog-details .overlay {
-    background-image: url(../images/blog-banner.png);
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top 100px center;
@@ -1341,7 +1341,7 @@ label {
 }
 
 .banner-section.privacy-content .overlay {
-    background-image: url(../images/integrations-banner-bg.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
 }
@@ -1364,7 +1364,7 @@ label {
 .footer-section .newsletter {
     border-radius: 20px;
     padding: 80px 0;
-    background-image: url(../images/footer-bg-left.png), url(../images/footer-bg-right.png);
+
     background-repeat: no-repeat;
     background-position: left 20px center, right bottom;
     background-color: var(--primary-color);
@@ -1514,13 +1514,13 @@ label {
 }
 
 .our-solutions.business-model {
-    background-image: url(../images/business-model-bg.png);
+
     background-repeat: no-repeat;
     background-position: top center;
 }
 
 .our-solutions.payment {
-    background-image: url(../images/our-solutions-payment-bg.png);
+    background-image: url(../images/our-solutions-bg.png);
 }
 
 .how-it-works .cus-mar {
@@ -1543,11 +1543,11 @@ label {
 }
 
 .how-it-works .single-item.first::after {
-    background-image: url(../images/icon/how-works-arrow-1.png);
+    background-image: url(../images/icon/how-works-icon-1.png);
 }
 
 .how-it-works .single-item.second::after {
-    background-image: url(../images/icon/how-works-arrow-2.png);
+    background-image: url(../images/icon/how-works-icon-2.png);
     top: calc(30% - 20px);
 }
 
@@ -1563,11 +1563,11 @@ label {
 }
 
 .how-it-works.second .single-item.first::after {
-    background-image: url(../images/icon/how-works-arrow-4.png);
+    background-image: url(../images/icon/how-works-icon-4.png);
 }
 
 .how-it-works.second .single-item.second::after {
-    background-image: url(../images/icon/how-works-arrow-3.png);
+    background-image: url(../images/icon/how-works-icon-3.png);
 }
 
 .how-it-works.second .single-item h3 {
@@ -1733,7 +1733,7 @@ label {
     width: 20px;
     height: 5px;
     content: "";
-    background-image: url(../images/icon/minus-icon.png);
+
     background-repeat: no-repeat;
     background-size: 20px;
     position: absolute;
@@ -1796,7 +1796,7 @@ label {
     height: 30px;
     margin-left: auto;
     content: "";
-    background-image: url(../images/icon/faq-icon.png);
+
     background-repeat: no-repeat;
 }
 
@@ -1816,7 +1816,7 @@ label {
 
 .more-features .overlay {
     background-color: #343098;
-    background-image: url(../images/more-features-illu-1.png), url(../images/more-features-illu-2.png);
+
     background-repeat: no-repeat;
     background-position: left center, right bottom 50px;
 }
@@ -1840,7 +1840,7 @@ label {
 }
 
 .accept-payments .overlay {
-    background-image: url(../images/accept-payments-bg.png);
+
     background-repeat: no-repeat;
     background-position: right center;
 }
@@ -1891,7 +1891,7 @@ label {
 
 .call-action.earn-when-spend {
     margin-bottom: -30px;
-    background-image: url(../images/earn-spend-1.png), url(../images/earn-spend-3.png);
+
     background-repeat: no-repeat;
     background-position: left top, right top;
 }
@@ -1938,7 +1938,7 @@ label {
 .call-action.security .main-content {
     background-color: var(--primary-color);
     border-radius: 10px;
-    background-image: url(../images/security-call-action.png);
+
     background-repeat: no-repeat;
     background-position: right bottom;
     padding: 90px 45px;
@@ -2241,7 +2241,7 @@ label {
 }
 
 .location {
-    background-image: url(../images/location-bg.png);
+
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -2414,7 +2414,7 @@ label {
 .job-details .left-area a::after {
     position: absolute;
     content: "";
-    background-image: url(../images/icon/arrow-right-6.png);
+    background-image: url(../images/icon/arrow-right-2.png);
     background-repeat: no-repeat;
     width: 18px;
     height: 18px;
@@ -2542,7 +2542,7 @@ label {
 .help-category .nav-tabs button::after {
     position: absolute;
     content: "";
-    background-image: url(../images/icon/arrow-right-6.png);
+    background-image: url(../images/icon/arrow-right-2.png);
     background-repeat: no-repeat;
     width: 18px;
     height: 18px;
@@ -2783,7 +2783,7 @@ label {
 }
 
 .error {
-    background-image: url(../images/error.png);
+
     background-repeat: no-repeat;
     background-position: center;
     padding: 400px 0 100px;
