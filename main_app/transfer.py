@@ -8,10 +8,9 @@ from main_app.models import Transaction
 
 @login_required
 def search_users_acct_number(request):
-    # account = Account.objects.filter(account_status="active")
     account = Account.objects.all()
-    
     query = request.POST.get("account_number")
+    
     if query:
         account = account.filter(
             Q(account_number=query)|
