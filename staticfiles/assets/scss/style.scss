@@ -1,0 +1,30 @@
+/*============================================ 
+# Template Name: Paylio Admin Dashboard
+# Version: 1.0
+# Date: 26/04/2022
+# Author: pixelaxis
+# Author URI: https://themeforest.net/user/pixelaxis/portfolio
+# Developed By: Pranto
+# Description: Paylio - Money Transfer and Online Payments Dashboard HTML Template
+============================================*/
+
+/*============================================ 
+======== Table of Css Content =========
+# Typography
+# Normalize 
+# Global style
+# Header Area
+# Banner Area
+# Section Area
+# Footer Area
+============================================*/
+
+// Sass Global
+@import "main/_global.scss";
+
+// Pages
+@import "pages/_banner-footer.scss";
+@import "pages/_section.scss";
+
+// Responsive Area
+@import "main/_responsive.scss";

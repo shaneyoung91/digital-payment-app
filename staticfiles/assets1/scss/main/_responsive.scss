@@ -1,0 +1,852 @@
+// Responsive Area
+@media (max-width: 1599px) {
+	.dashboard-section.account .nav-tabs {
+		justify-content: start;
+		.nav-link{
+			margin-right: 20px;
+		}
+	}
+}
+
+@media (max-width: 1399px) {
+	.dashboard-section.transactions.recipients .filters-item .search-area {
+		width: 80%;
+	}
+	.dashboard-section{
+		margin-left: 110px;
+		width: calc(100% - 100px);
+	}
+	.header-section.body-collapse{
+		margin-left: 140px;
+		width: calc(100% - 140px);
+	}
+	.dashboard-section.body-collapse {
+		margin-left: 110px;
+		width: calc(100% - 100px);
+	}
+	.header-section.body-collapse .sidebar-wrapper {
+		width: 270px;
+		left: -290px;
+	}
+	.header-section .sidebar-wrapper {
+		width: 130px;
+		&.active{
+			.close-btn {
+				display: none;
+			}
+		}
+		.close-btn {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 699px) {
+	.header-section.body-collapse,
+	.header-section,
+	.dashboard-section.body-collapse,
+	.dashboard-section {
+		width: calc(100%);
+		margin-left: 0;
+		.sidebar-wrapper{
+			left: -420px;
+		}
+	}
+	.header-section {
+		.sidebar-wrapper {
+			width: 270px;
+			ul {
+				li {
+					a {
+						justify-content: start;
+					}
+					img {
+						margin-right: 10px;
+						width: auto;
+					}
+					span {
+						display: block;
+					}
+				}
+			}
+			&.active {
+				left: 0;
+				.close-btn {
+					display: block;
+				}
+			}
+			.invite-now{
+				display: block;
+			}
+			.close-btn{
+				display: block;
+			}
+		}
+	}
+	.header-section {
+		.sidebar-wrapper{
+			opacity: 1;
+			visibility: visible;
+			left: -150px !important;
+			&.active{
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	h1, h1>a {
+		font-size: 57px;
+		line-height: 74.1px;
+		margin-top: -16px;
+	}
+	h2, h2>a {
+		font-size: 43px;
+		line-height: 55.9px;
+		margin-top: -10px;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link, 
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
+		font-size: 16px;
+	}
+	.banner-section .overlay .banner-content {
+		padding: 220px 0 230px;
+	}
+	.banner-section.inner-banner .overlay .banner-content {
+		padding: 215px 0 100px;
+	}
+	.dashboard-section.account .nav-tabs {
+		justify-content: start;
+		.nav-link{
+			margin-right: 20px;
+		}
+	}
+	.dashboard-section.account .owner-details{
+		margin-bottom: 30px;
+	}
+	.dashboard-section.pay.step .main-content .choose-recipient .recipient-list button {
+		padding: 10px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		i{
+			font-size: 20px !important;
+		}
+	}
+	.dashboard-section.exchange .side-area{
+		margin-top: 30px;
+	}
+	.dashboard-section.pay.step.exchange .main-content .user-select .single-user {
+		display: grid;
+		.right {
+			margin-top: 20px;
+			a {
+				padding: 5px 25px;
+				margin-left: 0;
+				margin-right: 15px;
+			}
+		}
+	}
+	.header-section .navbar-area {
+		padding: 10px 20px;
+	}
+	.dashboard-section .acc-details .top-area {
+		padding: 20px;
+	}
+	.dashboard-section .acc-details .bottom-area {
+		margin-top: 15px;
+	}
+	.dashboard-section.transactions.recipients .filters-item .search-area {
+		width: 45%;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		margin-bottom: 55px;
+		.file-custom2 {
+			width: 120%;
+			&::before {
+				top: -45px;
+			}
+			&::after {
+				bottom: -54px;
+			}
+		}
+	}
+	.dashboard-section .transactions-area .table-responsive .table {
+		width: 130%;
+	}
+}
+
+@media (max-width: 991px) {
+	// Normalize
+	h1, h1>a {
+		font-size: 57px;
+		line-height: 68.4px;
+		margin-top: -16px;
+	}
+	
+	h2, h2>a {
+		font-size: 43px;
+		line-height: 51.6px;
+		margin-top: -10px;
+	}
+	
+	h3, h3>a {
+		font-size: 32px;
+		line-height: 38.4px;
+		margin-top: -8px;
+	}
+	
+	h4, h4>a {
+		font-size: 24px;
+		line-height: 28px;
+		margin-top: -6px;
+	}
+	
+	h5, h5>a {
+		font-size: 18px;
+		line-height: 22px;
+		margin-top: -4px;
+	}
+	
+	h6, h6>a, table thead tr th, a, p, span, li {
+		font-size: 16px;
+		line-height: 22px;
+	}
+	
+	.section-header {
+		margin-bottom: 40px;
+	}
+	
+	.title {
+		margin-bottom: 20px;
+	}
+	
+	.xxlr{
+		font-size: 20px;
+		line-height: 28px;
+	}
+	.xlr{
+		font-size: 18px;
+		line-height: 25.5px;
+	}
+
+	// Header Responsive
+	.header-section .navbar-toggler {
+		display: inline-block;
+	}
+    .header-section .navbar .navbar-brand {
+		margin-top: -5px;
+		width: 35%;
+	}
+	.header-section .navbar .navbar-brand img {
+		max-width: initial;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav {
+		height: 200px;
+		margin: 20px 0;
+    	overflow-y: auto;
+		margin-bottom: 10px;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu .dropend .dropdown-menu {
+		left: 60px;
+	}
+	.header-section .nav-item.main-navbar .main-menu .sub-navbar .sub-menu{
+		right: 0;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu.show {
+		display: inline-block;
+		margin-left: 130px;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
+		display: none;
+	}
+	.header-section .navbar .navbar-collapse .navbar-nav .nav-item{
+		padding: 8px 0;
+	}
+	.header-section .nav-item.dropdown .dropdown-menu {
+		position: initial;
+	}
+	.header-section .navbar .navbar-collapse .right-area .lang{
+		display: none !important;
+	}
+	.header-section .navbar .navbar-collapse .right-area{
+		margin-left: 0;
+	}
+	// End Header
+	.dashboard-section {
+		padding-top: 40px;
+	}
+	.dashboard-section .side-items{
+		margin-top: 30px;
+	}
+	.dashboard-section.crypto .table{
+		width: 160%;
+	}
+	.dashboard-section.crypto .left-area ul li a {
+		line-height: 30px;
+	}
+	.dashboard-section.crypto .spend-get {
+		padding: 30px;
+		display: grid;
+		gap: 20px;
+	}
+	.dashboard-section.pay.step-2 .main-content .pay-option {
+		background: #F8F8FF;
+		display: grid;
+		.nice-select{
+			margin-left: 20px;
+		}
+		.border-area{
+			border: none;
+		}
+	}
+	.dashboard-section.pay.step-2 .main-content .exchange-content {
+		display: grid;
+		gap: 0;
+	}
+	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
+		top: -40px;
+		left: calc(50%);
+	}
+	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
+		top: -30px;
+		left: calc(52%);
+	}
+	.dashboard-section .footer-area a {
+		padding: 12px 35px;
+	}
+	.dashboard-section.pay.step-2 .main-content .pay-option .pay-option-single {
+		display: grid;
+		.nice-select{
+			margin-left: 0;
+		}
+	}
+	.add-recipients .modal-dialog .modal-content .nav-tabs li button .icon-area {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.dashboard-section.transactions.recipients .filters-item{
+		display: grid !important;
+		.search-area{
+			width: 100%;
+		}
+	}
+	.dashboard-section .transactions-area .table-responsive .table {
+		width: 100%;
+	}
+	.dashboard-section.transactions.recipients .table{
+		width: 130%;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		margin-bottom: 40px;
+		.file-custom2 {
+			width: 90%;
+			&::before {
+				top: -40px;
+			}
+			&::after {
+				bottom: -35px;
+			}
+		}
+	}
+	.dashboard-section.transactions .transactions-main .filters-item .single-item button {
+		padding-left: 10px;
+		margin-left: 0;
+	}
+
+
+
+
+
+
+
+
+}
+
+@media (max-width: 767px) {
+	.header-section .navbar-area .dashboard-nav {
+		margin-left: 30px;
+		gap: 20px;
+	}
+	.header-section .navbar-area .sidebar-icon {
+		margin-right: 40px;
+	}
+	.transactions-popup .modal-dialog .modal-content .right-area {
+		padding: 15px;
+	}
+	.dashboard-section.account .upload-avatar {
+		display: grid;
+	}
+	.dashboard-section.account .file-upload {
+		margin-top: 20px;
+		.file .file-custom::before {
+			left: 0;
+		}
+	}
+	.dashboard-section.account form .input-status .col-6{
+		width: 100% !important;
+		span{
+			margin-top: 15px;
+		}
+	}
+	.dashboard-section.account .tab-main {
+		padding: 20px;
+	}
+	.dashboard-section.account .single-content {
+		padding: 20px;
+	}
+	.dashboard-section.crypto .left-area {
+		position: initial;
+	}
+	.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
+		left: 30px;
+	}
+	.dashboard-section.pay.step .main-content .user-select .single-user {
+		display: grid;
+		.right{
+			margin-top: 20px;
+			a{
+				justify-content: center;
+			}
+		}
+	}
+	.dashboard-section.transactions.recipients .filters-item .right-area {
+		display: grid !important;
+	}
+	.dashboard-section.transactions.recipients .filters-item .single-item .nice-select{
+		padding-left: 0;
+	}
+	.dashboard-section.transactions.recipients .table {
+		width: 185%;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		margin-bottom: 55px;
+		.file-custom2 {
+			width: 65%;
+			&::before {
+				top: -40px;
+			}
+			&::after {
+				bottom: -55px;
+			}
+		}
+	}
+	.dashboard-section.transactions .transactions-main .filters-item {
+		display: grid;
+		gap: 20px;
+		.nice-select{
+			width: 100%;
+		}
+	}
+	.dashboard-section.transactions .transactions-main .table{
+		width: 145%;
+	}
+	.dashboard-section.transactions .head-area h4{
+		margin-bottom: 20px;
+	}
+
+
+}
+
+@media (max-width: 575px) {
+    h1, h1>a {
+        font-size: 40px;
+        line-height: 46px;
+		margin-top: -9px;
+    }
+    h2, h2>a {
+        font-size: 30px;
+        line-height: 36px;
+		margin-top: -7px;
+    }
+    h3, h3>a {
+        font-size: 24px;
+        line-height: 28px;
+		margin-top: -6px;
+    }
+    h4, h4>a {
+        font-size: 18px;
+        line-height: 22px;
+		margin-top: -4px;
+    }
+	a, p, span, li, .cmn-btn, thead tr th, tbody tr th, tbody tr td, input, label, textarea, h6, h6>a{
+		font-size: 15px;
+        line-height: 19px;
+    }
+	.section-header {
+		margin-bottom: 30px;
+	}
+	.title {
+		margin-bottom: 15px;
+	}
+	.xxlr {
+		font-size: 18px;
+		line-height: 25.5px;
+	}
+	.xlr {
+		font-size: 16px;
+		line-height: 22.4px;
+	}
+	.header-section .navbar {
+		padding: 20px 15px;
+	}
+	.header-section .navbar-area .dashboard-nav .single-item .main-area {
+		width: 300px;
+		padding: 20px;
+		border-radius: 10px;
+		border-radius: 10px;
+	}
+	.dashboard-section .transactions-area .table-responsive table{
+		width: 110%;
+	}
+	.card-popup .modal-dialog {
+		max-width: initial;
+	}
+	.transactions-popup .modal-dialog .modal-content .right-area {
+		padding: 20px;
+		border: none;
+	}
+	.transactions-popup.mycard .main-content {
+		padding: 30px;
+	}
+	.preloader {
+		background-size: 50%;
+	}
+	.transfer-popup .modal-dialog,
+	.add-recipients .modal-dialog,
+	.add-card .modal-dialog{
+		margin: auto;
+	}
+	.dashboard-section.account .card-area .card-content{
+		width: 100%;
+	}
+	.dashboard-section.account .your-devices .single-setting,
+	.dashboard-section.account .single-content {
+		display: grid !important;
+		.right{
+			margin-top: 15px;
+		}
+	}
+	.dashboard-section.account .change-pass form {
+		margin-top: 30px;
+	}
+	.dashboard-section.crypto .table-area {
+		padding: 0;
+	}
+	.dashboard-section.pay.step .main-content form{
+		margin-top: 0;
+	}
+	.dashboard-section.crypto .exchange-content .recipient::before{
+		left: calc(50% - 12px);
+	}
+	.dashboard-section.crypto .exchange-content .recipient::after {
+		left: calc(45%);
+	}
+	.card-popup .modal-content .main-content .tab-content .bottom-area {
+		display: grid !important;
+		margin: 0;
+		margin-top: 20px;
+		a{
+			margin-bottom: 20px;		
+		}
+	}
+	.dashboard-section.deposit-money .table-area{
+		padding: 30px;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		margin-bottom: 55px;
+		.file-custom2 {
+			width: 60%;
+			&::before {
+				top: -30px;
+			}
+			&::after {
+				bottom: -50px;
+			}
+		}
+		.file-custom::before{
+			left: 10px;
+		}
+	}
+	.dashboard-section {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 20px;
+	}
+	.dashboard-section.account .file-upload .file{
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::before{
+		top: -10px;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file .file-custom2::after{
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.header-section .navbar-area .dashboard-nav {
+		margin-left: 10px;
+		gap: 15px;
+	}
+	.header-section .navbar-area .sidebar-icon {
+		margin-right: 20px;
+	}
+	.header-section .navbar-area .dashboard-nav .single-item .main-area {
+		padding: 15px;
+	}
+	.dashboard-section .acc-details .top-area {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		padding: 30px;
+	}
+	.dashboard-section .acc-details .right-side{
+		margin-top: 30px;
+	}
+	.dashboard-section .acc-details .top-area .right-top {
+		justify-content: start;
+		padding-left: 15px;
+	}
+	.dashboard-section .acc-details .bottom-area {
+		margin-top: 20px;
+	}
+	.dashboard-section .transactions-area .table-responsive table{
+		width: 140%;
+	}
+	.dashboard-section.account .additional-security .single-setting{
+		display: grid !important;
+		.right{
+			margin-top: 15px;
+		}
+	}
+	.dashboard-section.account .single-content button{
+		font-size: 15px;
+	}
+	.dashboard-section.account .notification-single {
+		padding: 20px;
+		margin-bottom: 15px;
+	}
+	.transactions-popup.mycard .modal-dialog .modal-content .right-area {
+		padding: 0;
+		.top-area{
+			display: grid !important;
+			a{
+				margin-top: 10px;
+			}
+		}
+	}
+	.transactions-popup.mycard .main-content {
+		padding: 20px;
+	}
+
+	.dashboard-section.pay .main-content {
+		padding: 15px;
+	}
+	.dashboard-section.crypto .exchange-content .send-banance {
+		padding: 15px;
+		margin-top: 20px;
+	}
+	.dashboard-section.crypto .exchange-content .send-banance .input-area {
+		padding: 5px 12px;
+		margin: 10px 0;
+	}
+	.dashboard-section .main-content .footer-area a {
+		margin: 0 10px;
+		padding: 12px 12px;
+	}
+	.dashboard-section.crypto .exchange-content .recipient::before {
+		left: calc(50% - 0px);
+	}
+	.dashboard-section.crypto .spend-get {
+		padding: 20px;
+		display: grid;
+		.get{
+			margin-top: 15px;
+		}
+	}
+	.card-popup .modal-content .main-content .tab-area ul {
+		margin-bottom: 20px;
+		li{
+			margin-bottom: 15px;
+		}
+	}
+	.card-popup .modal-content .main-content .bottom-area li p {
+		padding: 10px 0;
+	}
+	.dashboard-section.pay.step-3 .payment-details .details-list li {
+		display: grid;
+		text-align: start;
+	}
+	.dashboard-section.pay.step-3 .payment-details .top-area {
+		display: grid;
+		justify-content: start;
+		.right{
+			text-align: start;
+		}
+		a {
+			background: #F7F9FD;
+			border: 1px solid #DDE8FF;
+			border-radius: 20px;
+			padding: 5px 20px;
+			transition: 0.3s;
+			margin-top: 15px;
+		}
+	}
+	.dashboard-section.pay.step-2 .main-content .send-banance {
+		border-radius: 10px;
+		padding: 15px;
+		margin-top: 20px;
+	}
+	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::before {
+		top: -30px;
+		left: calc(45%);
+	}
+	.dashboard-section.pay.step-2 .main-content .exchange-content .recipient::after {
+		top: -40px;
+		left: calc(42%);
+	}
+	.dashboard-section.pay.step-2 .main-content .send-banance .input-area {
+		padding: 10px 20px;
+	}
+	.add-recipients .modal-dialog .modal-content .nav-tabs li button {
+		padding: 10px 14px;
+	}
+	.dashboard-section.pay.receive-3 .request-submitted .top-area .icon-area{
+		img{
+			max-width: 60%;
+		}
+	}
+	.dashboard-section.transactions.recipients .table {
+		width: 225%;
+	}
+	.card-popup.recipients .modal-content .main-content .tab-area ul li {
+		width: 100%;
+		margin-bottom: 0;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		.file-custom2 {
+			width: 60%;
+			&::before {
+				top: -10px;
+    			left: 20px;
+			}
+		}
+	}
+	.pagination {
+		.page-item, .page-link {
+			width: 30px;
+			height: 30px;
+		}
+		li{
+			margin: 0 3px;
+		}
+	}
+	.dashboard-section.transactions .transactions-main .top-items {
+		display: grid;
+		ul{
+			margin-top: 15px;
+			li{
+				margin-left: 0;
+				margin-right: 15px;
+			}
+		}
+	}
+	.header-section .navbar-area {
+		padding: 10px 20px;
+	}
+	.dashboard-section.transactions .transactions-main .table {
+		width: 155%;
+	}
+
+}
+
+@media (max-width: 375px) {
+	.about .col-6{
+		width: 100% !important;
+	}
+	.header-section .navbar-area form .form-group img{
+		display: none;
+	}
+	.header-section .navbar-area form .form-group {
+		padding: 0;
+	}
+	.dashboard-section .transactions-area .table-responsive table{
+		width: 180%;
+	}
+	.dashboard-section .side-items .single-item {
+		padding: 15px;
+	}
+	.dashboard-section .side-items .single-item .recipients-item .left{
+		margin-right: 15px;
+	}
+	.dashboard-section.crypto .table {
+		width: 175%;
+	}
+	.dashboard-section.crypto .checkbox-single .item-title .img-area {
+		margin-left: 50px;
+		width: initial;
+		height: initial;
+		min-width: 45px;
+		min-height: 45px;
+	}
+	.add-recipients .modal-dialog .modal-content .nav-tabs li button {
+		margin-bottom: 15px;
+	}
+	.dashboard-section.transactions.recipients .table {
+		width: 300%;
+	}
+	.dashboard-section.pay.step-2 .main-content .user-select .right{
+		display: grid !important;
+		a{
+			margin-left: 0;
+			margin-bottom: 15px;
+		}
+	}
+	.dashboard-section.pay.step-2 .main-content .total-fees {
+		padding: 20px;
+	}
+	.dashboard-section.crypto .checkbox-single {
+		padding: 20px;
+	}
+	.dashboard-section.crypto .checkbox-single .checkbox-area .checkmark {
+		left: 15px;
+	}
+	.dashboard-section.deposit-money .table-area {
+		padding: 15px;
+	}
+	.dashboard-section.exchange .side-area .deposit-details li {
+		display: grid;
+	}
+	.dashboard-section.pay.receive-3 .attach-documents .file-upload .file{
+		.file-custom2 {
+			&::before {
+				top: -20px;
+				left: 40px;
+			}
+			&::after {
+				display: none;
+			}
+		}
+	}
+	.preloader {
+		background-size: 60%;
+	}
+	.dashboard-section.transactions .transactions-main .table {
+		width: 220%;
+	}
+	.purchased-popup .main-content ul {
+		padding: 15px;
+		margin: 0 15px;
+		margin-top: 30px;
+	}
+	.dashboard-section.account .nav-tabs .nav-link {
+		padding: 13px 25px;
+	}
+	.dashboard-section.pay.step .main-content .choose-recipient .recipient-list {
+		margin-bottom: 15px;
+	}
+}

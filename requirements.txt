@@ -1,4 +1,4 @@
-# altgraph @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/altgraph-0.17.2-py2.py3-none-any.whl
 asgiref==3.7.2
 boto3==1.28.15
 botocore==1.31.15
@@ -12,10 +12,10 @@ django-jazzmin==2.6.0
 django-on-heroku==1.1.2
 django-storages==1.14
 et-xmlfile==1.1.0
-# future @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/future-0.18.2-py3-none-any.whl
+future @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/future-0.18.2-py3-none-any.whl
 gunicorn==21.2.0
 jmespath==1.0.1
-# macholib @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/macholib-1.15.2-py2.py3-none-any.whl
+macholib @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/macholib-1.15.2-py2.py3-none-any.whl
 MarkupPy==1.14
 odfpy==1.4.1
 openpyxl==3.1.2
@@ -24,10 +24,11 @@ Pillow==10.0.0
 psycopg2==2.9.7
 psycopg2-binary==2.9.6
 python-dateutil==2.8.2
+python-decouple==3.8
 PyYAML==6.0.1
 s3transfer==0.6.1
 shortuuid==1.0.11
-# six @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/six-1.15.0-py2.py3-none-any.whl
+six @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot11/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-141/six-1.15.0-py2.py3-none-any.whl
 sqlparse==0.4.4
 tablib==3.5.0
 typing_extensions==4.7.1

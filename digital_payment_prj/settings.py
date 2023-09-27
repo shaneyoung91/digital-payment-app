@@ -12,15 +12,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import psycopg2
+import environ
 
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -32,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # Replace the DEBUG = True with:
 DEBUG = True if os.environ['MODE'] == 'dev' else False
 
-ALLOWED_HOSTS = ['moneyspread.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,17 +86,16 @@ WSGI_APPLICATION = 'digital_payment_prj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2g4ijqn282lmh',
-        'USER': 'llnpplrdgxecvq',
+        'NAME': 'neondb',
+        'USER': 'shaneadam.young',
         'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'ec2-34-236-103-63.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'HOST': 'ep-weathered-surf-86278663.us-west-2.aws.neon.tech',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -151,7 +148,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'userauths.User'
 
-
 JAZZMIN_SETTINGS = {
     "site_title": "MoneySpread Admin",
     "site_header": "MoneySpread",
@@ -187,5 +183,3 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 import django_on_heroku
 django_on_heroku.settings(locals())
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
