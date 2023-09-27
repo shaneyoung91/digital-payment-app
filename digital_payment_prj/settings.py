@@ -147,15 +147,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'userauths.User'
 
-# JAZZMIN_SETTINGS = {
-#     "site_title": "MoneySpread Admin",
-#     "site_header": "MoneySpread",
-#     "site_brand": "MoneySpread",
-#     # "site_logo": "/images/MoneySpread.png",
-#     "welcome_sign": "Welcome to MoneySpread",
-#     "copyright": "MoneySpread - All Rights Reserved ©️ Copyright 2023",
-#     # "order_with_respect_to": ["core", "userauths", "transactions", "addon", "blog"],
-# }
+JAZZMIN_SETTINGS = {
+    "site_title": "MoneySpread Admin",
+    "site_header": "MoneySpread",
+    "site_brand": "MoneySpread",
+    # "site_logo": "/images/MoneySpread.png",
+    "welcome_sign": "Welcome to MoneySpread",
+    "copyright": "MoneySpread - All Rights Reserved ©️ Copyright 2023",
+    # "order_with_respect_to": ["core", "userauths", "transactions", "addon", "blog"],
+}
 
 AWS_STORAGE_BUCKET_NAME = 'bucket-moneyspread'
 
