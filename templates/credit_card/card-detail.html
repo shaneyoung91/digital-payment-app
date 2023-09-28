@@ -11,7 +11,7 @@
                 <div class="col-xl-11 col-lg-11">
                     <div class="section-content">
                         <div class="transactions-popup">
-                            <div class="container-fruid">
+                            <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div>
@@ -30,20 +30,19 @@
                                                                             <div class="{% if credit_card.card_type == 'Discover' %}Front_card{% endif %} {% if credit_card.card_type == 'American Express' %}Front_card{% endif %}    {% if credit_card.card_type == 'Mastercard' %}masterCard{% endif %}    {% if credit_card.card_type == 'Visa' %}visaCard{% endif %}">
                                                                             <div class="top_card">
                                                                                 <span class="visa">{{credit_card.card_type|upper}}</span>
+                                                                                <div class="card_holder_name">${{credit_card.amount|intcomma}}</div>
                                                                                 {% comment %} <div class="logo">
                                                                                     <img src="{% static 'assets1/images/logo.png' %}" class="logo" alt="logo">
                                                                                 </div> {% endcomment %}
-                                                                            </div>
+                                                                            </div><br>
                                                                             <div class="middle_card">
                                                                                 <span class="chip"></span>
-                                                                                <div class="card_number">{{credit_card.card_number}}</div>
-                                                                            </div><br>
+                                                                                <div class="card_holder_name">{{credit_card.name}}</div>
+                                                                            </div>
                                                                             <div class="bottom_card">
                                                                                 <div class="card_info">
-                                                                                <div class="card_holder_name" style="text-align: left">${{credit_card.amount|intcomma}}</div>
-                                                                                <div class="card_holder_name">{{credit_card.name}}</div>
-                                                                                </div>
-                                                                                <div class="card_info">
+                                                                                <div class="card_number">{{credit_card.card_number}}</div>
+                                                                                </div>                                                                                <div class="card_info">
                                                                                 <div class="card_holder_info">
                                                                                     <span class="expire_month" >{{credit_card.month}}</span>
                                                                                     <span class="slash">/</span>

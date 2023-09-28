@@ -342,19 +342,20 @@
                                                     <div class="{% if c.card_type == 'Discover' %}Front_card{% endif %} {% if c.card_type == 'American Express' %}Front_card{% endif %}    {% if c.card_type == 'Mastercard' %}masterCard{% endif %}    {% if c.card_type == 'Visa' %}visaCard{% endif %}">
                                                     <div class="top_card">
                                                         <span class="visa">{{c.card_type|upper}}</span>
+                                                        <div class="card_holder_name">${{c.amount|intcomma}}</div>
                                                         {% comment %} <div class="logo">
                                                             <img src="{% static 'assets1/images/logo.png' %}" class="logo" alt="logo">
 
                                                         </div> {% endcomment %}
-                                                    </div>
+                                                    </div><br>
                                                     <div class="middle_card">
                                                         <span class="chip"></span>
-                                                        <div class="card_number">{{c.card_number}}</div>
-                                                    </div><br>
+                                                        <div class="card_holder_name">{{c.name}}</div>
+                                                    </div>
                                                     <div class="bottom_card">
                                                         <div class="card_info">
-                                                        <div class="card_holder_name">${{c.amount|intcomma}}</div>
-                                                        <div class="card_holder_name">{{c.name}}</div>
+
+                                                        <div class="card_number">{{c.card_number}}</div>
                                                         </div>
                                                         <div class="card_info">
                                                         <div class="card_holder_info">
@@ -483,7 +484,7 @@
     <!-- Dashboard Section end -->
 
     <!-- Card Popup start -->
-    <div class="card-popup">
+    {% comment %} <div class="card-popup">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
@@ -602,7 +603,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- Card Popup start -->
 
     <!-- Add Card Popup start -->

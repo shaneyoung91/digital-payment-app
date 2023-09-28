@@ -5,7 +5,7 @@ class CreditCardForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Card Holder Name"}))
     card_number = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"Card Number"}))
     month = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"MM"}))
-    year = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"YYYY"}))
+    year = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"YY"}))
     cvv = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"****"}))
     
     class Meta:
