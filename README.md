@@ -16,13 +16,43 @@
 
 ---
 
+## Account Detail 
+![account-detail](static/images/account-detail.png)
+
+---
+
+## Credit Card Details 
+![dashboard](static/images/cc-detail.png)
+
+---
+
+## Deposits Funds to Card
+![dashboard](static/images/deposit-funds.png)
+
+---
+
+## Withdraw Funds from Card
+![dashboard](static/images/withdraw-funds.png)
+
+---
+
 ## Request Payment from Users
 ![request-payment](static/images/request-payment.png)
 
 ---
 
+## Confirm Payment
+![confirm-payment](static/images/confirm-payment.png)
+
+---
+
 ## Transactions
 ![transactions](static/images/transactions.png)
+
+---
+
+## Transaction Detail
+![transaction-detail](static/images/transaction-detail.png)
 
 ---
 
