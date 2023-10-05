@@ -28,6 +28,9 @@
                                         </li> | &nbsp;
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="recipient-request-tab" data-bs-toggle="tab" data-bs-target="#recipient-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received Requests</button>
+                                        </li> | &nbsp;
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="deposit-tab" data-bs-toggle="tab" data-bs-target="#deposit-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Deposits</button>
                                         </li>
                                     </ul>
                                     {% comment %} <div class="view-all d-flex align-items-center">
@@ -276,6 +279,56 @@
                                                                     <a class="btn btn-success">APPROVED</i></a>
                                                                 {% endif %}
 
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="deposit-request" role="tabpanel" aria-labelledby="deposit-tab">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Name / Business</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for d in deposit_transaction %}
+                                                        <tr data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                            <th scope="row">
+                                                                <p>{{d.sender.kyc.full_name|title}}</p>
+                                                                <p class="mdr">{{d.transaction_type|title}}</p>
+                                                            </th>
+                                                            <td>
+                                                                <p><small>{{d.date|date:"h:i"}}</small></p>
+                                                                <p class="mdr">{{d.date|date:"d M, Y"}}</p>
+                                                            </td>
+                                                            <td>
+                                                                {% if d.status == 'Completed' %}
+                                                                    <p class="text-success">{{d.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if d.status == 'Pending' %}
+                                                                    <p class="inprogress">{{d.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if d.status == 'Failed' %}
+                                                                    <p class="text-danger">{{d.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if d.status == 'Processing' %}
+                                                                    <p class="inprogress">{{d.status|title}}</p>
+                                                                {% endif %}                                                         
+                                                            </td>
+                                                            <td>
+                                                                <p>+${{d.amount|intcomma}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <a href="{% url "main_app:transaction-detail" d.transaction_id %}" class="btn btn-primary">VIEW</i></a>
                                                             </td>
                                                         </tr>
                                                     {% empty %}
