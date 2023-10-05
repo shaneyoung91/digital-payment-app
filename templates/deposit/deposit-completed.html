@@ -1,0 +1,50 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2 step-3 receive-3">
+        <div class="overlay pt-120">
+            <div class="container-fluid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Deposit Money</h4>
+                        {% comment %} <div class="icon-area">
+                            <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
+                        </div> {% endcomment %}
+                    </div>
+                    <div class="request-submitted pb-120 text-center">
+                        <div class="top-area">
+                            <div class="icon-area">
+                                <img src="{% static 'assets1/images/icon/success-icon.png' %}" alt="icon" style="width: 200px; height: 200px;">
+                            </div>
+                            <h3>Submitted!</h3>
+                            <p>Deposit <b>{{transaction.transaction_id}}</b> was processed successfully to <b>{{account.user.kyc.full_name}}</b></p>
+                            <h5><a href=""><b>View Details</b></a> | <a href=""><b>Make Another Deposit</b></a></h5>
+                        </div>
+                        {% comment %} <div class="share-link">
+                            <p>Share direct link with your payer</p>
+                            <ul class="d-flex align-items-center justify-content-center">
+                                <li>
+                                    <a href="javascript:void(0)"><img src="{% static 'assets1/images/icon/whatsapp.png' %}" alt="icon"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="{% static 'assets1/images/icon/skype.png' %}" alt="icon"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="{% static 'assets1/images/icon/messenger.png' %}" alt="icon"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="{% static 'assets1/images/icon/copy-link.png' %}" alt="icon"></a>
+                                </li>
+                            </ul>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+{% endblock content %}

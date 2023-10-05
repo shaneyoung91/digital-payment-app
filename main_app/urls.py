@@ -1,5 +1,5 @@
 from django.urls import path
-from main_app import views, transfer, transaction, payment_request, credit_card
+from main_app import views, transfer, transaction, payment_request, credit_card, deposit
 
 app_name = 'main_app'
 
@@ -37,4 +37,12 @@ urlpatterns = [
     path("fund-card/<card_id>/", credit_card.fund_card, name="fund-card"),
     path("withdraw-fund/<card_id>/", credit_card.withdraw_fund, name="withdraw-fund"),
     path("delete-card/<card_id>/", credit_card.delete_card, name="delete-card"),
+    
+    # Deposit
+    path('deposit-money/<account_number>/', deposit.deposit_money, name='deposit-money'),
+    path("deposit-money-process/<account_number>/", deposit.deposit_money_process, name='deposit-money-process'),
+    path('deposit-money-confirmation/<account_number>/<transaction_id>/', deposit.deposit_money_confirmation, name='deposit-money-confirmation'),
+    path("deposit-process/<account_number>/<transaction_id>/", deposit.deposit_process, name='deposit-process'),
+    path("deposit-completed/<account_number>/<transaction_id>/", deposit.deposit_completed, name='deposit-completed'),
+
 ]

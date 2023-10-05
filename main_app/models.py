@@ -12,6 +12,7 @@ TRANSACTION_TYPE = (
     ("Withdraw", "Withdraw"),
     ("Refund", "Refund"),
     ("Request", "Payment Request"),
+    ("Deposit", "Deposit"),
     ("None", "None"),
 )
 

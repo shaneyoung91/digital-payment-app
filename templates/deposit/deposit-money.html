@@ -1,0 +1,66 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2">
+        <div class="overlay pt-120">
+            <div class="container-fluid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Deposit Money</h4>
+                        {% comment %} <div class="icon-area">
+                            <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
+                        </div> {% endcomment %}
+                    </div>
+                    <div class="choose-recipient">
+                        <div class="step-area">
+                            <span class="mdr">Step 1 of 2</span>
+                            <h5>Set Amount to Deposit</h5>
+                        </div>
+                        <div class="user-select">
+                            <div class="single-user">
+                                <div class="left d-flex align-items-center">
+                                    <div class="img-area">
+                                        <img src="{{ account.user.kyc.image.url }}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover"  alt="image">
+                                    </div>
+                                    <div class="text-area">
+                                        <p>{{ account.user.kyc.full_name|title }}</p>
+                                        <span class="mdr"><b>{{ account.account_number }}</b></span><br>
+                                        <span class="mdr">{{ account.user.email }}</span>
+                                    </div>
+                                </div>
+                                {% comment %} <div class="right">
+                                    <a href="{% url "main_app:request-search-acct" %}">
+                                        Edit
+                                    </a>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <form action={% url "main_app:deposit-money-process" account.account_number %}  method="POST">
+                        {% csrf_token %}
+                        <div class="send-banance">
+                            <span class="mdr">Amount to Deposit</span>
+                            <div class="input-area">
+                                <input class="xxlr" id="amount-deposit" name="amount-deposit" placeholder="Enter Deposited Amount $" type="number">
+                                {% comment %} <select>
+                                    <option value="1">USD</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">USD</option>
+                                </select> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="footer-area mt-40">
+                            <a href="{% url "account:dashboard" %}">Previous Step</a>
+                            <button type="submit" style="padding: 10px 30px; border-radius: 10px; background: rgb(98, 0, 255); color: #fff" class="active">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+{% endblock content %}
