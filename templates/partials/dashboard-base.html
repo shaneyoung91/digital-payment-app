@@ -200,13 +200,13 @@
                                 <a href="crypto.html">
                                     <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto"> <span>Crypto</span>
                                 </a>
-                            </li>
+                            </li> {% endcomment %}
                             <li>
-                                <a href="deposit-money.html">
+                                <a href="{% url "main_app:deposit-money" account.account_number %}">
                                     <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
                                 </a>
                             </li>
-                            <li>
+                            {% comment %} <li>
                                 <a href="withdraw-money-step-1.html">
                                     <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
                                 </a>
