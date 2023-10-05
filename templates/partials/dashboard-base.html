@@ -202,7 +202,7 @@
                                 </a>
                             </li> {% endcomment %}
                             <li>
-                                <a href="{% url "main_app:deposit-money" account.account_number %}">
+                                <a href="{% url "main_app:deposit-money" user.account.account_number %}">
                                     <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
                                 </a>
                             </li>
